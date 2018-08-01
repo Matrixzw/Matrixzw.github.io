@@ -327,7 +327,35 @@
 <h3 id="6-柔弱均匀细弦线一端固定，另一端为弹性支承，弦在介质中做微小振动。该介质中阻力密度与速度承正比。推导振动方程。"><a href="#6-柔弱均匀细弦线一端固定，另一端为弹性支承，弦在介质中做微小振动。该介质中阻力密度与速度承正比。推导振动方程。" class="headerlink" title="6. 柔弱均匀细弦线一端固定，另一端为弹性支承，弦在介质中做微小振动。该介质中阻力密度与速度承正比。推导振动方程。"></a>6. 柔弱均匀细弦线一端固定，另一端为弹性支承，弦在介质中做微小振动。该介质中阻力密度与速度承正比。推导振动方程。</h3><p><strong>ans.</strong> </p>
 <p>$$\begin{align}\rho \Delta x\frac{\partial^2u}{\partial t^2} &amp;=T(\sin \alpha_2-\sin \alpha_1)-k\frac{\partial u}{\partial t}\rho \Delta x\\<br>&amp;=T\frac{\partial^2 u}{\partial t^2}\Delta x-k\frac{\partial u}{\partial t}\rho \Delta x\end{align}$$<br>由此可得：</p>
 <p>$$\rho \frac{\partial^2 u}{\partial t^2}=T\frac{\partial^2u}{\partial t^2}-k\frac{\partial u}{\partial t}$$</p>
-<h3 id="7-长度为-l-的弹性杆，长短固定，下端质量为-m-的重物，横截面积为-S-，求边界条件。"><a href="#7-长度为-l-的弹性杆，长短固定，下端质量为-m-的重物，横截面积为-S-，求边界条件。" class="headerlink" title="7. 长度为 $l$ 的弹性杆，长短固定，下端质量为 $m$ 的重物，横截面积为 $S$ ，求边界条件。"></a>7. 长度为 $l$ 的弹性杆，长短固定，下端质量为 $m$ 的重物，横截面积为 $S$ ，求边界条件。</h3>
+<h3 id="7-长度为-l-的弹性杆，长短固定，下端质量为-m-的重物，横截面积为-S-，求边界条件。"><a href="#7-长度为-l-的弹性杆，长短固定，下端质量为-m-的重物，横截面积为-S-，求边界条件。" class="headerlink" title="7. 长度为 $l$ 的弹性杆，长短固定，下端质量为 $m$ 的重物，横截面积为 $S$ ，求边界条件。"></a>7. 长度为 $l$ 的弹性杆，长短固定，下端质量为 $m$ 的重物，横截面积为 $S$ ，求边界条件。</h3><p><strong>ans.</strong>  $u(0,t)=0$ 在 $l$ 处的张力为 $mg$ 。就是 $E\frac{\partial u}{\partial x}(l,t)S=mg$</p>
+<h3 id="8-推导热传导方程。"><a href="#8-推导热传导方程。" class="headerlink" title="8. 推导热传导方程。"></a>8. 推导热传导方程。</h3><p><strong>ans.</strong> 由 Fourier 定理，减少的热量 $\mathbb{d}Q=-k\frac{\partial u}{\partial \bf{n}}\mathbb{d}S\mathbb{d}t$</p>
+<p>增加的热量  $ c\rho (u_{t_2}-u_{t_1})\mathbb{d}\Omega$ ，从而有：</p>
+<p>$$\begin{align}k\frac{\partial u}{\partial \bf{n}}\mathbb{d}S\mathbb{d}t&amp;=c\rho(u_{t_2}-u_{t_1})\mathbb{d}\Omega\\<br>\implies<br>k\nabla^2u\mathbb{d}\Omega\mathbb{d}t&amp;=c\rho \frac{\partial u}{\partial t}\mathbb{d}\Omega\mathbb{d}t&amp;&amp;\text{左边利用 Guass 公式}\end{align}$$<br>也就是 $k\nabla^2u=c\rho \frac{\partial u}{\partial t}$</p>
+<h3 id="9-热传导方程三种边界条件的确定"><a href="#9-热传导方程三种边界条件的确定" class="headerlink" title="9. 热传导方程三种边界条件的确定"></a>9. 热传导方程三种边界条件的确定</h3><ul>
+<li>可测的表面温度（Dirichlet 条件）</li>
+<li>可测得单位时间单位面积流过的热量（Neumann 条件）</li>
+<li>物质放在温度为 $u_1$ 的介质中</li>
+</ul>
+<p><strong>ans.</strong> </p>
+<ul>
+<li>$u|_{(x,y,z)\in \Omega}=u_0$</li>
+<li>利用 Fourier 冷却定律 $\mathbb{d}Q=-k\frac{\partial u}{\partial \bf{n}}\mathbb{d}S\mathbb{d}t\implies \frac{\partial u}{\partial \bf{n}}=u_0$</li>
+<li>利用物质冷却定律（Newton定律）：$\mathbb{d}Q=k_1(u-u_1)\mathbb{d}S\mathbb{d}t$<br>有 $-k\frac{\partial u}{\partial \bf{n}}\mathbb{d}S\mathbb{d}t=k_1(u-u_1)\mathbb{d}S\mathbb{d}t\implies k\frac{\partial u}{\partial \bf{n}}+k_1u=k_1u_1$</li>
+</ul>
+<h3 id="10-推导气体扩散方程。"><a href="#10-推导气体扩散方程。" class="headerlink" title="10. 推导气体扩散方程。"></a>10. 推导气体扩散方程。</h3><p><strong>ans.</strong> 气体扩散定律：$\mathbb{d}m=-D\frac{\partial N}{\partial \bf{n}}\mathbb{d}S\mathbb{d}t$ 其中 $\mathbb{d}m$ 为物质减少的质量， $N$ 为扩散物质的浓度。</p>
+<p>有 $D\frac{\partial N}{\partial \bf{n}}\mathbb{d}S\mathbb{d}t=(N_{t_2}-N_{t_1})\mathbb{d}\Omega\implies D\nabla^2N\mathbb{d}\Omega \mathbb{d}t=\frac{\partial N}{\partial t}\mathbb{d}t\mathbb{d}\Omega\implies D\nabla^2N=\frac{\partial N}{\partial t}$</p>
+<h3 id="11-均匀细杆长度为-l-，同一截面的温度相同，杆的表面与周围介质发生热交换（服从冷却定律）-求温度-u-满足的方程。"><a href="#11-均匀细杆长度为-l-，同一截面的温度相同，杆的表面与周围介质发生热交换（服从冷却定律）-求温度-u-满足的方程。" class="headerlink" title="11. 均匀细杆长度为 $l$ ，同一截面的温度相同，杆的表面与周围介质发生热交换（服从冷却定律）  求温度 $u$ 满足的方程。"></a>11. 均匀细杆长度为 $l$ ，同一截面的温度相同，杆的表面与周围介质发生热交换（服从冷却定律）  求温度 $u$ 满足的方程。</h3><p><strong>ans.</strong> 利用 Fourier 热传导定律，加上Newton 冷却定律得到 </p>
+<p>$$\begin{align}&amp;k\frac{\partial u}{\partial x}|_{x+\Delta x}\pi (\frac{l}{2})^2\Delta t-k\frac{\partial u}{\partial x}|_x\pi(\frac{l}{2})^2\Delta t-(u-u_1)\pi l \Delta x\Delta t=c\rho(u_{t_2}-u_{t_1})\pi(\frac{l}{2})^2\Delta x\\<br>\implies &amp;k\frac{\partial^2u}{\partial x^2}\pi(\frac{l}{2})^2\Delta x\Delta t-k_1(u-u_1)\pi l\Delta x\Delta t=c\rho(u_{t_2}-u_{t_1})\pi(\frac{l}{2})^2\Delta x\\<br>\implies &amp;k\frac{\partial^2u}{\partial t^2}-\frac{4}{l}(u-u_1)=c\rho\frac{\partial u}{\partial t}\end{align}$$</p>
+<h3 id="12-砼（混凝土）-Q-t-表示单位体积内存储的热量，-Q-0-表示初始时刻的温度，满足-frac-mathbb-d-Q-mathbb-d-t-beta-Q-求烧铸后温度-u-满足的方程。"><a href="#12-砼（混凝土）-Q-t-表示单位体积内存储的热量，-Q-0-表示初始时刻的温度，满足-frac-mathbb-d-Q-mathbb-d-t-beta-Q-求烧铸后温度-u-满足的方程。" class="headerlink" title="12. 砼（混凝土）$Q(t)$ 表示单位体积内存储的热量， $Q_0$ 表示初始时刻的温度，满足 $\frac{\mathbb{d}Q}{\mathbb{d}t}=-\beta Q$ 求烧铸后温度 $u$ 满足的方程。"></a>12. 砼（混凝土）$Q(t)$ 表示单位体积内存储的热量， $Q_0$ 表示初始时刻的温度，满足 $\frac{\mathbb{d}Q}{\mathbb{d}t}=-\beta Q$ 求烧铸后温度 $u$ 满足的方程。</h3><p><strong>ans.</strong> 热源 $Q_0\beta e^{-\beta t}$  从而 $\frac{\partial u}{\partial t}=\frac{k}{c\rho}\nabla^2u+\frac{\beta Q_0}{c\rho}e^{-\beta t}$</p>
+<h3 id="13-均匀导线处于温度为-u-0-的介质中，求在常电流作用下温度满足的方程。"><a href="#13-均匀导线处于温度为-u-0-的介质中，求在常电流作用下温度满足的方程。" class="headerlink" title="13. 均匀导线处于温度为 $u_0$ 的介质中，求在常电流作用下温度满足的方程。"></a>13. 均匀导线处于温度为 $u_0$ 的介质中，求在常电流作用下温度满足的方程。</h3><p><strong>ans.</strong> 设 $r$ 为电阻率（电阻系数），有关系 $R=\frac{rl}{S}$，从而单位长度的电阻为$\frac{r}{S}$常电流 $i$ 。</p>
+<p>被动热源： $-\frac{4k_1}{lc\rho}(u-u_0)$， 正常热源： $i^2\frac{r}{S}\frac{1}{c\rho}$。</p>
+<p>从而类比杆的热传导方程有：</p>
+<p>$$\frac{\partial u}{\partial t}=\frac{k}{c\rho}\nabla^2u+i^2\frac{r}{S}\frac{1}{c\rho}-\frac{4k_1}{lc\rho}(u-u_0)$$</p>
+<h3 id="14-物质表绝对温度-u-，依据-Stefan-Boltzman-定律有-mathbb-d-Q-sigma-u-4-mathbb-d-S-mathbb-d-t-mathbb-d-Q-为辐射出的热量。假设物质间仅有辐射，无热传导，介质温度-f-x-y-z-t-求物体温度满足的方程。"><a href="#14-物质表绝对温度-u-，依据-Stefan-Boltzman-定律有-mathbb-d-Q-sigma-u-4-mathbb-d-S-mathbb-d-t-mathbb-d-Q-为辐射出的热量。假设物质间仅有辐射，无热传导，介质温度-f-x-y-z-t-求物体温度满足的方程。" class="headerlink" title="14. 物质表绝对温度 $u$ ，依据 Stefan-Boltzman 定律有 $\mathbb{d}Q=\sigma u^4\mathbb{d}S\mathbb{d}t,\mathbb{d}Q$ 为辐射出的热量。假设物质间仅有辐射，无热传导，介质温度 $f(x,y,z,t)$ 求物体温度满足的方程。"></a>14. 物质表绝对温度 $u$ ，依据 Stefan-Boltzman 定律有 $\mathbb{d}Q=\sigma u^4\mathbb{d}S\mathbb{d}t,\mathbb{d}Q$ 为辐射出的热量。假设物质间仅有辐射，无热传导，介质温度 $f(x,y,z,t)$ 求物体温度满足的方程。</h3><p><strong>ans.</strong> 物质热传导方程： $\frac{\partial u}{\partial t}=\frac{k}{c\rho}\nabla^2u$</p>
+<p>边界条件： $k\frac{\partial u}{\partial \bf{n}}=\sigma (u^4-f^4)\text{ for } (x,y,z) \in\Sigma$</p>
+<h3 id="15-100-circ-C-的开水放在木制书桌上，自然冷却，室温为-37-circ-C-求水温-u-x-y-z-t-满足的方程。"><a href="#15-100-circ-C-的开水放在木制书桌上，自然冷却，室温为-37-circ-C-求水温-u-x-y-z-t-满足的方程。" class="headerlink" title="15. $100^\circ C$ 的开水放在木制书桌上，自然冷却，室温为 $37\circ C$ 求水温 $u(x,y,z,t)$ 满足的方程。"></a>15. $100^\circ C$ 的开水放在木制书桌上，自然冷却，室温为 $37\circ C$ 求水温 $u(x,y,z,t)$ 满足的方程。</h3><p><strong>ans.</strong> </p>
+<p>$$\begin{cases}c\rho \frac{\partial u}{\partial t}=k\nabla^2u &amp;(x,y,z)\in \Omega,t\ge 0\\<br>u(x,0)=100\\<br>\frac{\partial u}{\partial \bf{n}}|_{S_3}=0\quad k\frac{\partial u}{\partial \bf{n}}+k_1 u=37 k_1|_{S_2}\quad k\frac{\partial u}{\partial \bf{n}}+k_2 u=37k_2|_{S_3}\end{cases}$$</p>
+<h3 id="16"><a href="#16" class="headerlink" title="16."></a>16.</h3>
           
         
       
