@@ -229,6 +229,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/fortest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RESPECT">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/01/fortest/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-01T16:45:10+08:00">
+                2018-08-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数学物理方程答案"><a href="#数学物理方程答案" class="headerlink" title="数学物理方程答案"></a>数学物理方程答案</h1><h2 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h2><ol>
+<li><p>推导细杆的纵向振动位移偏移量 $u(x,t)$ 满足的微分方程。    <img src="_v_images/_pic11_1533121250_30566.png" alt="pic1.1"></p>
+<p> <strong>ans.</strong> 有</p>
+<p> $$\begin{align}\rho S \Delta S\frac{\partial^2u}{\partial t^2} &amp;=(P(x+\Delta x,t)-P(x,t))S\\<br> &amp;= \frac{\partial P}{\partial x}\Delta x S\\<br> \implies \rho\frac{\partial^2u}{\partial t^2}&amp;=\frac{\partial P}{\partial x}<br> \end{align}<br> $$</p>
+<p> 又有 $P=E\frac{\partial u}{\partial x}$ 从而带入原来的式子有：</p>
+<p> $$\rho \frac{\partial^2u}{\partial t^2}=\frac{\partial}{\partial x}\left(E\frac{\partial u}{\partial t}\right)$$</p>
+</li>
+<li><p>杆纵向振动时，给出以下三种情况的对应的边界条件。</p>
+</li>
+</ol>
+<ul>
+<li>端点固定</li>
+<li>端点自由</li>
+<li>端点在弹性支承上</li>
+</ul>
+<p><strong>ans</strong> </p>
+<ul>
+<li>$u(0,t)=0,u(l,t)=0$</li>
+<li>端点自由，则张力 $P=E\frac{\partial u}{\partial x}=0\implies u_x(0,t)=u_x(l,t)=0$</li>
+<li>在 $x=l$ 端有弹性支承，劲度系数为</li>
+</ul>
+<ol start="3">
+<li>推导圆锥形枢轴纵向振动方程。 <img src="_v_images/_pic13_1533121933_7813.png" alt="pic1.3"></li>
+</ol>
+<p><strong>ans</strong>利用比例关系有：</p>
+<p>$$\frac{h}{r}=\frac{h-x}{r’}\implies r’=\frac{r(h-x)}{h}$$<br>再利用牛顿运动定律：</p>
+<p>$$\rho \pi r^2(\frac{h-x}{h})^2\Delta x\frac{\partial^2u}{\partial t^2}=\left(P(x+\Delta x,t)-P(x,t)\right)\pi r^2(\frac{h-x}{h})^2$$<br>由此可得：</p>
+<p>$$\rho (1-\frac{x}{h}) ^2\frac{\partial^2u}{\partial t^2}=E\frac{\partial}{\partial x}\left( (1-\frac{x}{h})^2\frac{\partial u}{\partial x} \right)$$</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -300,9 +447,7 @@
       
         
           
-            <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
-<h3 id="9-18-1"><a href="#9-18-1" class="headerlink" title="9.18.1"></a>9.18.1</h3><p>证明 ：</p>
+            <h3 id="9-18-1"><a href="#9-18-1" class="headerlink" title="9.18.1"></a>9.18.1</h3><p>证明 ：</p>
 <p>$$P_n(x)=\frac{1}{2^nn!}\frac{\mathrm{d}^n}{\mathrm{d}x^n}(x^n-1)^n$$<br>满足微分方程：$(1-x^2)P_n’’(x))-2xP_n(x)’+n(n+1)P_n(x)=0$</p>
 <h3 id="9-21-1"><a href="#9-21-1" class="headerlink" title="9.21.1"></a>9.21.1</h3><p>令</p>
 <p>$$\varphi(x)=\begin{cases}0 &amp;x\leq 0\<br>1 &amp;x&gt;0\end{cases} \quad \psi(x)=\begin{cases}0 &amp;x&lt;0\<br>1 &amp;x\geq0\end{cases}$$</p>
@@ -825,7 +970,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
