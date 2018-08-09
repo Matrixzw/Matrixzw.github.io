@@ -187,6 +187,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
@@ -225,6 +235,125 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/09/CCT3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RESPECT">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/09/CCT3/" itemprop="url">CCT3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-09T17:19:22+08:00">
+                2018-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -309,8 +438,8 @@
 
       
         
-          
-            <h4 id="习题-2"><a href="#习题-2" class="headerlink" title="习题 2"></a>习题 2</h4><ol>
+          <h4 id="习题-2"><a href="#习题-2" class="headerlink" title="习题 2"></a>习题 2</h4><hr>
+<ol>
 <li>证明下列命题：</li>
 </ol>
 <ul>
@@ -323,135 +452,18 @@
 <ul>
 <li>未证明，可以利用 Jordan 标准型切入。</li>
 <li>单位矩阵 $E$，$E^TE=E$ 的特征根均为 $1$ 从而， $2-$范数也为 $1$ 。置换矩阵 $P$ 就是每行每列有且仅有一个 $1$ 的矩阵，$P^TP=E$ 从而 $2-$ 范数也为 $1$ 。（注记：正交矩阵的 $2-$范数均为 $1$）</li>
-<li>证明 $\Vert Ax\Vert_2=\sum_{j=1}^\infty|\sum_{i=1}^\infty a_{ij}x_i|\le \sum_{i,j=1}^\infty |a_{ij}x_i|\le \sum_{i=1}^\infty |x_i|\cdot \max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|=\max_{1\le i\le n}\sum_{i=1}^n|a_{ij}|\Vert x\Vert_1$</li>
+<li>证明：</li>
 </ul>
+<p>$$\begin{align}\Vert Ax\Vert_2=\sum_{j=1}^\infty|\sum_{i=1}^\infty a_{ij}x_i|\le \sum_{i,j=1}^\infty |a_{ij}x_i|\le \sum_{i=1}^\infty |x_i|\cdot \max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|=\max_{1\le i\le n}\sum_{i=1}^n|a_{ij}|\Vert x\Vert_1\end{align}$$</p>
 <p>从而 $\Vert A\Vert\le \max_{1\le j\le n}\sum_{j=1}^n|a_{ij}|$ 不妨设当 $j=k$ 时右边式子取到最大值，从而只需取 $x=(0,\cdots,1,\cdots,0)$ ，第 $k$ 个位置为 $1$ ， 其余为 $0$ 。即可证明等号可以成立</p>
 <hr>
-<ol start="2">
-<li>证明 <strong>(1)</strong> $\Vert x\Vert_{2}\le\Vert x\Vert_1\le \sqrt{n}\Vert x\Vert_{2}$   <strong>(2)</strong> $\Vert x\Vert_{\infty}\le \Vert x\Vert_1\le n\Vert x\Vert_{\infty}$   <strong>(3)</strong> $\Vert x\Vert_{\infty}\le \Vert x\Vert_2\le\Vert x\Vert_{\infty}$</li>
-</ol>
-<p><strong>ans.</strong> 三个不等式其实都是 Cauchy 不等式的应用</p>
-<ul>
-<li>$\sum x_i^2\le (\sum|x_i|)^2\le n\sum x_i^2$</li>
-<li>$(\max |x_i|^2)^2\le (\sum |x_i|)^2\le n\max |x_i|^2$</li>
-<li>$max |x_i|^2\le \sum x_i^2\le n\max |x_i|^2$</li>
-</ul>
-<hr>
-<ol start="3">
-<li>若 $\Vert B\Vert&lt;1$ ，证明 $I-B$ 非奇异,且有 $\frac{1}{1+\Vert B\Vert}\le\Vert(I-B)^{-1}\Vert\le \frac{1}{1-\Vert B\Vert}$</li>
-</ol>
-<p><strong>ans.</strong> 反证 $I-B$ 奇异，则 $\exists \eta \ne 0,s.t. (I-B)\eta=0\implies B\eta =\eta$ ，从而 $\Vert B\Vert\ge 1$ 矛盾。</p>
-<p>又 $(I-B)^{-1}(I-B)=I\implies (I-B)^{-1}=I+(I-B)^{-1}B$</p>
-<p>两边取范数，且利用三角不等式得  $\Vert (I-B)^{-1}\Vert\le 1+\Vert(I-B)^{-1}B\Vert\le 1+\Vert (I-B)^{-1}\Vert\cdot\Vert B\Vert$</p>
-<p>将 $\Vert (I-B)^{-1}\Vert$ 解得 $\Vert (I-B)^{-1}\Vert\le \frac{1}{1-\Vert B\Vert}$</p>
-<p>同样利用另外一边的三角不等式有 $\Vert (I-B)^{-1}\Vert\ge 1-\Vert(I-B)^{-1}B\Vert\ge 1-\Vert (I-B)^{-1}\Vert\cdot\Vert B\Vert$</p>
-<p>解得 $\Vert (I-B)^{-1}\Vert\ge \frac{1}{1+\Vert B\Vert}$</p>
-<hr>
-<ol start="4">
-<li>设 $A$ 为非奇异方阵，而 $B$ 为任一奇异方阵，证明 $\frac{1}{\Vert A-B\Vert}\le\Vert A^{-1}\Vert$</li>
-</ol>
-<p><strong>ans.</strong> 利用第三题的结论。</p>
-<p>$\Vert (I-A^{-1}B)^{-1}\Vert\ge 1\implies 1\le \Vert (I-A^{-1}B)^{-1}\Vert\le\Vert A^{-1}\Vert\cdot \Vert A-B\Vert$</p>
-<hr>
-<ol start="5">
-<li>求下列方阵的行范数，列范数，以及条件数。<br>$$A=\begin{pmatrix}5 &amp;7 &amp;3\\<br>7 &amp;11 &amp;2\\<br>3 &amp;2 &amp;6\end{pmatrix},\quad B=\begin{pmatrix}-2 &amp;1 &amp;0\\<br>1 &amp;-2 &amp;1\\<br>0 &amp;1 &amp;-2\end{pmatrix}$$</li>
-</ol>
-<p><strong>ans.</strong> 行范数 $\Vert A\Vert_{\infty}=20,\Vert B\Vert_{\infty}=4$</p>
-<p>列范数 $\Vert A\Vert_1=20,\Vert B\Vert_1=4$</p>
-<p>逆矩阵 $A^{-1}=\begin{pmatrix}62 &amp;-36 &amp;-19\\ -36 &amp;21 &amp;11\\ -19 &amp;11 &amp;6\end{pmatrix},B^{-1}=\frac{1}{8}\begin{pmatrix}-5 &amp;-2 &amp;1 \\ -2 &amp;-4 &amp;2\\ 1 &amp;2 &amp;3\\ \end{pmatrix}$</p>
-<p>条件数 $\mathrm{cond}_{\infty}(A)=20\times 117=2340,\mathrm{cond}_{\infty}(B)=4\times 1=4$</p>
-<p>$\mathrm{cond}_1(A)=20\times117=2340,\mathrm{cond}(B)=4\times 1=4 $</p>
-<hr>
-<ol start="6">
-<li>给定线性方程组 $\begin{pmatrix}10^{-2}&amp;1\\<br>1 &amp;1\end{pmatrix}\begin{pmatrix}x_1\\<br>x_2\end{pmatrix}=\begin{pmatrix}1\\2\end{pmatrix}$</li>
-</ol>
-<ul>
-<li>用分数表示出此方程的准确解</li>
-<li>用 Guass 消元法过程中采用两位有效数字舍入计算</li>
-<li>按列主元消元法过程中采用两位有效数字舍入计算</li>
-</ul>
-<p><strong>ans.</strong> </p>
-<ul>
-<li>作初等行变换化为： $\begin{pmatrix}10^{-2} &amp;1 &amp;1\\ 0 &amp;-99 &amp;-98\end{pmatrix}$，解得 $x_1=\frac{100}{99},x_2=\frac{98}{99}$</li>
-<li>过程中仅取两位有效数字作变换： $\begin{pmatrix}0.01 &amp;1 &amp;1\\ 0 &amp;-99 &amp;-98\end{pmatrix}$ ，解得 $x_1=1.00,x_2=0.99$</li>
-<li>全主元消元法 $\begin{pmatrix}1 &amp;1 &amp;2\\ 10^{-2} &amp;1 &amp;1\end{pmatrix}\rightarrow\begin{pmatrix}1 &amp;1 &amp;2\\ 0 &amp;0.99 &amp;0.98\end{pmatrix}\implies \begin{cases}x_1=1.01\\ x_2=0.99\end{cases}$</li>
-</ul>
-<hr>
-<ol start="7">
-<li>线性方程组 $\begin{pmatrix}10^{-5} &amp;10^{-5} &amp;1\\<br>10^{-5} &amp;-10^{-5} &amp;1\\<br>1 &amp;1 &amp;2\end{pmatrix}\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}=\begin{pmatrix}2\times 10^{-5}\\-2\times10^{-5}\\1\end{pmatrix}$</li>
-</ol>
-<ul>
-<li>用 Guass 消元法过程中保留三位有效数字计算</li>
-<li>用全主元消元法</li>
-<li>先做代换 $x_3’=10^5x_3$ 在用选主元消元法求解</li>
-</ul>
-<p><strong>ans.</strong> </p>
-<ul>
-<li>Guass 消元法 $\begin{pmatrix}10^{-5} &amp;10^{-5} &amp;1 &amp;2\times 10^{-5}\\ 10^{-5} &amp;-10^{-5} &amp;1 &amp;-2\times 10^{-5}\\ 1 &amp;1 &amp;2 &amp;1\end{pmatrix}\rightarrow \begin{pmatrix}10^{-5} &amp;10^{-5} &amp;1 &amp;2\times 10^{-5}\\ 0 &amp;-2\times 10^{-5} &amp;0 &amp;-4\times 10^{-5}\\ 0 &amp;0 &amp;10^{5} &amp;-1\end{pmatrix}$ 解得 $x_1=0,x_2=2,x_3=0$</li>
-<li>全主元消元法： $\begin{pmatrix}1 &amp;1 &amp;2 &amp;1\\ 10^{-5} &amp;-10^{-5} &amp;1 &amp;-2\times 10^{-5}\\ 10^{-5} &amp;10^{-5}&amp;1 &amp;-2\times 10^{-5}\\ 10^{-5} &amp;10^{-5} &amp;1 &amp;2\times 10^{-5}\end{pmatrix}\rightarrow\begin{pmatrix}2 &amp;1 &amp;1 &amp;1\\ 1 &amp;-10^{-5} &amp;10^{-5} &amp;-2\times 10^{-5}\\ 1 &amp;10^{-5} &amp;10^{-5} &amp;2\times 10^{-5}\end{pmatrix}\rightarrow \begin{pmatrix}1 &amp;1 &amp;1 &amp;1\\ 0 &amp;-0.5 &amp;-0.5 &amp;-0.5\\ 0 &amp;0 &amp;0 &amp;0\end{pmatrix}$ 方程有无穷多解</li>
-<li>先做替换再消元 $\begin{pmatrix}1 &amp;10^{-5} &amp;10^{-5} &amp;2\times 10^{-5}\\ 1 &amp;-10^{-5} &amp;10^{-5} &amp;-2\times 10^{-5}\\ 2\times 10^{-5} &amp;10^{-5} &amp;10^{-5} &amp;10^{-5}\end{pmatrix}\rightarrow \begin{pmatrix}\end{pmatrix}$</li>
-</ul>
-<ol start="8">
-<li>$A$ 为对称正定矩阵，经过一次 Guass 消元法化为 $\begin{pmatrix}a_{11} &amp;\alpha^T\\<br>0 &amp;A_2 \end{pmatrix}$ 证明：</li>
-</ol>
-<ul>
-<li>$a_{ii}&gt;0$</li>
-<li>$|a_{ij}|\le\sqrt{a_{ii}a_{jj}}\le\frac{1}{2}(a_{ii}+a_{jj})$</li>
-<li>$A$ 的绝对值最大的元素一定在对角线上</li>
-<li>$A_2$ 为对称正定矩阵</li>
-<li>$a_{ii}^{(2)}\le a_{ii},i=2,3,…n$</li>
-<li>$\max_{1\le i,j\le n}|a_{ij}^{(2)}|\le\max_{2\le i,j\le n}|a_{ij}|$</li>
-</ul>
-<ol start="9">
-<li>用 Guass 消元法求解下列线性方程组，并求系数矩阵的行列式</li>
-</ol>
-<p>$$\begin{pmatrix}1 &amp;4 &amp;-2 &amp;3\\<br>2 &amp;2 &amp;0 &amp;4\\<br>3 &amp;0 &amp;-1 &amp;2\\<br>1 &amp;2 &amp;2 &amp;-3\end{pmatrix}\begin{pmatrix}x_1\\x_2\\x_3\\x_4\end{pmatrix}=\begin{pmatrix}6\\2\\1\\8\end{pmatrix}$$</p>
-<ol start="10">
-<li>设 $A=\begin{pmatrix}1 &amp;2 &amp;3\\<br>2 &amp;3 &amp;4\\<br>3 &amp;4 &amp;4\end{pmatrix},b=\begin{pmatrix}2\\3\\3\end{pmatrix}$</li>
-</ol>
-<ul>
-<li>求解线性方程组 $Ax=b$</li>
-<li><del>求所有满足 $y^TAy&lt;0$ 的 $y$</del></li>
-</ul>
-<ol start="11">
-<li>$A$ 为实对称正定矩阵，证明 $D=\mathrm{diag}(a_{11},…a_{nn})$ 仍为实对称正定矩阵</li>
-<li>用下列方法求矩阵 $A=\begin{pmatrix}2 &amp;1 &amp;2\\<br>1 &amp;2 &amp;3\\<br>4 &amp;1 &amp;2\end{pmatrix}$ 的逆矩阵</li>
-</ol>
-<ul>
-<li>解方程组 $Ax=e_i$</li>
-<li>通过 $LU$ 三角分解</li>
-</ul>
-<ol start="13">
-<li><p>设 $A,B$ 均为 $n$ 阶方阵， $I,O$ 分别为 $n$ 阶单位阵和 $n$ 阶零矩阵，求 $\begin{pmatrix}I &amp;A &amp;0\\<br>0 &amp;I &amp;B\\<br>0 &amp;0 &amp;I\end{pmatrix}$ $3n$ 阶矩阵的逆</p>
-</li>
-<li><p>若 $A$ 为三对角矩阵，即 $A=\begin{pmatrix}a_1 &amp;c_1 &amp; &amp;\\<br>b_2 &amp;\ddots &amp;\ddots &amp;\\<br>&amp;\ddots &amp;\ddots &amp;c_{n-1}\\<br>&amp; &amp;b_n &amp;a_n \end{pmatrix}$ 且 $|a_i|\ge|b_i|+|c_i|,|a_1|&gt;|c_1|,|a_n|&gt;|b_n|,c_ib_i\ne 0$</p>
-</li>
-</ol>
-<p>证明 $A$ 的顺序主子式皆不为零</p>
-<ol start="15">
-<li><p>求三对角矩阵 $\begin{pmatrix}1 &amp;1 &amp; &amp;\\<br>1 &amp;2 &amp;1 &amp; &amp;\\<br>&amp;1 &amp;3 &amp;1 &amp;\\<br>&amp; &amp;1 &amp;4 &amp;1\\<br>&amp; &amp; &amp;1 &amp;5\end{pmatrix}$的 $LU$ 分解及其行列式的值</p>
-</li>
-<li><p>若 $A\in M^{n\times n}$ 为实对称矩阵或 Hermite 矩阵，证明 $\Vert A\Vert_2=\rho(A)$</p>
-</li>
-<li>若 $A\in M^{n\times n}$ 为正交矩阵，证明 $\mathbb{cond}_2(A)=1$</li>
-<li>设 $m\times n$ 阶矩阵 $A$ 为列满秩矩阵，矩阵 $A$ 的条件数：</li>
-</ol>
-<p>$$\mathbb{cond}<em>2(A):=\max\</em>{\Vert x\Vert_2=1}\Vert Ax\Vert_2/\min_{\Vert x\Vert_2=1}\Vert Ax\Vert_2$$</p>
-<ul>
-<li>当 $m=n$ 时，上述条件数的定义与之前定义一致</li>
-<li>设 $\lambda_i$ 为 $n$ 阶方阵 $A^TA$ 的特征值，证明：<br>$$\mathbb{cond}_2(A)=\sqrt{\mathbb{cond}_2(A^TA)}=\sqrt{\max_{1\le i\le n}\lambda_i/\min_{1\le i\le n}\lambda_i}$$</li>
-<li>求 $\begin{pmatrix}1 &amp;1 &amp;\cdots &amp;1\\ \epsilon &amp;0 &amp;\cdots &amp;0\\ 0 &amp;\epsilon &amp;\cdots &amp;0\\ \vdots &amp;\vdots &amp; &amp;\vdots\\ 0 &amp;0 &amp;\cdots &amp;\epsilon\end{pmatrix}$ 的条件数 $\mathbb{cond}_2(A)$</li>
-</ul>
-<ol start="19">
-<li>设 $A$ 为非奇异矩阵，且 $\Vert A^{-1}\Vert\cdot \Vert \delta A\Vert&lt;1$ ，证明 $(A+\delta A)^{-1}$ 存在且有下列关系式：</li>
-</ol>
-<p>$$\frac{\Vert A^{-1}-(A+\delta A)^{-1}\Vert}{\Vert A^{-1}\Vert}\le \frac{\mathbb{cond}(A)\cdot\frac{\Vert \delta A\Vert}{\Vert A\Vert}}{1-\mathbb{cond}(A)\frac{\Vert \delta A\Vert}{\Vert A\Vert}}$$</p>
-<ol start="20">
-<li>$A\in M^{n\times n}$ 非奇异， $b\in\mathbb{R}^n$ 非零，$A,b$ 分别有扰动 $\delta A,\delta b$ 若 $\Vert A^{-1}\Vert&lt;1$ 证明：</li>
-</ol>
-<p>$$\frac{\Vert x-\widetilde{x}\Vert}{\Vert x\Vert}\le\frac{\Vert A^{-1}\Vert\cdot \Vert A\Vert}{1-\Vert A^{-1}\Vert\cdot \Vert A\Vert\frac{\Vert \delta A\Vert}{\Vert A\Vert}}\cdot \left(\frac{\Vert\delta A\Vert}{\Vert A\Vert}+\frac{\Vert \delta b\Vert}{\Vert b\Vert}\right)$$</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/08/CCT2/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -568,115 +580,21 @@
 
       
         
-          
-            <h4 id="习题-1"><a href="#习题-1" class="headerlink" title="习题 1"></a>习题 1</h4><ol>
+          <h4 id="习题-1"><a href="#习题-1" class="headerlink" title="习题 1"></a>习题 1</h4><hr>
+<ol>
 <li>什么是绝对误差，相对误差与有效数字，它们之间有何关系？</li>
 </ol>
 <p><strong>ans.</strong> 绝对误差：某个量的准确值 $x$ ，近似值 $x^\ast$ ，称 $\mathcal{E}(x):=|x^\ast-x|$ 为绝对误差</p>
 <p>相对误差： 绝对误差与准确值之比： $\mathcal{E}_r:=\mathcal{E}/x=(x^*-x)/x$ ，也可以定义为绝对误差与近似值的。</p>
 <p>有效数字：近似值 $x^\ast$ 的误差不超过某一位的半个单位，该位到 $x^\ast$ 的第一位非零数字共有 $n$ 位，则称 $x^\ast$ 有 $n$ 位有效数字 $\Box$</p>
-<ol start="2">
-<li>什么是算法的稳定性？如何判断一个算法的稳定性？举例说明</li>
-</ol>
-<p><strong>ans.</strong> 一个算法如果输入数据有误差而在计算过程中舍入误差不增长，则称算法则称算法数值稳定，否则算法不稳定。</p>
-<p>后面两问不作回答。</p>
-<ol start="3">
-<li>证明 $\sqrt{x}$ 的相对误差约等于 $x$ 相对误差的一半</li>
-</ol>
-<p><strong>ans.</strong> 设 $x+\Delta x$ 为近似值 $x^\ast$ 则绝对误差 $\sqrt{x+\Delta x}-\sqrt{x}=\frac{1}{2\sqrt{\xi}}\Delta x,\xi\in(x,x+\Delta x)$</p>
-<p>由于 $\Delta x$ 充分小，所以右边可以看成是相对误差的一半。 $\Box$</p>
-<ol start="4">
-<li>证明和的相对误差限不超过个加数绝对误差限之和</li>
-</ol>
-<p><strong>ans.</strong> 本题其实就是一个三角不等式的应用。<br>$|x_1+\Delta x_1+…+x_n+\Delta x_n-(x_1+…+x_n)|\le |\Delta x_1|+…+|\Delta x_n|$</p>
-<ol start="5">
-<li>先化简 $S=\sum_{i=2}^{100} \frac{1}{i^2-1}$ 再求其值</li>
-</ol>
-<p><strong>ans.</strong> $S=\frac{1}{2}\sum_{i=2}^{100}(\frac{1}{i-1}-\frac{1}{i+1})=\frac{1}{2}(1+\frac{1}{2}-\frac{1}{100}-\frac{1}{101})=0.7400\quad \Box$ </p>
-<ol start="6">
-<li>求 $\frac{1}{662}-\frac{1}{663}$</li>
-</ol>
-<p><strong>ans.</strong> $\frac{1}{662\times 663}=\frac{1}{438906}=2.2784\times 10^{-6}$</p>
-<ol start="7">
-<li>设序列 $A_n$ 满足递推关系 $A_n=10A_{n-2},n=1,2…$ 若 $\sqrt{783}=27.982$ ，求计算到 $A_{10}$ 有多大的误差。</li>
-</ol>
-<p><strong>ans.</strong> $A_0=\sqrt{2},A_2=10\sqrt{2},…A_{10}=10^5\sqrt{2}$ ，从而 $A_{10}$ 的误差 $10^5|\sqrt{2}-1.41|\le5\times 10^2$</p>
-<ol start="8">
-<li>设 $A_0=28$ 按如下递推关系计算 $A_n=A_{n-1}-\frac{1}{100}\sqrt{783},n=1,2…$ 问计算到 $A_{100}$ 有多大的误差</li>
-</ol>
-<p><strong>ans.</strong> $A_1=28-\sqrt{783}/100,A_2=28-\frac{\sqrt{783}}{100}\times 2,…A_{100}=28-\sqrt{783}$ 从而 $A_{10}$ 的误差为 $|\sqrt{783}-27.982|$</p>
-<ol start="9">
-<li>设 $f(x)=\ln(x-\sqrt{x^2-1})$ ，求 $f(30)$ 的值，若开平方用 $6$ 位函数表，求对数是误差有多大。若改用等价的公式 $f(x)=-\ln(x+\sqrt{x^2+1})$ 呢？</li>
-</ol>
-<p><strong>ans.</strong> $f(30)=\ln(30-\sqrt{899})$ ，利用公式 $\ln(x+\Delta x)-\ln(x)=\frac{\Delta}{\xi}$ </p>
-<p>可知误差为 $\frac{1}{30-\sqrt{899}}\frac{1}{2}\times 10^{-4}=0.2994\times 10^{-2}$</p>
-<p>同理利用后面一个公式的话误差为  $\frac{1}{30+\sqrt{899}}\frac{1}{2}\times 10^{-4}=0.8336\times 10^{-6}$</p>
-<p>代入公式的 $\sqrt{899}=29.9833$</p>
-<ol start="10">
-<li>正方形的边长约为 $100\bf{cm}$ ，求测量是误差最多只能到多少，才能保证面积的误差不超过 $1\bf{cm}$</li>
-</ol>
-<p><strong>ans.</strong> 利用 $(x+\Delta x)^2-x^2=2\xi \Delta x$ 可知 $2\cdot 100\cdot \Delta x\le 1\implies \Delta x\le \frac{1}{200}=5\times 10^{-3}$</p>
-<ol start="11">
-<li>求方程 $x^2-40x+1=0$ 的两根，使得他们至少具有 $4$ 位有效数字 （已知 $\sqrt{399}=19.957$）</li>
-</ol>
-<p><strong>ans.</strong> 方程的解为 $\frac{40\pm \sqrt{40^2-4}}{2}=20\pm\sqrt{399}=39.957,0.043$</p>
-<ol start="12">
-<li>下列计算 $y$ 的多项式中，哪一个更精确，为什么？</li>
-</ol>
-<ul>
-<li>已知 $|x|\ll 1,y=\frac{1}{1+2x}-\frac{1-x}{1+x}=\frac{2x^2}{(1+2x)(1+x)}$</li>
-<li>已知 $|x|\gg 1,y=\frac{2}{x(\sqrt{x+1/x}+\sqrt{x-1/x})}=\sqrt{x+1/x}-\sqrt{x-1/x}$</li>
-<li>已知 $p\gg q&gt;0,y=\frac{q^2}{p+\sqrt{p^2+q^2}}=-p+\sqrt{p^2+q^2}$</li>
-<li>已知 $|x|\ll 1,y=\frac{2\sin^2x}{x}=\frac{1-\cos2x}{x}$</li>
-</ul>
-<p><strong>ans.</strong> 第一个后者，第二个前者，第三个前者，第四个后者。理由都是相近数相减应该避免。</p>
-<ol start="13">
-<li>已知 $p\gg q&gt;0$ 计算 $y=-p+\sqrt{p^2+q^2}$</li>
-</ol>
-<ul>
-<li>算法1： $s=p^2,t=s+q^2,u=\sqrt{t},y=-p+u$</li>
-<li>算法2： $s=p^2,t=s+q^2,u=\sqrt{t},v=p+u,y=q^2/v$</li>
-</ul>
-<p><strong>ans.</strong> 同第 12 问第三个，算法 2 好，理由也是避免相近数相减。</p>
-<ol start="14">
-<li>求定积分 $I_n=\int_0^1\frac{x^n}{4x+1}\,\mathbb{d}x,n=0,1…,9$ 的近似值</li>
-</ol>
-<p><strong>ans.</strong> 注意到 $4I_n+I_{n-1}=\int_0^1x^{n-1}\,\mathbb{d}x=1/n\implies I_n=-\frac{1}{4}I_{n-1}+\frac{1}{4n}$ 这个递推式是稳定的且 $I_0=\ln 5/4=0.4024$</p>
-<table>
-<thead>
-<tr>
-<th>$n$</th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>8</th>
-<th>9</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$I_n$</td>
-<td>0.4024</td>
-<td>0.1494</td>
-<td>0.0.0877</td>
-<td>0.0614</td>
-<td>0.0471</td>
-<td>0.0382</td>
-<td>0.0321</td>
-<td>0.0277</td>
-<td>0.0243</td>
-<td>0.0217</td>
-</tr>
-</tbody>
-</table>
 <hr>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/06/CCT/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1539,7 +1457,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

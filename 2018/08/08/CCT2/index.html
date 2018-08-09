@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="习题 2 证明下列命题：   $n$ 维向量 $x$ 的一切范数均等价。 $n$ 阶矩阵 $A$ 的一切范数均等价。 单位矩阵和置换矩阵的 $2-$范数均为 $1$ 矩阵的列范数 $\Vert A\Vert_{1}=\max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|$  ans.   未证明，可以利用 Jordan 标准型切入。 单位矩阵 $E$，$E^TE=E$ 的特征">
+<meta name="description" content="习题 2  证明下列命题：   $n$ 维向量 $x$ 的一切范数均等价。 $n$ 阶矩阵 $A$ 的一切范数均等价。 单位矩阵和置换矩阵的 $2-$范数均为 $1$ 矩阵的列范数 $\Vert A\Vert_{1}=\max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|$  ans.   未证明，可以利用 Jordan 标准型切入。 单位矩阵 $E$，$E^TE=E$ 的特">
 <meta name="keywords" content="计算方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解线性方程组的直接方法">
 <meta property="og:url" content="http://yoursite.com/2018/08/08/CCT2/index.html">
 <meta property="og:site_name" content="RESPECT">
-<meta property="og:description" content="习题 2 证明下列命题：   $n$ 维向量 $x$ 的一切范数均等价。 $n$ 阶矩阵 $A$ 的一切范数均等价。 单位矩阵和置换矩阵的 $2-$范数均为 $1$ 矩阵的列范数 $\Vert A\Vert_{1}=\max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|$  ans.   未证明，可以利用 Jordan 标准型切入。 单位矩阵 $E$，$E^TE=E$ 的特征">
+<meta property="og:description" content="习题 2  证明下列命题：   $n$ 维向量 $x$ 的一切范数均等价。 $n$ 阶矩阵 $A$ 的一切范数均等价。 单位矩阵和置换矩阵的 $2-$范数均为 $1$ 矩阵的列范数 $\Vert A\Vert_{1}=\max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|$  ans.   未证明，可以利用 Jordan 标准型切入。 单位矩阵 $E$，$E^TE=E$ 的特">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-09T07:39:06.914Z">
+<meta property="og:updated_time" content="2018-08-09T09:13:48.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解线性方程组的直接方法">
-<meta name="twitter:description" content="习题 2 证明下列命题：   $n$ 维向量 $x$ 的一切范数均等价。 $n$ 阶矩阵 $A$ 的一切范数均等价。 单位矩阵和置换矩阵的 $2-$范数均为 $1$ 矩阵的列范数 $\Vert A\Vert_{1}=\max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|$  ans.   未证明，可以利用 Jordan 标准型切入。 单位矩阵 $E$，$E^TE=E$ 的特征">
+<meta name="twitter:description" content="习题 2  证明下列命题：   $n$ 维向量 $x$ 的一切范数均等价。 $n$ 阶矩阵 $A$ 的一切范数均等价。 单位矩阵和置换矩阵的 $2-$范数均为 $1$ 矩阵的列范数 $\Vert A\Vert_{1}=\max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|$  ans.   未证明，可以利用 Jordan 标准型切入。 单位矩阵 $E$，$E^TE=E$ 的特">
 
 
 
@@ -187,6 +187,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
           </a>
         </li>
       
@@ -315,7 +325,8 @@
       
 
       
-        <h4 id="习题-2"><a href="#习题-2" class="headerlink" title="习题 2"></a>习题 2</h4><ol>
+        <h4 id="习题-2"><a href="#习题-2" class="headerlink" title="习题 2"></a>习题 2</h4><hr>
+<ol>
 <li>证明下列命题：</li>
 </ol>
 <ul>
@@ -328,10 +339,12 @@
 <ul>
 <li>未证明，可以利用 Jordan 标准型切入。</li>
 <li>单位矩阵 $E$，$E^TE=E$ 的特征根均为 $1$ 从而， $2-$范数也为 $1$ 。置换矩阵 $P$ 就是每行每列有且仅有一个 $1$ 的矩阵，$P^TP=E$ 从而 $2-$ 范数也为 $1$ 。（注记：正交矩阵的 $2-$范数均为 $1$）</li>
-<li>证明 $\Vert Ax\Vert_2=\sum_{j=1}^\infty|\sum_{i=1}^\infty a_{ij}x_i|\le \sum_{i,j=1}^\infty |a_{ij}x_i|\le \sum_{i=1}^\infty |x_i|\cdot \max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|=\max_{1\le i\le n}\sum_{i=1}^n|a_{ij}|\Vert x\Vert_1$</li>
+<li>证明：</li>
 </ul>
+<p>$$\begin{align}\Vert Ax\Vert_2=\sum_{j=1}^\infty|\sum_{i=1}^\infty a_{ij}x_i|\le \sum_{i,j=1}^\infty |a_{ij}x_i|\le \sum_{i=1}^\infty |x_i|\cdot \max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|=\max_{1\le i\le n}\sum_{i=1}^n|a_{ij}|\Vert x\Vert_1\end{align}$$</p>
 <p>从而 $\Vert A\Vert\le \max_{1\le j\le n}\sum_{j=1}^n|a_{ij}|$ 不妨设当 $j=k$ 时右边式子取到最大值，从而只需取 $x=(0,\cdots,1,\cdots,0)$ ，第 $k$ 个位置为 $1$ ， 其余为 $0$ 。即可证明等号可以成立</p>
 <hr>
+<a id="more"></a>
 <ol start="2">
 <li>证明 <strong>(1)</strong> $\Vert x\Vert_{2}\le\Vert x\Vert_1\le \sqrt{n}\Vert x\Vert_{2}$   <strong>(2)</strong> $\Vert x\Vert_{\infty}\le \Vert x\Vert_1\le n\Vert x\Vert_{\infty}$   <strong>(3)</strong> $\Vert x\Vert_{\infty}\le \Vert x\Vert_2\le\Vert x\Vert_{\infty}$</li>
 </ol>
@@ -393,7 +406,10 @@
 <p><strong>ans.</strong> </p>
 <ul>
 <li>Guass 消元法 $\begin{pmatrix}10^{-5} &amp;10^{-5} &amp;1 &amp;2\times 10^{-5}\\ 10^{-5} &amp;-10^{-5} &amp;1 &amp;-2\times 10^{-5}\\ 1 &amp;1 &amp;2 &amp;1\end{pmatrix}\rightarrow \begin{pmatrix}10^{-5} &amp;10^{-5} &amp;1 &amp;2\times 10^{-5}\\ 0 &amp;-2\times 10^{-5} &amp;0 &amp;-4\times 10^{-5}\\ 0 &amp;0 &amp;10^{5} &amp;-1\end{pmatrix}$ 解得 $x_1=0,x_2=2,x_3=0$</li>
-<li>全主元消元法： $\begin{pmatrix}1 &amp;1 &amp;2 &amp;1\\ 10^{-5} &amp;-10^{-5} &amp;1 &amp;-2\times 10^{-5}\\ 10^{-5} &amp;10^{-5}&amp;1 &amp;-2\times 10^{-5}\\ 10^{-5} &amp;10^{-5} &amp;1 &amp;2\times 10^{-5}\end{pmatrix}\rightarrow\begin{pmatrix}2 &amp;1 &amp;1 &amp;1\\ 1 &amp;-10^{-5} &amp;10^{-5} &amp;-2\times 10^{-5}\\ 1 &amp;10^{-5} &amp;10^{-5} &amp;2\times 10^{-5}\end{pmatrix}\rightarrow \begin{pmatrix}1 &amp;1 &amp;1 &amp;1\\ 0 &amp;-0.5 &amp;-0.5 &amp;-0.5\\ 0 &amp;0 &amp;0 &amp;0\end{pmatrix}$ 方程有无穷多解</li>
+<li>全主元消元法： $\begin{pmatrix}1 &amp;1 &amp;2 &amp;1\\ 10^{-5} &amp;-10^{-5} &amp;1 &amp;-2\times 10^{-5}\\ 10^{-5} &amp;10^{-5}&amp;1 &amp;-2\times 10^{-5}\\ 10^{-5} &amp;10^{-5} &amp;1 &amp;2\times 10^{-5}\end{pmatrix}\rightarrow\begin{pmatrix}2 &amp;1 &amp;1 &amp;1\\ 1 &amp;-10^{-5} &amp;10^{-5} &amp;-2\times 10^{-5}\\ 1 &amp;10^{-5} &amp;10^{-5} &amp;2\times 10^{-5}\end{pmatrix}$ </li>
+</ul>
+<p>$\rightarrow \begin{pmatrix}1 &amp;1 &amp;1 &amp;1\\ 0 &amp;-0.5 &amp;-0.5 &amp;-0.5\\ 0 &amp;0 &amp;0 &amp;0\end{pmatrix}$ 方程有无穷多解</p>
+<ul>
 <li>先做替换再消元 $\begin{pmatrix}1 &amp;10^{-5} &amp;10^{-5} &amp;2\times 10^{-5}\\ 1 &amp;-10^{-5} &amp;10^{-5} &amp;-2\times 10^{-5}\\ 2\times 10^{-5} &amp;10^{-5} &amp;10^{-5} &amp;10^{-5}\end{pmatrix}\rightarrow \begin{pmatrix}\end{pmatrix}$</li>
 </ul>
 <ol start="8">
@@ -495,6 +511,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/08/09/CCT3/" rel="prev" title="CCT3">
+                CCT3 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -570,7 +590,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
