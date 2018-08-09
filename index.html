@@ -177,12 +177,22 @@
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Home
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
           </a>
         </li>
       
@@ -309,11 +319,45 @@
 <li>单位矩阵和置换矩阵的 $2-$范数均为 $1$</li>
 <li>矩阵的列范数 $\Vert A\Vert_{1}=\max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|$</li>
 </ul>
+<p><strong>ans.</strong> </p>
+<ul>
+<li>未证明，可以利用 Jordan 标准型切入。</li>
+<li>单位矩阵 $E$，$E^TE=E$ 的特征根均为 $1$ 从而， $2-$范数也为 $1$ 。置换矩阵 $P$ 就是每行每列有且仅有一个 $1$ 的矩阵，$P^TP=E$ 从而 $2-$ 范数也为 $1$ 。（注记：正交矩阵的 $2-$范数均为 $1$）</li>
+<li>证明 $\Vert Ax\Vert_2=\sum_{j=1}^\infty|\sum_{i=1}^\infty a_{ij}x_i|\le \sum_{i,j=1}^\infty |a_{ij}x_i|\le \sum_{i=1}^\infty |x_i|\cdot \max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|=\max_{1\le i\le n}\sum_{i=1}^n|a_{ij}|\Vert x\Vert_1$</li>
+</ul>
+<p>从而 $\Vert A\Vert\le \max_{1\le j\le n}\sum_{j=1}^n|a_{ij}|$ 不妨设当 $j=k$ 时右边式子取到最大值，从而只需取 $x=(0,\cdots,1,\cdots,0)$ ，第 $k$ 个位置为 $1$ ， 其余为 $0$ 。即可证明等号可以成立</p>
+<hr>
 <ol start="2">
 <li>证明 <strong>(1)</strong> $\Vert x\Vert_{2}\le\Vert x\Vert_1\le \sqrt{n}\Vert x\Vert_{2}$   <strong>(2)</strong> $\Vert x\Vert_{\infty}\le \Vert x\Vert_1\le n\Vert x\Vert_{\infty}$   <strong>(3)</strong> $\Vert x\Vert_{\infty}\le \Vert x\Vert_2\le\Vert x\Vert_{\infty}$</li>
+</ol>
+<p><strong>ans.</strong> 三个不等式其实都是 Cauchy 不等式的应用</p>
+<ul>
+<li>$\sum x_i^2\le (\sum|x_i|)^2\le n\sum x_i^2$</li>
+<li>$(\max |x_i|^2)^2\le (\sum |x_i|)^2\le n\max |x_i|^2$</li>
+<li>$max |x_i|^2\le \sum x_i^2\le n\max |x_i|^2$</li>
+</ul>
+<hr>
+<ol start="3">
 <li>若 $\Vert B\Vert&lt;1$ ，证明 $I-B$ 非奇异,且有 $\frac{1}{1+\Vert B\Vert}\le\Vert(I-B)^{-1}\Vert\le \frac{1}{1-\Vert B\Vert}$</li>
+</ol>
+<p><strong>ans.</strong> 反证 $I-B$ 奇异吗，则 $\exists \eta \ne 0,s.t. (I-B)\eta=0\implies B\eta =\eta$ ，从而 $\Vert B\Vert\ge 1$ 矛盾。</p>
+<p>又 $(I-B)^{-1}(I-B)=I\implies (I-B)^{-1}=I+(I-B)^{-1}B$</p>
+<p>两边取范数，且利用三角不等式得  $\Vert (I-B)^{-1}\Vert\le 1+\Vert(I-B)^{-1}B\Vert\le 1+\Vert (I-B)^{-1}\Vert\cdot\Vert B\Vert$</p>
+<p>将 $\Vert (I-B)^{-1}\Vert$ 解得 $\Vert (I-B)^{-1}\Vert\le \frac{1}{1-\Vert B\Vert}$</p>
+<p>同样利用另外一边的三角不等式有 $\Vert (I-B)^{-1}\Vert\ge 1-\Vert(I-B)^{-1}B\Vert\ge 1-\Vert (I-B)^{-1}\Vert\cdot\Vert B\Vert$</p>
+<p>解得 $\Vert (I-B)^{-1}\Vert\ge \frac{1}{1+\Vert B\Vert}$</p>
+<hr>
+<ol start="4">
 <li>设 $A$ 为非奇异方阵，而 $B$ 为任一奇异方阵，证明 $\frac{1}{\Vert A-B\Vert}\le\Vert A^{-1}\Vert$</li>
+</ol>
+<p><strong>ans.</strong> 利用第三题的结论。</p>
+<p>$\Vert (I-A^{-1}B)^{-1}\Vert\ge 1\implies 1\le \Vert (I-A^{-1}B)^{-1}\Vert\le\Vert A^{-1}\Vert\cdot \Vert A-B\Vert$</p>
+<hr>
+<ol start="5">
 <li>求下列方阵的行范数，列范数，以及条件数。<br>$$A=\begin{pmatrix}5 &amp;7 &amp;3\\<br>7 &amp;11 &amp;2\\<br>3 &amp;2 &amp;6\end{pmatrix},\quad B=\begin{pmatrix}-2 &amp;1 &amp;0\\<br>1 &amp;-2 &amp;1\\<br>0 &amp;1 &amp;-2\end{pmatrix}$$</li>
+</ol>
+<p><strong>ans.</strong> </p>
+<ol start="6">
 <li>给定线性方程组 $\begin{pmatrix}10^{-2}&amp;1\\<br>1 &amp;1\end{pmatrix}\begin{pmatrix}x_1\\<br>x_2\end{pmatrix}=\begin{pmatrix}1\\2\end{pmatrix}$</li>
 </ol>
 <ul>
@@ -372,8 +416,9 @@
 <li><p>若 $A\in M^{n\times n}$ 为实对称矩阵或 Hermite 矩阵，证明 $\Vert A\Vert_2=\rho(A)$</p>
 </li>
 <li>若 $A\in M^{n\times n}$ 为正交矩阵，证明 $\mathbb{cond}_2(A)=1$</li>
-<li>设 $m\times n$ 阶矩阵 $A$ 为列满秩矩阵，矩阵 $A$ 的条件数 $\mathbb{cond}<em>2(A):=\max\</em>{\Vert x\Vert_2=1}\Vert Ax\Vert_2/\min_{\Vert x\Vert_2=1}\Vert Ax\Vert_2$ </li>
+<li>设 $m\times n$ 阶矩阵 $A$ 为列满秩矩阵，矩阵 $A$ 的条件数：</li>
 </ol>
+<p>$$\mathbb{cond}<em>2(A):=\max\</em>{\Vert x\Vert_2=1}\Vert Ax\Vert_2/\min_{\Vert x\Vert_2=1}\Vert Ax\Vert_2$$</p>
 <ul>
 <li>当 $m=n$ 时，上述条件数的定义与之前定义一致</li>
 <li>设 $\lambda_i$ 为 $n$ 阶方阵 $A^TA$ 的特征值，证明：<br>$$\mathbb{cond}_2(A)=\sqrt{\mathbb{cond}_2(A^TA)}=\sqrt{\max_{1\le i\le n}\lambda_i/\min_{1\le i\le n}\lambda_i}$$</li>
@@ -383,6 +428,10 @@
 <li>设 $A$ 为非奇异矩阵，且 $\Vert A^{-1}\Vert\cdot \Vert \delta A\Vert&lt;1$ ，证明 $(A+\delta A)^{-1}$ 存在且有下列关系式：</li>
 </ol>
 <p>$$\frac{\Vert A^{-1}-(A+\delta A)^{-1}\Vert}{\Vert A^{-1}\Vert}\le \frac{\mathbb{cond}(A)\cdot\frac{\Vert \delta A\Vert}{\Vert A\Vert}}{1-\mathbb{cond}(A)\frac{\Vert \delta A\Vert}{\Vert A\Vert}}$$</p>
+<ol start="20">
+<li>$A\in M^{n\times n}$ 非奇异， $b\in\mathbb{R}^n$ 非零，$A,b$ 分别有扰动 $\delta A,\delta b$ 若 $\Vert A^{-1}\Vert&lt;1$ 证明：</li>
+</ol>
+<p>$$\frac{\Vert x-\widetilde{x}\Vert}{\Vert x\Vert}\le\frac{\Vert A^{-1}\Vert\cdot \Vert A\Vert}{1-\Vert A^{-1}\Vert\cdot \Vert A\Vert\frac{\Vert \delta A\Vert}{\Vert A\Vert}}\cdot \left(\frac{\Vert\delta A\Vert}{\Vert A\Vert}+\frac{\Vert \delta b\Vert}{\Vert b\Vert}\right)$$</p>
 
           
         
