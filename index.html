@@ -2,6 +2,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
@@ -9,8 +18,11 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
+
+
+
 
 
 
@@ -38,10 +50,6 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
 
 
 
@@ -50,42 +58,25 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
 
 
 
 
 
 
-
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="RESPECT">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="RESPECT">
-<meta property="og:locale" content="default">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RESPECT">
 
 
 
@@ -94,15 +85,13 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    version: '5.1.4',
+    version: '6.4.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -114,14 +103,35 @@
 </script>
 
 
+  
+
+
+
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="RESPECT">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="RESPECT">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RESPECT">
+
+
+
+
+
 
   <link rel="canonical" href="http://yoursite.com/"/>
 
 
 
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
-
-  <title>RESPECT - To All Master</title>
+  <title>RESPECT</title>
   
 
 
@@ -130,6 +140,34 @@
 
 
 
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
 
 </head>
 
@@ -150,19 +188,21 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">RESPECT</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <p class="site-subtitle">To All Master</p>
       
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -170,55 +210,42 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-home menu-item-active">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
+  </li>
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />Über</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv</a>
+  </li>
 
       
+      
     </ul>
+  
+
   
 
   
@@ -226,12 +253,23 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -242,6 +280,8 @@
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -268,23 +308,34 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/09/CCT3/" itemprop="url">CCT3</a></h1>
+                <a class="post-title-link" href="/2018/08/09/CCT3/" itemprop="url">
+                  CCT3
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-09T17:19:22+08:00">
-                2018-08-09
-              </time>
-            
 
+              
+                
+              
+
+              <time title="Post created: 2018-08-09 17:19:22" itemprop="dateCreated datePublished" datetime="2018-08-09T17:19:22+08:00">2018-08-09</time>
             
 
             
@@ -325,6 +376,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -363,6 +417,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -387,25 +443,52 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/08/CCT2/" itemprop="url">解线性方程组的直接方法</a></h1>
+                <a class="post-title-link" href="/2018/08/08/CCT2/" itemprop="url">
+                  解线性方程组的直接方法
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-08T21:06:48+08:00">
-                2018-08-08
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2018-08-08 21:06:48" itemprop="dateCreated datePublished" datetime="2018-08-08T21:06:48+08:00">2018-08-08</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-08-09 19:52:14" itemprop="dateModified" datetime="2018-08-09T19:52:14+08:00">2018-08-09</time>
+              
             
           </span>
 
@@ -451,22 +534,20 @@
 <p><strong>ans.</strong> </p>
 <ul>
 <li>未证明，可以利用 Jordan 标准型切入。</li>
-<li>单位矩阵 $E$，$E^TE=E$ 的特征根均为 $1$ 从而， $2-$范数也为 $1$ 。置换矩阵 $P$ 就是每行每列有且仅有一个 $1$ 的矩阵，$P^TP=E$ 从而 $2-$ 范数也为 $1$ 。（注记：正交矩阵的 $2-$范数均为 $1$）</li>
-<li>证明：</li>
 </ul>
-<p>$$\begin{align}\Vert Ax\Vert_2=\sum_{j=1}^\infty|\sum_{i=1}^\infty a_{ij}x_i|\le \sum_{i,j=1}^\infty |a_{ij}x_i|\le \sum_{i=1}^\infty |x_i|\cdot \max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|=\max_{1\le i\le n}\sum_{i=1}^n|a_{ij}|\Vert x\Vert_1\end{align}$$</p>
-<p>从而 $\Vert A\Vert\le \max_{1\le j\le n}\sum_{j=1}^n|a_{ij}|$ 不妨设当 $j=k$ 时右边式子取到最大值，从而只需取 $x=(0,\cdots,1,\cdots,0)$ ，第 $k$ 个位置为 $1$ ， 其余为 $0$ 。即可证明等号可以成立</p>
-<hr>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/08/CCT2/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
@@ -505,6 +586,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -529,25 +612,52 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/06/CCT/" itemprop="url">绪论</a></h1>
+                <a class="post-title-link" href="/2018/08/06/CCT/" itemprop="url">
+                  绪论
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-06T14:12:55+08:00">
-                2018-08-06
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2018-08-06 14:12:55" itemprop="dateCreated datePublished" datetime="2018-08-06T14:12:55+08:00">2018-08-06</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-08-09 17:12:22" itemprop="dateModified" datetime="2018-08-09T17:12:22+08:00">2018-08-09</time>
+              
             
           </span>
 
@@ -591,13 +701,16 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/06/CCT/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
@@ -634,6 +747,8 @@
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -660,25 +775,52 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/01/fortest/" itemprop="url">fortest</a></h1>
+                <a class="post-title-link" href="/2018/08/01/fortest/" itemprop="url">
+                  fortest
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-01T16:45:10+08:00">
-                2018-08-01
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2018-08-01 16:45:10" itemprop="dateCreated datePublished" datetime="2018-08-01T16:45:10+08:00">2018-08-01</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-08-09 18:20:33" itemprop="dateModified" datetime="2018-08-09T18:20:33+08:00">2018-08-09</time>
+              
             
           </span>
 
@@ -711,115 +853,20 @@
 
       
         
-          
-            <h1 id="数学物理方程答案"><a href="#数学物理方程答案" class="headerlink" title="数学物理方程答案"></a>数学物理方程答案</h1><h2 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h2><h3 id="1-推导细杆的纵向振动位移偏移量-u-x-t-满足的微分方程。"><a href="#1-推导细杆的纵向振动位移偏移量-u-x-t-满足的微分方程。" class="headerlink" title="1. 推导细杆的纵向振动位移偏移量 $u(x,t)$ 满足的微分方程。 "></a>1. 推导细杆的纵向振动位移偏移量 $u(x,t)$ 满足的微分方程。 <img src="http://img2.ph.126.net/LdQZgtgXNsixjM8nrQGiMQ==/6597577741030954259.png" alt="pic1.1"></h3><p><strong>ans.</strong> 有<br>$$\begin{align}\rho S \Delta S\frac{\partial^2u}{\partial t^2} &amp;=(P(x+\Delta x,t)-P(x,t))S\\<br>    &amp;= \frac{\partial P}{\partial x}\Delta x S\\<br>    \implies \rho\frac{\partial^2u}{\partial t^2}&amp;=\frac{\partial P}{\partial x} \end{align}$$</p>
-<p>又有 $P=E\frac{\partial u}{\partial x}$ 从而带入原来的式子有：</p>
-<p>$$\rho \frac{\partial^2u}{\partial t^2}=\frac{\partial}{\partial x}\left(E\frac{\partial u}{\partial t}\right)$$</p>
-<h3 id="2-杆纵向振动时，给出以下三种情况的对应的边界条件。"><a href="#2-杆纵向振动时，给出以下三种情况的对应的边界条件。" class="headerlink" title="2. 杆纵向振动时，给出以下三种情况的对应的边界条件。"></a>2. 杆纵向振动时，给出以下三种情况的对应的边界条件。</h3><ul>
-<li>端点固定</li>
-<li>端点自由</li>
-<li>端点在弹性支承上</li>
-</ul>
-<p><strong>ans.</strong> </p>
-<ul>
-<li>$u(0,t)=0,u(l,t)=0$</li>
-<li>端点自由，则张力 $P=E\frac{\partial u}{\partial x}=0\implies u_x(0,t)=u_x(l,t)=0$</li>
-<li>在 $x=l$ 端有弹性支承，劲度系数为</li>
-</ul>
-<h3 id="3-推导圆锥形枢轴纵向振动方程。"><a href="#3-推导圆锥形枢轴纵向振动方程。" class="headerlink" title="3. 推导圆锥形枢轴纵向振动方程。"></a>3. 推导圆锥形枢轴纵向振动方程。<img src="http://img0.ph.126.net/0cjChse6SX7zeh32Cd8clw==/1422856007372785107.png" alt="pic1.3"></h3><p><strong>ans.</strong> 利用比例关系有：</p>
-<p>$$\frac{h}{r}=\frac{h-x}{r’}\implies r’=\frac{r(h-x)}{h}$$<br>再利用牛顿运动定律：</p>
-<p>$$\rho \pi r^2(\frac{h-x}{h})^2\Delta x\frac{\partial^2u}{\partial t^2}=\left(P(x+\Delta x,t)-P(x,t)\right)\pi r^2(\frac{h-x}{h})^2$$<br>由此可得：</p>
-<p>$$\rho (1-\frac{x}{h}) ^2\frac{\partial^2u}{\partial t^2}=E\frac{\partial}{\partial x}\left( (1-\frac{x}{h})^2\frac{\partial u}{\partial x} \right)$$</p>
-<h3 id="4-推导弦振动方程。"><a href="#4-推导弦振动方程。" class="headerlink" title="4. 推导弦振动方程。"></a>4. 推导弦振动方程。</h3><p><strong>ans.</strong> 利用 Newton 运动定律知</p>
-<p>$$\begin{align}\rho \Delta x\frac{\partial^2u}{\partial t^2}&amp;=T(\sin \alpha_2-\sin \alpha_1)\\<br>&amp;=T(\frac{\partial u}{\partial x}|_{x+\Delta x}-\frac{\partial u}{\partial x}|_x)\\<br>&amp;=T\frac{\partial^2 u}{\partial x^2}\Delta x\end{align}$$<br>两边同时消去 $\Delta x$ 得到：</p>
-<p>$$\rho \frac{\partial^2u}{\partial t^2}=T\frac{\partial^2u}{\partial x^2}$$</p>
-<h3 id="5-绝对柔软逐条均匀的弦有一端固定，在自身重力作用下，求此线微小振动的方程。"><a href="#5-绝对柔软逐条均匀的弦有一端固定，在自身重力作用下，求此线微小振动的方程。" class="headerlink" title="5. 绝对柔软逐条均匀的弦有一端固定，在自身重力作用下，求此线微小振动的方程。"></a>5. 绝对柔软逐条均匀的弦有一端固定，在自身重力作用下，求此线微小振动的方程。</h3><p><strong>ans.</strong> </p>
-<p>$$\begin{align}\rho \frac{\partial^2u}{\partial t^2}\Delta x&amp;=\rho g(l-x-\Delta x)\sin \theta_2-\rho g(l-x)\sin \theta_1\\<br>&amp;=\rho g(l-x-\Delta x)\frac{\partial u}{\partial x}|_{x+\Delta x}-\rho g(l-x)\frac{\partial u}{\partial x}|_x\\<br>&amp;=\rho g \frac{\partial}{\partial x}\left((l-x)\frac{\partial u}{\partial x}\right)\Delta x\end{align}$$<br>由此可得：</p>
-<p>$$\frac{\partial^2u}{\partial t^2}=g\frac{\partial}{\partial x}\left((l-x)\frac{\partial u}{\partial x}\right)$$</p>
-<h3 id="6-柔弱均匀细弦线一端固定，另一端为弹性支承，弦在介质中做微小振动。该介质中阻力密度与速度承正比。推导振动方程。"><a href="#6-柔弱均匀细弦线一端固定，另一端为弹性支承，弦在介质中做微小振动。该介质中阻力密度与速度承正比。推导振动方程。" class="headerlink" title="6. 柔弱均匀细弦线一端固定，另一端为弹性支承，弦在介质中做微小振动。该介质中阻力密度与速度承正比。推导振动方程。"></a>6. 柔弱均匀细弦线一端固定，另一端为弹性支承，弦在介质中做微小振动。该介质中阻力密度与速度承正比。推导振动方程。</h3><p><strong>ans.</strong> </p>
-<p>$$\begin{align}\rho \Delta x\frac{\partial^2u}{\partial t^2} &amp;=T(\sin \alpha_2-\sin \alpha_1)-k\frac{\partial u}{\partial t}\rho \Delta x\\<br>&amp;=T\frac{\partial^2 u}{\partial t^2}\Delta x-k\frac{\partial u}{\partial t}\rho \Delta x\end{align}$$<br>由此可得：</p>
-<p>$$\rho \frac{\partial^2 u}{\partial t^2}=T\frac{\partial^2u}{\partial t^2}-k\frac{\partial u}{\partial t}$$</p>
-<h3 id="7-长度为-l-的弹性杆，长短固定，下端质量为-m-的重物，横截面积为-S-，求边界条件。"><a href="#7-长度为-l-的弹性杆，长短固定，下端质量为-m-的重物，横截面积为-S-，求边界条件。" class="headerlink" title="7. 长度为 $l$ 的弹性杆，长短固定，下端质量为 $m$ 的重物，横截面积为 $S$ ，求边界条件。"></a>7. 长度为 $l$ 的弹性杆，长短固定，下端质量为 $m$ 的重物，横截面积为 $S$ ，求边界条件。</h3><p><strong>ans.</strong>  $u(0,t)=0$ 在 $l$ 处的张力为 $mg$ 。就是 $E\frac{\partial u}{\partial x}(l,t)S=mg$</p>
-<h3 id="8-推导热传导方程。"><a href="#8-推导热传导方程。" class="headerlink" title="8. 推导热传导方程。"></a>8. 推导热传导方程。</h3><p><strong>ans.</strong> 由 Fourier 定理，减少的热量 $\mathbb{d}Q=-k\frac{\partial u}{\partial \bf{n}}\mathbb{d}S\mathbb{d}t$</p>
-<p>增加的热量  $ c\rho (u_{t_2}-u_{t_1})\mathbb{d}\Omega$ ，从而有：</p>
-<p>$$\begin{align}k\frac{\partial u}{\partial \bf{n}}\mathbb{d}S\mathbb{d}t&amp;=c\rho(u_{t_2}-u_{t_1})\mathbb{d}\Omega\\<br>\implies<br>k\nabla^2u\mathbb{d}\Omega\mathbb{d}t&amp;=c\rho \frac{\partial u}{\partial t}\mathbb{d}\Omega\mathbb{d}t&amp;&amp;\text{左边利用 Guass 公式}\end{align}$$<br>也就是 $k\nabla^2u=c\rho \frac{\partial u}{\partial t}$</p>
-<h3 id="9-热传导方程三种边界条件的确定"><a href="#9-热传导方程三种边界条件的确定" class="headerlink" title="9. 热传导方程三种边界条件的确定"></a>9. 热传导方程三种边界条件的确定</h3><ul>
-<li>可测的表面温度（Dirichlet 条件）</li>
-<li>可测得单位时间单位面积流过的热量（Neumann 条件）</li>
-<li>物质放在温度为 $u_1$ 的介质中</li>
-</ul>
-<p><strong>ans.</strong> </p>
-<ul>
-<li>$u|_{(x,y,z)\in \Omega}=u_0$</li>
-<li>利用 Fourier 冷却定律 $\mathbb{d}Q=-k\frac{\partial u}{\partial \bf{n}}\mathbb{d}S\mathbb{d}t\implies \frac{\partial u}{\partial \bf{n}}=u_0$</li>
-<li>利用物质冷却定律（Newton定律）：$\mathbb{d}Q=k_1(u-u_1)\mathbb{d}S\mathbb{d}t$<br>有 $-k\frac{\partial u}{\partial \bf{n}}\mathbb{d}S\mathbb{d}t=k_1(u-u_1)\mathbb{d}S\mathbb{d}t\implies k\frac{\partial u}{\partial \bf{n}}+k_1u=k_1u_1$</li>
-</ul>
-<h3 id="10-推导气体扩散方程。"><a href="#10-推导气体扩散方程。" class="headerlink" title="10. 推导气体扩散方程。"></a>10. 推导气体扩散方程。</h3><p><strong>ans.</strong> 气体扩散定律：$\mathbb{d}m=-D\frac{\partial N}{\partial \bf{n}}\mathbb{d}S\mathbb{d}t$ 其中 $\mathbb{d}m$ 为物质减少的质量， $N$ 为扩散物质的浓度。</p>
-<p>有 $D\frac{\partial N}{\partial \bf{n}}\mathbb{d}S\mathbb{d}t=(N_{t_2}-N_{t_1})\mathbb{d}\Omega\implies D\nabla^2N\mathbb{d}\Omega \mathbb{d}t=\frac{\partial N}{\partial t}\mathbb{d}t\mathbb{d}\Omega\implies D\nabla^2N=\frac{\partial N}{\partial t}$</p>
-<h3 id="11-均匀细杆长度为-l-，同一截面的温度相同，杆的表面与周围介质发生热交换（服从冷却定律）-求温度-u-满足的方程。"><a href="#11-均匀细杆长度为-l-，同一截面的温度相同，杆的表面与周围介质发生热交换（服从冷却定律）-求温度-u-满足的方程。" class="headerlink" title="11. 均匀细杆长度为 $l$ ，同一截面的温度相同，杆的表面与周围介质发生热交换（服从冷却定律）  求温度 $u$ 满足的方程。"></a>11. 均匀细杆长度为 $l$ ，同一截面的温度相同，杆的表面与周围介质发生热交换（服从冷却定律）  求温度 $u$ 满足的方程。</h3><p><strong>ans.</strong> 利用 Fourier 热传导定律，加上Newton 冷却定律得到 </p>
-<p>$$\begin{align}&amp;k\frac{\partial u}{\partial x}|_{x+\Delta x}\pi (\frac{l}{2})^2\Delta t-k\frac{\partial u}{\partial x}|_x\pi(\frac{l}{2})^2\Delta t-(u-u_1)\pi l \Delta x\Delta t=c\rho(u_{t_2}-u_{t_1})\pi(\frac{l}{2})^2\Delta x\\<br>\implies &amp;k\frac{\partial^2u}{\partial x^2}\pi(\frac{l}{2})^2\Delta x\Delta t-k_1(u-u_1)\pi l\Delta x\Delta t=c\rho(u_{t_2}-u_{t_1})\pi(\frac{l}{2})^2\Delta x\\<br>\implies &amp;k\frac{\partial^2u}{\partial t^2}-\frac{4}{l}(u-u_1)=c\rho\frac{\partial u}{\partial t}\end{align}$$</p>
-<h3 id="12-砼（混凝土）-Q-t-表示单位体积内存储的热量，-Q-0-表示初始时刻的温度，满足-frac-mathbb-d-Q-mathbb-d-t-beta-Q-求烧铸后温度-u-满足的方程。"><a href="#12-砼（混凝土）-Q-t-表示单位体积内存储的热量，-Q-0-表示初始时刻的温度，满足-frac-mathbb-d-Q-mathbb-d-t-beta-Q-求烧铸后温度-u-满足的方程。" class="headerlink" title="12. 砼（混凝土）$Q(t)$ 表示单位体积内存储的热量， $Q_0$ 表示初始时刻的温度，满足 $\frac{\mathbb{d}Q}{\mathbb{d}t}=-\beta Q$ 求烧铸后温度 $u$ 满足的方程。"></a>12. 砼（混凝土）$Q(t)$ 表示单位体积内存储的热量， $Q_0$ 表示初始时刻的温度，满足 $\frac{\mathbb{d}Q}{\mathbb{d}t}=-\beta Q$ 求烧铸后温度 $u$ 满足的方程。</h3><p><strong>ans.</strong> 热源 $Q_0\beta e^{-\beta t}$  从而 $\frac{\partial u}{\partial t}=\frac{k}{c\rho}\nabla^2u+\frac{\beta Q_0}{c\rho}e^{-\beta t}$</p>
-<h3 id="13-均匀导线处于温度为-u-0-的介质中，求在常电流作用下温度满足的方程。"><a href="#13-均匀导线处于温度为-u-0-的介质中，求在常电流作用下温度满足的方程。" class="headerlink" title="13. 均匀导线处于温度为 $u_0$ 的介质中，求在常电流作用下温度满足的方程。"></a>13. 均匀导线处于温度为 $u_0$ 的介质中，求在常电流作用下温度满足的方程。</h3><p><strong>ans.</strong> 设 $r$ 为电阻率（电阻系数），有关系 $R=\frac{rl}{S}$，从而单位长度的电阻为$\frac{r}{S}$常电流 $i$ 。</p>
-<p>被动热源： $-\frac{4k_1}{lc\rho}(u-u_0)$， 正常热源： $i^2\frac{r}{S}\frac{1}{c\rho}$。</p>
-<p>从而类比杆的热传导方程有：</p>
-<p>$$\frac{\partial u}{\partial t}=\frac{k}{c\rho}\nabla^2u+i^2\frac{r}{S}\frac{1}{c\rho}-\frac{4k_1}{lc\rho}(u-u_0)$$</p>
-<h3 id="14-物质表绝对温度-u-，依据-Stefan-Boltzman-定律有-mathbb-d-Q-sigma-u-4-mathbb-d-S-mathbb-d-t-mathbb-d-Q-为辐射出的热量。假设物质间仅有辐射，无热传导，介质温度-f-x-y-z-t-求物体温度满足的方程。"><a href="#14-物质表绝对温度-u-，依据-Stefan-Boltzman-定律有-mathbb-d-Q-sigma-u-4-mathbb-d-S-mathbb-d-t-mathbb-d-Q-为辐射出的热量。假设物质间仅有辐射，无热传导，介质温度-f-x-y-z-t-求物体温度满足的方程。" class="headerlink" title="14. 物质表绝对温度 $u$ ，依据 Stefan-Boltzman 定律有 $\mathbb{d}Q=\sigma u^4\mathbb{d}S\mathbb{d}t,\mathbb{d}Q$ 为辐射出的热量。假设物质间仅有辐射，无热传导，介质温度 $f(x,y,z,t)$ 求物体温度满足的方程。"></a>14. 物质表绝对温度 $u$ ，依据 Stefan-Boltzman 定律有 $\mathbb{d}Q=\sigma u^4\mathbb{d}S\mathbb{d}t,\mathbb{d}Q$ 为辐射出的热量。假设物质间仅有辐射，无热传导，介质温度 $f(x,y,z,t)$ 求物体温度满足的方程。</h3><p><strong>ans.</strong> 物质热传导方程： $\frac{\partial u}{\partial t}=\frac{k}{c\rho}\nabla^2u$</p>
-<p>边界条件： $k\frac{\partial u}{\partial \bf{n}}=\sigma (u^4-f^4)\text{ for } (x,y,z) \in\Sigma$</p>
-<h3 id="15-100-circ-C-的开水放在木制书桌上，自然冷却，室温为-37-circ-C-求水温-u-x-y-z-t-满足的方程。"><a href="#15-100-circ-C-的开水放在木制书桌上，自然冷却，室温为-37-circ-C-求水温-u-x-y-z-t-满足的方程。" class="headerlink" title="15. $100^\circ C$ 的开水放在木制书桌上，自然冷却，室温为 $37^\circ C$ 求水温 $u(x,y,z,t)$ 满足的方程。"></a>15. $100^\circ C$ 的开水放在木制书桌上，自然冷却，室温为 $37^\circ C$ 求水温 $u(x,y,z,t)$ 满足的方程。</h3><p><strong>ans.</strong> </p>
-<p>$$\begin{cases}c\rho \frac{\partial u}{\partial t}=k\nabla^2u &amp;(x,y,z)\in \Omega,t\ge 0\\<br>u(x,0)=100\\<br>\frac{\partial u}{\partial \bf{n}}|_{S_3}=0\quad k\frac{\partial u}{\partial \bf{n}}+k_1 u=37 k_1|_{S_2}\quad k\frac{\partial u}{\partial \bf{n}}+k_2 u=37k_2|_{S_3}\end{cases}$$</p>
-<h3 id="16-地球模型看成为有一团炽热的岩浆逐渐冷却而成，岩浆的温度为-1200-circ-C-表面温度为-0-circ-C"><a href="#16-地球模型看成为有一团炽热的岩浆逐渐冷却而成，岩浆的温度为-1200-circ-C-表面温度为-0-circ-C" class="headerlink" title="16.地球模型看成为有一团炽热的岩浆逐渐冷却而成，岩浆的温度为 $1200^\circ C$ 表面温度为 $0^\circ C$"></a>16.地球模型看成为有一团炽热的岩浆逐渐冷却而成，岩浆的温度为 $1200^\circ C$ 表面温度为 $0^\circ C$</h3><p><strong>ans.</strong> </p>
-<p>$$\begin{cases}u_t-a^2\nabla^2u=0 &amp;(x,y,z)\in \Omega \quad t\ge 0\\<br>u|_{t=0}=1200 &amp;(x,y,z)\in \Omega\\<br>u|_{\partial \Omega}=0&amp; t\ge 0\end{cases}$$</p>
-<h3 id="17-半无界杆一段为常温-u-0-，杆的侧面与周围介质发成热交换，介质温度为-u-1-。杆的初始温度为-0-，求定解问题。"><a href="#17-半无界杆一段为常温-u-0-，杆的侧面与周围介质发成热交换，介质温度为-u-1-。杆的初始温度为-0-，求定解问题。" class="headerlink" title="17. 半无界杆一段为常温 $u_0$ ，杆的侧面与周围介质发成热交换，介质温度为 $u_1$ 。杆的初始温度为 $0$ ，求定解问题。"></a>17. 半无界杆一段为常温 $u_0$ ，杆的侧面与周围介质发成热交换，介质温度为 $u_1$ 。杆的初始温度为 $0$ ，求定解问题。</h3><p><strong>ans.</strong> </p>
-<p>$$\begin{cases}c\rho u_t=k\nabla^2u &amp;(x,y,z)\in \Omega \quad t\ge 0\\<br>u|_{t=0}=0 &amp;(x,y,z)\in \overline{\Omega}\\<br>u(0,y,z,t)=u_0 &amp;(y,z)\in \overline{\Omega}\quad t\ge 0\\<br>\frac{\partial u}{\partial \bf{b}}|_{\partial \Omega \text{ 前 }}=\alpha(u_1-u) &amp;\text{ 热交换系数 }\end{cases}$$ </p>
-<h3 id="18-一条自西向东无限延伸的传送带，运转速度为-a-。运转开始空无一物，然后在带的奇点上通过一升降机源源不断的以-A-1-sin-omega-t-mathrm-kg-的方式向传送带加煤，列出传输过程中，煤的质量分布满足的微分方程。"><a href="#18-一条自西向东无限延伸的传送带，运转速度为-a-。运转开始空无一物，然后在带的奇点上通过一升降机源源不断的以-A-1-sin-omega-t-mathrm-kg-的方式向传送带加煤，列出传输过程中，煤的质量分布满足的微分方程。" class="headerlink" title="18. 一条自西向东无限延伸的传送带，运转速度为 $a$ 。运转开始空无一物，然后在带的奇点上通过一升降机源源不断的以 $A(1+\sin \omega t) \mathrm{kg}$ 的方式向传送带加煤，列出传输过程中，煤的质量分布满足的微分方程。"></a>18. 一条自西向东无限延伸的传送带，运转速度为 $a$ 。运转开始空无一物，然后在带的奇点上通过一升降机源源不断的以 $A(1+\sin \omega t) \mathrm{kg}$ 的方式向传送带加煤，列出传输过程中，煤的质量分布满足的微分方程。</h3><h3 id="19-A-0-0-B-3-5-求连接-AB-的最短距离-C-1-函数。"><a href="#19-A-0-0-B-3-5-求连接-AB-的最短距离-C-1-函数。" class="headerlink" title="19. $A(0,0),B(3,5)$ 求连接 $AB$ 的最短距离 $C^1$ 函数。"></a>19. $A(0,0),B(3,5)$ 求连接 $AB$ 的最短距离 $C^1$ 函数。</h3><p><strong>ans.</strong> $l(y)=\int_0^3\sqrt{1+y_x^2}\,\mathbb{d}x\quad l(y+\epsilon g)=\int_0^3\sqrt{1+(y_x+\epsilon g_x)^2} \quad \forall g\in C^1\quad g(0)=g(3)=0$</p>
-<p>$$\frac{\partial l}{\partial \epsilon}|_{\epsilon=0}=\int_0^3\frac{(y_x+\epsilon g_x)g_x}{\sqrt{1+(y_x+\epsilon g_x)^2}}\,\mathbb{d}x|_{\epsilon=0}=\int_0^3\frac{y_xg_x}{\sqrt{1+y_x^2}}\,\mathbb{d}x=-\int_0^3\left(\frac{y_x}{\sqrt{1+y_x^2}}\right)_xg\,\mathbb{d}x$$<br>从而由变分原理，上式为 $0$。 即有 $\left(\frac{y_x}{\sqrt{1+y_x^2}}\right)|_x=0$ 解得： $y=ax+b$</p>
-<h3 id="20-u-in-y-mid-y-in-C-1-0-1-y-1-0-text-s-t-J-u-min-y-in-M-frac-1-2-int-0-1y-x-2-rm-d-x-2-int-0-1y-mathbb-d-x-y-0"><a href="#20-u-in-y-mid-y-in-C-1-0-1-y-1-0-text-s-t-J-u-min-y-in-M-frac-1-2-int-0-1y-x-2-rm-d-x-2-int-0-1y-mathbb-d-x-y-0" class="headerlink" title="20. $u\in{y\mid y\in C^1[0,1],y(1)=0},\text{ s.t. } ,J(u)=\min_{y\in M}\, \frac{1}{2}\int_0^1y_x^2\,{\rm d}x-2\int_0^1y\,\mathbb{d}x-y(0)$"></a>20. $u\in{y\mid y\in C^1[0,1],y(1)=0},\text{ s.t. } ,J(u)=\min_{y\in M}\, \frac{1}{2}\int_0^1y_x^2\,{\rm d}x-2\int_0^1y\,\mathbb{d}x-y(0)$</h3><p><strong>ans.</strong> </p>
-<p>$$\begin{align}J(u+\epsilon y)&amp;=\frac{1}{2}\int_0^1(u_x+\epsilon y)^2\,\mathbb{d}x-2\int_0^1(u+\epsilon y)\mathbb{d}x-(u(0)+\epsilon y(0))\\<br>\frac{\partial J}{\partial \epsilon}|_{\epsilon=0}&amp;=\int_0^1(u_x+\epsilon y_x)y_x\,\mathbb{d}x-2\int_0^1y\,\mathbb{d}x-y(0)|_{\epsilon=0}\\<br>&amp;\int_0^1u_xy_x\,\mathbb{d}x-2\int_0^1y\,\mathbb{d}x-y(0)\\<br>&amp;=-u’(0)y(0)-\int_0^1(u_{xx}+2)y\,\mathbb{d}x-y(0)\end{align}$$<br>从而有 $\begin{cases}u_{xx}+2=0\\<br>u’(0)+1=0\\<br>u(1)=0\end{cases}\implies u=-x^2-x+2$</p>
-<h3 id="21-u-in-M-C-1-0-1-text-s-t-J-u-min-left-frac-1-2-int-0-1-y-x-2-y-2-mathbb-d-x-frac-1-2-y-2-0-y-x-1-2y-0-right"><a href="#21-u-in-M-C-1-0-1-text-s-t-J-u-min-left-frac-1-2-int-0-1-y-x-2-y-2-mathbb-d-x-frac-1-2-y-2-0-y-x-1-2y-0-right" class="headerlink" title="21. $u\in M=C^1[0,1],\text{ s.t. } J(u)=\min\left(\frac{1}{2}\int_0^1(y_x^2+y^2)\,\mathbb{d}x+\frac{1}{2}(y^2(0)+y_x(1))-2y(0)\right)$"></a>21. $u\in M=C^1[0,1],\text{ s.t. } J(u)=\min\left(\frac{1}{2}\int_0^1(y_x^2+y^2)\,\mathbb{d}x+\frac{1}{2}(y^2(0)+y_x(1))-2y(0)\right)$</h3><p><strong>ans.</strong> </p>
-<p>$$\begin{align}J(u+\epsilon v)&amp;=\frac{1}{2}\int_0^1(u_x+\epsilon v_x)^2+(u+\epsilon v)^2\,\mathbb{d}x+\frac{1}{2}\left((u(0)+\epsilon v(0))^2+(u(1)+\epsilon v(1))^2\right)-2(u(0)+\epsilon v(0))\\<br>\frac{\partial J}{\partial \epsilon}|_{\epsilon=0}&amp;=\int_0^1(u_x+\epsilon v_x)v_x+(u+\epsilon v)v\,\mathbb{d}x+(u(0)+\epsilon v(0)))v(0)+(u(1)+\epsilon v(1))v(1)-2v(0)|_{\epsilon=0}\\<br>&amp;=\int_0^1u_x v_x+uv\,\mathbb{d}x+u(0)v(0)+u(1)v(1)-2v(0)\\<br>&amp;=u_xv|_{0}^1+\int_0^1(-u_{xx}+u)v\,\mathbb{d}x+u(0)v(0)+u(1)v(1)-2v(0)\\<br>&amp;=(u_x(1)+u(1))v(1)-(u_x(0)-u(0)+2)v(0)+\int_0^1(-u_{xx}+u)v\,\mathbb{d}x\end{align}$$<br>从而有 $\begin{cases}-u_{xx}+u=0\\<br>u_x(1)+u(1)=0\\<br>u_x(0)-u(0)+2=0\end{cases}\implies u(x)=e^{-x}$</p>
-<h3 id="22-J-v-frac-1-2-int-Omega-nabla-2v-v-2-mathbb-d-x-frac-1-2-int-partial-Omega-alpha-v-2-mathbb-d-x-int-Omega-fv-mathbb-d-x-int-partial-Omega-gv-mathbb-d-s-alpha-t-ge-0"><a href="#22-J-v-frac-1-2-int-Omega-nabla-2v-v-2-mathbb-d-x-frac-1-2-int-partial-Omega-alpha-v-2-mathbb-d-x-int-Omega-fv-mathbb-d-x-int-partial-Omega-gv-mathbb-d-s-alpha-t-ge-0" class="headerlink" title="22. $J(v)=\frac{1}{2}\int_\Omega \nabla^2v+v^2\,\mathbb{d}x+\frac{1}{2}\int_{\partial \Omega}\alpha v^2\,\mathbb{d}x-\int_{\Omega}fv\,\mathbb{d}x-\int_{\partial \Omega}gv\,\mathbb{d}s,\alpha(t)\ge 0$"></a>22. $J(v)=\frac{1}{2}\int_\Omega \nabla^2v+v^2\,\mathbb{d}x+\frac{1}{2}\int_{\partial \Omega}\alpha v^2\,\mathbb{d}x-\int_{\Omega}fv\,\mathbb{d}x-\int_{\partial \Omega}gv\,\mathbb{d}s,\alpha(t)\ge 0$</h3><p>求证：$u\in C^2(\overline{\Omega})\cap C^1(\overline{\Omega})=M$</p>
-<ul>
-<li>$J(u)=\min_{v\in M}J(v)$</li>
-<li>$$\forall v\in M,\int_{\Omega}(\nabla u\nabla v+uv-fv)\,\mathbb{d}x+\int_{\partial \Omega}\alpha uv-gv\,\mathbb{d}s=0$$</li>
-<li>$$\begin{cases}-\nabla^2 u+u=f &amp;x\in \Omega\\<br>\frac{\partial u}{\partial \bf{n}}+\alpha(x)=g(x) &amp;x\in \partial \Omega\end{cases}$$<br>以上三问题等价。<br><strong>ans.</strong> $$\begin{align}J(u+\epsilon v)&amp;=\frac{1}{2}\int_{\Omega}(\nabla u+\epsilon \nabla v)^2+(u+\epsilon v)^2\,\mathbb{d}x+\frac{1}{2}\int_{\partial \Omega}\alpha(u+\epsilon v)^2\,\mathbb{d}s-\int_\Omega f(u+\epsilon v)\,\mathbb{d}x-\int_{\partial \Omega}g(u+\epsilon v)\,\mathbb{d}x\\<br>\frac{\partial J}{\partial \epsilon }|_{\epsilon=0}&amp;=\int_\Omega(\nabla u+\epsilon \nabla v)\nabla v+(u+\epsilon v)v\,\mathbb{d}x+\int_{\partial \Omega}\alpha(u+\epsilon v)v\,\mathbb{d}s-\int_{\Omega}fv\,\mathbb{d}x-\int_{\partial \Omega}gv\,\mathbb{d}s|_{\epsilon=0}\\<br>&amp;=\int_{\Omega}(\nabla u\nabla v+uv)\,\mathbb{d}x+\int_{\partial \Omega}\alpha uv\,\mathbb{d}s-\int_{\Omega}fv\,\mathbb{d}x-\int_{\partial \Omega}gv\,\mathbb{d}s\\<br>&amp;=\int_{\partial \Omega}\frac{\partial u}{\partial \bf{n}}v\,\mathbb{d}s-\int_{\Omega}\nabla^2 uv\,\mathbb{d}x+\int_{\Omega}uv\,\mathbb{d}x+\int_{\partial \Omega}\alpha uv\,\mathbb{d}s-\int_{\Omega}fv\,\mathbb{d}x-\int_{\partial \Omega}gv\,\mathbb{d}s\\<br>&amp;=\int_{\partial \Omega}\frac{\partial u}{\partial \bf{n}}v\,\mathbb{d}x-\int_{\Omega}\nabla^2uv\,\mathbb{d}x+\int_{\Omega}uv\,\mathbb{d}x+\int_{\partial \Omega}uv\,\mathbb{d}x+\int_{\partial \Omega}\alpha uv\,\mathbb{d}s-\int_{\Omega}fv\,\mathbb{d}x-\int_{\partial \Omega}gv\,\mathbb{d}s\\<br>&amp;=\int_{\partial \Omega}(\frac{\partial u}{\partial \bf{n}})v\,\mathbb{d}s-\int_{\Omega}(\nabla^2u-u-f)v\,\mathbb{d}x\end{align}$$<br>从而 $\begin{cases}\nabla^2u-u=f &amp;x\in \Omega\\<br>\frac{\partial u}{\partial \bf{n}}+\alpha u=g &amp;x\in \partial \Omega\end{cases}$<br>以上证明了 $i\to ii\to iii,iii\to ii$ ，下面证明 $ii\to i$<br>$$\begin{align}J(u+\epsilon v)&amp;=\int_{\Omega}(\nabla^2u+\epsilon \nabla^2v+2\epsilon\nabla u\nabla v)+(u^2+\epsilon^2v^2+2\epsilon uv)\,\mathbb{d}x+\frac{1}{2}\int_{\partial \Omega}\alpha(u^2+2u\epsilon v+\epsilon^2v^2)\,\mathbb{d}s\\<br>&amp; -\int_{\Omega}fu+f\epsilon v\,\mathbb{d}x-\int_{\partial \Omega}gu+g\epsilon v\,\mathbb{d}x\\<br>&amp;=\frac{1}{2}\int_{\Omega}\nabla^2u+u^2\,\mathbb{d}x+\frac{1}{2}\int_{\partial \Omega}\alpha u^2\,\mathbb{d}s-\int_{ \Omega}fu\,\mathbb{d}x-\int_{\partial \Omega}gu\,\mathbb{d}s\\<br>&amp;+\frac{1}{2}\int_{\Omega}\epsilon^2\nabla^2u+\epsilon^2v\,\mathbb{d}x+\frac{1}{2}\int_{\partial \Omega}\alpha \epsilon^2v^2\,\mathbb{d}s\\<br>&amp;\ge J(u)\end{align}$$</li>
-</ul>
-<h3 id="23-求-w-作变换-u-v-w-使得下面定解问题变为齐次。"><a href="#23-求-w-作变换-u-v-w-使得下面定解问题变为齐次。" class="headerlink" title="23. 求 $w$ 作变换 $u=v+w$ 使得下面定解问题变为齐次。"></a>23. 求 $w$ 作变换 $u=v+w$ 使得下面定解问题变为齐次。</h3><ol>
-<li>$\begin{cases}u_{tt}=a^2u_{xx}&amp;0&lt;x&lt;+\infty,t&gt;0\\<br>u_x(0,t)=g(t)&amp;t\ge 0\\<br>u(x,0)=\phi(x),u(x,0)=\psi(x)&amp;0&lt;x&lt;+\infty\end{cases}$</li>
-</ol>
-<p><strong>ans.</strong> 作变换 $u=v+g(t)x$ 化为 $\begin{cases}v_{tt}+g_{tt}=a^2v_{xx}\\<br>v_{x}(0,t)=0\\<br>v(x,0)+g(0)x=\phi(x),v_t(x,0)+g_t(0)x=\psi(x)\end{cases}$</p>
-<ol start="2">
-<li>$\begin{cases}u_{tt}=a^2u_{xx}&amp;0&lt;x&lt;l,t&gt;0\\<br>u(0,t)=g_1(t),u(l,t)=g_2(t)&amp;t\ge 0\\<br>u(x,0)=\phi(x),u_t(x,0)=\psi(x)&amp;0\le x\le l\end{cases}$</li>
-</ol>
-<p><strong>ans.</strong> 做变换 $u=v+\frac{xg_2(t)+(l-x)g_1(t)}{l}$ 化为：</p>
-<p>$$\begin{cases}v_{tt}+\frac{1}{l}(x(g_2)_{tt}+(l-x)(g_1)_{tt})=a^2v_{xx}\\<br>v(0,t)=-,v(l,t)=0 \\<br>v(x,0)+\frac{xg_2(0)+(l-x)g_1(0)}{l}=\phi(x)\\<br>v_t(x,0)+\frac{xg_2’(0)+(l-x)g_1’(0)}{l}=\psi(x)\end{cases}$$</p>
-<ol start="3">
-<li>$\begin{cases}u_{tt}=a^2u_{xx}&amp;0&lt;x&lt;l,t&gt;0\\<br>-u_x(0,t)=g_1(t),u_x(l,t)+u(l,t)=g_2(t) &amp;t\ge 0\\<br>u(x,0)=\phi(x),u_t(x,0)=\psi(x)&amp;0\le x\le l\end{cases}$</li>
-</ol>
-<p><strong>ans.</strong> 令 $u=v-g_1(t)x+g_2(t)+g_1(t)l$ 化为：</p>
-<p>$$\begin{cases}v_{tt}-(g_1)_{tt}x+(g_2)_{tt}-(g_1)_{tt}=a^2v_{xx}\\<br>v_x(0,t)=0,v_x(l,t)+v(l,t)=0\\<br>v(x,0)-g_1(0)x+g_2(0)+g_1(0)l=\phi(x)\\<br>v_t(x,0)+(g_1)_t(0)+(g_2)_t(0)+(g_1)_{t}(0)l=\psi(x)\end{cases}$$</p>
-<ol start="4">
-<li>$\begin{cases}u_t=u_{xx}+f(x)&amp;0&lt;x&lt;l,,t&gt;0\\<br>u(0,t)=0,u(l,t)=0&amp;t&gt;0\\<br>u(x,0)=\phi(x)&amp;0\le x\le l\end{cases}$ 方程化为齐次，保持边界齐次。</li>
-</ol>
-<p><strong>ans.</strong> 作 $u=v+w$ 带入方程，得到 $\begin{cases}v_t+w_t=v_{xx}+w_{xx}+f(x)&amp;0&lt;x&lt;l,t&gt;0\\<br>v(0,t)+w(0,t)=0,v(l,t)+w(l,t)=0\end{cases}$</p>
-<p>只需 $w_{xx}+f(x)=w_t,w(0,t)=w(l,t)=0$ 我们找 $w_{xx}+f(x)=w_t=0$</p>
-<p>解得  $$w=-\int_0^x\int_0^xf(t)\,\mathbb{d}t\,\mathbb{d}s+\frac{1}{l}\int_0^l\int_0^sf(t)\,\mathbb{d}t\,\mathbb{d}s\cdot x$$</p>
-<ol start="5">
-<li>作变换 $u=vw$ 将 $u_t-u_{xx}+au_x+3u=f(x,t)$ 化为 $v_t-v_{xx}=\widetilde{f(x,t)}$</li>
-</ol>
-<p><strong>ans.</strong> 本题涉及了二次方程的分类问题，常系数作变换 $u=ve^{cx+dt}$<br>$u_t=(v_t+dv)e^{cx+dt},u_x=(v_x+cv)e^{cx+dt},u_{xx}=(v_{xx}+2cv_x+c^2v)e^{cx+dt}$<br>带入原方程得 $(v_t-v_{xx}+(d-c^2+ca+b)v+(a-2c)v_x)e^{cx+dt}=f$</p>
-<p>我们令 $\begin{cases}d+ca=c^2-b\\<br>c=a/2\end{cases}\implies \begin{cases}c=a/2\\<br>d=-b-c^2/4\end{cases}$<br>化简为 $(v_t-v_xx)e^{\frac{a}{2}x-(\frac{a^2}{4}+b)t}=f$</p>
-<h3 id="24-解方程-u-tt-a-2u-xx-0"><a href="#24-解方程-u-tt-a-2u-xx-0" class="headerlink" title="24. 解方程 $u_{tt}-a^2u_{xx}=0$"></a>24. 解方程 $u_{tt}-a^2u_{xx}=0$</h3><p><strong>ans.</strong> $\begin{cases}\xi=x-at\\<br>\eta=x+at\end{cases}$ 则 $u_t=-au_\xi+au_\eta,u_{tt}=a^2u_{\xi\xi}-2a^2u_{\xi\eta}+a^2u_{\eta\eta},u_x=u_{\xi}+u_{\eta},u_{xx}=u_{\xi\xi}+2u_{\xi\eta}+u_{\eta\eta}$<br>从而原方程化为 $-4a^2u_{\xi\eta}=0\implies u=f(x-at)+g(x+at),f,g\in C^2$</p>
-<h3 id="25-化简方程-u-t-alpha-u-x-a-2u-xx"><a href="#25-化简方程-u-t-alpha-u-x-a-2u-xx" class="headerlink" title="25. 化简方程 $u_t+\alpha u_x=a^2u_{xx}$"></a>25. 化简方程 $u_t+\alpha u_x=a^2u_{xx}$</h3><p><strong>ans.</strong> $\begin{cases}\xi=x-\alpha t\\<br>\tau=t\end{cases}$<br>则 $u_t=-\alpha u_{\xi}+u_{\tau},u_x=u_{\xi},u_{xx}=u_{\xi\xi}$ 带入原方程得：$u_{\tau}=a^2u_{\xi\xi}$</p>
-<h3 id="26-u-为-nabla-2u-0-的解，-u-r-为-r-的函数，求-u-r-满足的方程。"><a href="#26-u-为-nabla-2u-0-的解，-u-r-为-r-的函数，求-u-r-满足的方程。" class="headerlink" title="26. $u$ 为 $\nabla^2u=0$ 的解，$u(r)$ 为 $r$ 的函数，求 $u(r)$ 满足的方程。"></a>26. $u$ 为 $\nabla^2u=0$ 的解，$u(r)$ 为 $r$ 的函数，求 $u(r)$ 满足的方程。</h3><p><strong>ans.</strong> 这里我们看作是三维情况的， $n$ 维同样讨论。则有 $\nabla^2r=\frac{2}{r}\frac{\partial f}{\partial r}+\frac{\partial^2f}{\partial r^2}=0$ </p>
-<p>这是一个可以化为一阶的一元微分方程，解得 $f=\frac{c}{r}$</p>
-<h3 id="27-做变换-xi-frac-x-sqrt-t-解方程"><a href="#27-做变换-xi-frac-x-sqrt-t-解方程" class="headerlink" title="27. 做变换 $\xi=\frac{x}{\sqrt{t}}$ 解方程:"></a>27. 做变换 $\xi=\frac{x}{\sqrt{t}}$ 解方程:</h3><p>$$\begin{cases}\frac{\partial u}{\partial t}=a^2\frac{\partial^2 u }{\partial x^2}&amp;0&lt;x&lt;+\infty,t&gt;0\\<br>u|_{x=0}=0 &amp;t\ge 0\\<br>u|_{t=0}=u_0 &amp;0\le x&lt;+\infty\end{cases}$$<br><strong>ans.</strong> $u_t=-u_{\xi}\frac{x}{2t^{1/2}},u_{xx}=u_{\xi\xi}\frac{1}{t}$ 从而 $-u_{\xi}\frac{x}{2t^{3/2}}-\frac{a^2}{t}u_{\xi\xi}=0$<br>得到：</p>
-<p>$$\begin{cases}u_{\xi\xi}+\frac{\xi}{2a^2}u_{\xi}=0\\<br>u(0)=0,u(\infty)=u_0\end{cases}\implies u=\int_0^\xi e^{-\frac{\xi^2}{4a^2}}\,\mathbb{d}\xi\cdot\frac{u_0}{a\sqrt{\pi}}$$</p>
-<h3 id="28-地球模型充满-z-ge-0-区域，地球表面-z-0-温度为-0-。岩浆温度-1200-circ-C-。-a-2-frac-k-c-rho-6-times-10-7-m-2-s-frac-partial-u-partial-t-z-0-3-times-10-2-k-m-求地球年龄。"><a href="#28-地球模型充满-z-ge-0-区域，地球表面-z-0-温度为-0-。岩浆温度-1200-circ-C-。-a-2-frac-k-c-rho-6-times-10-7-m-2-s-frac-partial-u-partial-t-z-0-3-times-10-2-k-m-求地球年龄。" class="headerlink" title="28. 地球模型充满 $z\ge 0$ 区域，地球表面 $z=0$ 温度为 $0$ 。岩浆温度 $1200^\circ C$ 。$a^2=\frac{k}{c\rho}=6\times 10^{-7} m^2/s,\frac{\partial u}{\partial t}|_{z=0}=3\times 10^{-2}k/m$ 求地球年龄。"></a>28. 地球模型充满 $z\ge 0$ 区域，地球表面 $z=0$ 温度为 $0$ 。岩浆温度 $1200^\circ C$ 。$a^2=\frac{k}{c\rho}=6\times 10^{-7} m^2/s,\frac{\partial u}{\partial t}|_{z=0}=3\times 10^{-2}k/m$ 求地球年龄。</h3><p><strong>ans.</strong> $\begin{cases}u_{tt}-a^2u_{xx}=0\\<br>u|_{t=0}=1200\\<br>u|_{z=0}=0\end{cases}\implies u=\frac{1200}{a\sqrt{\pi}}\int_0^{2/\sqrt{t}}e^{\eta^2/(2a^2)}\,\mathbb{d}\eta$<br>再由 $u_z|_{z=0}=3\times 10^{-2}\implies \frac{1200}{\sqrt{6\times 10^{-7}}}\frac{1}{\sqrt{\pi}}e^{-z^2/(2a^2t)}|_{z=0}=3\times 10^{-2}\implies t=8\times 10^{14}$</p>
-
-          
+          <h1 id="数学物理方程答案"><a href="#数学物理方程答案" class="headerlink" title="数学物理方程答案"></a>数学物理方程答案</h1><h2 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h2><h3 id="1-推导细杆的纵向振动位移偏移量-u-x-t-满足的微分方程。"><a href="#1-推导细杆的纵向振动位移偏移量-u-x-t-满足的微分方程。" class="headerlink" title="1. 推导细杆的纵向振动位移偏移量 $u(x,t)$ 满足的微分方程。 "></a>1. 推导细杆的纵向振动位移偏移量 $u(x,t)$ 满足的微分方程。 <img src="http://img2.ph.126.net/LdQZgtgXNsixjM8nrQGiMQ==/6597577741030954259.png" alt="pic1.1"></h3><p><strong>ans.</strong> 有<br>$$\begin{align}\rho S \Delta S\frac{\partial^2u}{\partial t^2} &amp;=(P(x+\Delta x,t)-P(x,t))S\\<br>    &amp;= \frac{\partial P}{\partial x}\Delta x S\\<br>    \implies \rho\frac{\partial^2u}{\partial t^2}&amp;=\frac{\partial P}{\partial x} \end{align}$$<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/01/fortest/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
@@ -856,6 +903,8 @@
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -882,25 +931,52 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/01/test/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2018/08/01/test/" itemprop="url">
+                  Unbenannt
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-01T16:36:22+08:00">
-                2018-08-01
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2018-08-01 16:36:22" itemprop="dateCreated datePublished" datetime="2018-08-01T16:36:22+08:00">2018-08-01</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-08-09 19:53:45" itemprop="dateModified" datetime="2018-08-09T19:53:45+08:00">2018-08-09</time>
+              
             
           </span>
 
@@ -933,53 +1009,21 @@
 
       
         
-          
-            <h3 id="9-18-1"><a href="#9-18-1" class="headerlink" title="9.18.1"></a>9.18.1</h3><p>证明 ：</p>
+          <h3 id="9-18-1"><a href="#9-18-1" class="headerlink" title="9.18.1"></a>9.18.1</h3><p>证明 ：</p>
 <p>$$P_n(x)=\frac{1}{2^nn!}\frac{\mathrm{d}^n}{\mathrm{d}x^n}(x^n-1)^n$$<br>满足微分方程：$(1-x^2)P_n’’(x))-2xP_n(x)’+n(n+1)P_n(x)=0$</p>
-<h3 id="9-21-1"><a href="#9-21-1" class="headerlink" title="9.21.1"></a>9.21.1</h3><p>令</p>
-<p>$$\varphi(x)=\begin{cases}0 &amp;x\leq 0\<br>1 &amp;x&gt;0\end{cases} \quad \psi(x)=\begin{cases}0 &amp;x&lt;0\<br>1 &amp;x\geq0\end{cases}$$</p>
-<p>$$f(x)=\sum_{n=1}^\infty\frac{\varphi(x-r_n)-\psi(x-s_n)}{2^n},r_n\in E_1.s_n\in E_2$$<br>证明 $f(x)$ 在 $E_1$ 上左连续。</p>
-<h3 id="9-21-2"><a href="#9-21-2" class="headerlink" title="9.21.2"></a>9.21.2</h3><p>${r_n}$ 为有理数全体，$c_n&gt;0,\sum c_n=+\infty$ ，定义$f(x)=\sum_{r_n &lt; x}c_n$<br>证明 $f(x)$ 在无理点处连续，且在有理点处满足 $f(r_n+0)-f(r_n-0)=c_n$</p>
-<h3 id="9-22-1"><a href="#9-22-1" class="headerlink" title="9.22.1"></a>9.22.1</h3><p>$f(x)=\chi_W(x)$ 的连续点集和间段点集均不可数。其中 $W$ 为 $\mathbb{R}$ 上的不可测集。</p>
-<h3 id="9-23-1"><a href="#9-23-1" class="headerlink" title="9.23.1"></a>9.23.1</h3><p>设$\varphi(x)$ 为下凸函数，证明 $\frac{\varphi(x’)-\varphi(x)}{x’-x}\leq \frac{\varphi(y’)-\varphi(x)}{y’-x}\leq \frac{\varphi(y’)-\varphi(y)}{y’-y}$</p>
-<h3 id="9-23-2"><a href="#9-23-2" class="headerlink" title="9.23.2"></a>9.23.2</h3><p>证明：</p>
-<ol>
-<li>当 $\alpha \in (0,1)$ 时 $(1+x)^\alpha\leq 1+\alpha x,x&gt; -1$</li>
-<li>当 $\alpha \in (1,\infty)$ 时 $(1+x)^\alpha\geq 1+\alpha x,x&gt; -1$</li>
-</ol>
-<h3 id="9-24-1"><a href="#9-24-1" class="headerlink" title="9.24.1"></a>9.24.1</h3><p>证明：</p>
-<ol>
-<li>可列个元素的闭集一定存在孤立点。</li>
-<li>可列个元素的闭集一定存在可列个孤立点</li>
-<li>可列个元素的一定存在孤立点</li>
-</ol>
-<h3 id="9-24-2"><a href="#9-24-2" class="headerlink" title="9.24.2"></a>9.24.2</h3><p>证明 存在 $n,\epsilon_1,\cdots,\epsilon_n$ 使得</p>
-<p>$$I_{\epsilon_1,\cdots,\epsilon_n} \bigcap\left(\bigcup_{i=1}^\infty F_i\right)=\varnothing$$</p>
-<h3 id="9-24-3"><a href="#9-24-3" class="headerlink" title="9.24.3"></a>9.24.3</h3><p>证明 若任一闭集 $F,f^{-1}(F)$ 也是闭集，则 $f$ 为连续函数。（任一开集也一样可证明）</p>
-<h3 id="9-24-4"><a href="#9-24-4" class="headerlink" title="9.24.4"></a>9.24.4</h3><p>证明 $K$ 为紧集，则 $f(K)$ 也是紧集，其中 $f$ 为连续函数。</p>
-<h3 id="9-24-5"><a href="#9-24-5" class="headerlink" title="9.24.5"></a>9.24.5</h3><p>若 $y=f(x_1,\cdots,x_n)$ 在 $(x^0,\cdots,x^n)$ 某一邻域 $E$ 内恒有 $f(E)=0$ 则 $f\equiv 0$。 其中 $f$ 为 $\mathbb{R}^n$ 上的连续函数。</p>
-<h3 id="9-25-1"><a href="#9-25-1" class="headerlink" title="9.25.1"></a>9.25.1</h3><p>连续函数 $f$ ，令 $G_{n,k}={a:\exists\text{满足} 0&lt;|x-a|&lt;\frac{1}{n} x \text{ 使得 }\frac{f(x)-f(a)}{x-a}&gt;t-\frac{a}{k}}$<br>证明 $G_{n,k}$ 为开集。</p>
-<h3 id="9-26-1"><a href="#9-26-1" class="headerlink" title="9.26.1"></a>9.26.1</h3><p>设 $\omega_\delta=\sup{f(t):0&lt;|t-x|&lt;\delta},\omega(x)=\lim_{\delta\to 0}\omega_\delta(x)$ 证明：点集 $E_n={x\in \mathbb{R}:\omega(x)&lt;\frac{1}{n}}$ 为开集。</p>
-<h3 id="9-26-2"><a href="#9-26-2" class="headerlink" title="9.26.2"></a>9.26.2</h3><p>证明:</p>
-<p>$$\bigcup_{m=1}^\infty\bigcap_{n=m}^\infty{x\in\mathbb{R}:f_n(x)\geq \frac{1}{2}}=\bigcap_{m=1}^\infty\bigcup_{n=m}^\infty{x\in\mathbb{R}:f_n(x)&gt; \frac{1}{2}}$$</p>
-<h3 id="9-26-3"><a href="#9-26-3" class="headerlink" title="9.26.3"></a>9.26.3</h3><p>证明：</p>
-<p>$${x\in\mathbb{R}:\liminf_{n\to\infty} f_n(x)\gt\alpha}=\bigcup_{\beta&gt;\alpha}\bigcup_{n=1}^\infty\bigcap_{n=m}^\infty{x\in \mathbb{R}:f_n(x)\ge \beta}$$</p>
-<h3 id="9-26-4"><a href="#9-26-4" class="headerlink" title="9.26.4"></a>9.26.4</h3><p>证明：</p>
-<ol>
-<li><p>$$\sum_{i=1}^nx_i+\sum_{1\le i\le n}(x_i+x_j)=n\sum_{i=1}^nx_i$$</p>
-</li>
-<li></li>
-</ol>
-<p>$$\sum_{1\le i\lt j\le n}(x_i+x_j)=(n-1)\sum_{i=1}^nx_i$$</p>
-<ol start="3">
-<li><p>$${2n \choose n}=\sum_{k=0}^n{n\choose k} {n \choose {n-k}}$$</p>
-</li>
-</ol>
-<h3 id="9-26-6"><a href="#9-26-6" class="headerlink" title="9.26.6"></a>9.26.6</h3>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/01/test/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
@@ -1018,6 +1062,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1042,25 +1088,52 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/18/NNU/" itemprop="url">浙江人在南师大</a></h1>
+                <a class="post-title-link" href="/2018/07/18/NNU/" itemprop="url">
+                  浙江人在南师大
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T15:01:55+08:00">
-                2018-07-18
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2018-07-18 15:01:55" itemprop="dateCreated datePublished" datetime="2018-07-18T15:01:55+08:00">2018-07-18</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-08-09 18:20:54" itemprop="dateModified" datetime="2018-08-09T18:20:54+08:00">2018-08-09</time>
+              
             
           </span>
 
@@ -1093,8 +1166,7 @@
 
       
         
-          
-            <h1 id="给新生的一些信息"><a href="#给新生的一些信息" class="headerlink" title="给新生的一些信息"></a>给新生的一些信息</h1><blockquote>
+          <h1 id="给新生的一些信息"><a href="#给新生的一些信息" class="headerlink" title="给新生的一些信息"></a>给新生的一些信息</h1><blockquote>
 <p><strong>本文具有较强的主观性，自己衡量，仅供参考</strong></p>
 </blockquote>
 <blockquote>
@@ -1102,285 +1174,20 @@
 </blockquote>
 <h2 id="转专业相关："><a href="#转专业相关：" class="headerlink" title="转专业相关："></a>转专业相关：</h2><ol>
 <li>南师大转专业 <strong><u>比较</u></strong> 容易</li>
-<li>英语师范和数学师范，数学要降级</li>
-<li>好的专业转专业比较难：例如法学，汉语言文学，英语师范</li>
-<li>非师范可以转师范专业，貌似需要第一学年不挂科，在第一学年第二学期有组织考试，英语必考。</li>
-</ol>
-<h2 id="一些比较好的专业："><a href="#一些比较好的专业：" class="headerlink" title="一些比较好的专业："></a>一些比较好的专业：</h2><ol>
-<li>南师大地地科院很强，真的很强（意味着有钱，为所欲为）</li>
-<li>南师大生物有个基地班（保研率会高），生物要杀小白鼠。</li>
-<li>一些南师大比较好的学科：马克思主义理论，教育学，中国语言文学，地理学，美术学。</li>
-<li><del>不推荐南师大的数学，同类的可以选择的是江苏大学可以去了解一下。</del> 南师大数学专业排名还是挺靠前的。不多说</li>
-<li>师范专业都还行，师范专业很多人本科毕业就去当老师了。现在读研越来越多了。但还是有很多就业的。</li>
-</ol>
-<h2 id="一些可能需要的信息："><a href="#一些可能需要的信息：" class="headerlink" title="一些可能需要的信息："></a>一些可能需要的信息：</h2><ol>
-<li>以前师范专业归属教师院（独立院系），好像这一届就要归到各个院系了，数学师范所属划到数学科学学院例如）</li>
-<li>能源院在紫金，（一般的都在仙林校区），好像后年就要搬到仙林了。紫金厕所很不行。（能源号称转专业学院，变凤凰）</li>
-<li><del>劝人学法，千刀万剐。</del>(看自己兴趣)</li>
-<li>填报的时候没有标明师范的就不是师范专业。</li>
-<li>填报之前看一下培养方案，会设置哪一些课程，不要看专业名称就开始填报，有些课很坑。</li>
-</ol>
-<h2 id="确定录取之后需要的信息"><a href="#确定录取之后需要的信息" class="headerlink" title="确定录取之后需要的信息"></a>确定录取之后需要的信息</h2><ol>
-<li><p>收到录取通知书作为参考</p>
-<p>2016年7月29日（id：闰年）,</p>
-<p>2018年7月28日（id：空蒙之渊） 当（dàng）天 衢州收到，杭州收到</p>
-</li>
-<li><p>南师大饭菜还是挺好吃的，南京吃饭大学。<del>推荐西区二楼辣油小混沌</del></p>
-</li>
-<li><p>大一新生要带笔记本电脑（可以不带，但是会有点不方便，不带的话之后还是会需要的），办个30元每月的（联通或者电信）校园网（50M带宽）。<del>有人说20￥（20M带宽）的网可以存活，也有人说30￥的也不好用</del> 价格相差不大，我是觉得联通电信差不多。可以根据自己情况选择办理。</p>
-<p>校园网（wifi）全覆盖（号称，某些教室没有wifi，比如J2-113等，还有就是人多的时候wifi也没用，流量也没用，这个时候就安心听课吧）这里面涉及骚操作锁频段啥的，自己琢磨。</p>
-</li>
-<li><p>老生2018年8月25日，26日报到，27日直接开学。新生9月2日新生报到注册，9月3日开始上课（没有课，各种事情而已）</p>
-</li>
-<li><p>新生9月2日可能就有活动，比如院开学典礼，这个具体要看学院安排。</p>
-</li>
-<li><p>学校开学典礼在军训期间</p>
-</li>
-<li><p>军训很水，毕竟大家都是柔弱的小女子。但还是有点累的</p>
-</li>
-<li><p>支付宝一般地方都可以用。校园卡与浦发银行卡挂钩，宿舍楼下直接圈存就行了，很方便。但是有些地方不支持校园卡，比如报刊亭小卖部</p>
-</li>
-<li><p>选课使用IE，360，一定要开启兼容模式（如何开启自己百度）</p>
-</li>
-<li><p>录取通知书拿到之后可以用来购买火车票，有折扣，一次性使用。也可以用来购买景区门票，也有折扣。火车票提早买</p>
-</li>
-<li><p>带好U盘，美美哒一寸照带多点，最好电子版也留一份。院学生会还有什么心理气象站青年什么的招新一寸照要求不严格的话可以不贴。以后重要的用到的一寸照地方有很多</p>
-</li>
-<li><p>带好拖鞋，多带块抹布擦一擦</p>
-</li>
-<li><p>通知书带来的作业一般不需要做，我觉得一般辅导员不会有这个兴趣去关注这些的，不放心的话可以询问17级的，问问他们当时有没有要求必做</p>
-</li>
-<li><p>通知书中的通信卡可以根据需要选择性办理，怕麻烦的话直接办理也是没啥问题的</p>
-</li>
-<li><p>对于交钱之类的事情不要急，先核实清楚，钱之类的事情迟点交不会有问题的。然后心态要好，该交的智商税还是要交的</p>
-</li>
-<li><p>到时候学校会发一张南京市社会保障卡，可以当地铁卡&amp;公交卡使用，直接到可以充地铁卡的地方（东区报刊亭小卖部，各种大地铁站）往里面充钱，就可以了</p>
-</li>
-<li><p>到时候会有人告诉你我们的图书馆像一本书，后面的那个塔像一支笔。我们学校是第一个搬到文苑路的。</p>
-</li>
-<li><p>学校地址是：江苏省南京市栖霞区文苑路1号，南京师范大学（东区 or 西区）  </p>
-<p>邮政编码：210000（这个其实不重要）</p>
-</li>
-<li><p>以上这些琐事多呆几年就自然懂了。也都是次要的，关键还是学习真本事</p>
-</li>
-</ol>
-<h2 id="专业前辈推销自己学校的链接："><a href="#专业前辈推销自己学校的链接：" class="headerlink" title="专业前辈推销自己学校的链接："></a>专业前辈推销自己学校的链接：</h2><blockquote>
-<p>其实每个学院都有招生推销，信息还是得自己甄别</p>
-<p>到时候会加各种群，关注各种微信号，然后一段时间后也就都屏蔽了</p>
-<p>其中学院都有正规的群，辅导员会在其中发布重要消息，不能错过</p>
-<p>南师大官方的话QQ用的比较多，毕竟辅导员都在专门的QQ群</p>
-</blockquote>
-<p><a href="http://bkzs.njnu.edu.cn/" target="_blank" rel="noopener">南师大本科招生网</a> （查询录取情况，之后就不怎么关注了）</p>
-<p>微信：南师助手（NNUhelp） （做的挺好的，推荐关注）</p>
-<p>QQ: 南师助手 （488252994） （推荐关注，挺多有用的信息会发布）</p>
-<p>QQ: 小权维南师（3384113988） （其实就是失物招领，我觉得没啥用，选择性关注吧，她还有对应的一个QQ 南师维小权，也是失物招领为主，好像是学生会办的）</p>
-<p><a href="http://jwc.njnu.edu.cn/" target="_blank" rel="noopener">南师大菁林园</a> （教务处各种事情通知）</p>
-<p><a href="http://jwgl.njnu.edu.cn/cas/login.action" target="_blank" rel="noopener">南师大教务网络管理系统</a> （紧张刺激的选课和成绩就是这里公布的）</p>
-<p><a href="http://223.2.10.123/jwgl/xxcj.aspx" target="_blank" rel="noopener">南师大信息采集入口</a> （好像只能用IE打开，里面可以查询教室，四六级报名，火车票）</p>
-<hr>
-<p>微信：南师大贴吧公众号（选择性关注）</p>
-<p>ID@LL一只一只山羊  <a href="http://tieba.baidu.com/p/5731570306" target="_blank" rel="noopener">【浙江】2018招生答疑帖</a></p>
-<p>@漫长的告白：  <a href="https://mp.weixin.qq.com/s?__biz=MzA5NzAyNzQ4NA==&amp;mid=2650693765&amp;idx=1&amp;sn=c894c3bb03f49968e2a0480e32e56ffa&amp;chksm=88add476bfda5d60ad8328f55df250204b5d7c5f83fe504eac985377a9f06c94fe4c2e9b5ec3&amp;mpshare=1&amp;scene=23&amp;srcid=0626CbUZGeqDJIDvAN2Wdur7#rd" target="_blank" rel="noopener">教育科学学院: 未来教育家的摇篮</a></p>
-<p>@漫长的告别：<a href="https://mp.weixin.qq.com/s?__biz=MjM5NDA5NDcyMA==&amp;mid=2651700124&amp;idx=1&amp;sn=84ce9fe3e8ee4fe80d410b922357aaef&amp;chksm=bd7410738a039965d7bb2ff0da0d98405db9a01cff62601d4fefe7e50eac616e6a8f2c232ece&amp;mpshare=1&amp;scene=23&amp;srcid=0728FPSfdFFdhwb2BU0GIA2v#rd" target="_blank" rel="noopener">当年选专业时脑子进的水，如今都变成了表情包</a> （欢乐的吐槽贴）</p>
-<p>@第五言福：<a href="https://mp.weixin.qq.com/s?__biz=MzIzMjQxNjM1OA==&amp;mid=100001726&amp;idx=4&amp;sn=8f5ac7dd4896cadb29f7b590e73fb13b&amp;chksm=689472b75fe3fba1e9152ed996c073eb34d3db623589df71986240980dd40042680d84007774&amp;mpshare=1&amp;scene=23&amp;srcid=0626JEgoLagdHGHuFGZgCgpH#rd" target="_blank" rel="noopener">社会学类，原来要这么学？</a></p>
-<h2 id="浙江人南师大群："><a href="#浙江人南师大群：" class="headerlink" title="浙江人南师大群："></a>浙江人南师大群：</h2><blockquote>
-<p>我不得不吐槽一下，为什么要搞这么多个群啊，大家都在一个群里不就行了吗</p>
-</blockquote>
-<p>浙江人在南师大：98511688  （这个群满了，所以建立的2.0）</p>
-<p>浙江人在南师大2.0：648341063 （2.0本来建立起来是给17级迎新的）</p>
-<p>南京师范大学浙江群：540355056  （然后17级的自己建了一个）</p>
-<p>南师18级浙江招生咨询：707200590  (然后17级为了迎新又建了一个)</p>
-<blockquote>
-<p>推荐大家都加入浙江人在南师大2.0，“一家人最重要的是整整齐齐”。</p>
-<p>其实大家也就有事会说两句，过一段时间也就没人说话了。</p>
-</blockquote>
-<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>信息的整理其实并不复杂，就是希望大家能够一届届的传递下去，给新人答疑解惑，毕竟大家都不容易。</p>
-<p>本文为动态页面，可以持续增加修改一些信息，如果可能的话，希望下一届有人接手整理。如果有时间的话，我会尽量做的好看一点的。</p>
-<p>觉得这个有用可以推荐给其他人，链接<a href="https://matrixzw.github.io/2018/07/18/NNU/" target="_blank" rel="noopener">https://matrixzw.github.io/2018/07/18/NNU/</a></p>
-<blockquote>
-<p>18.7.18 花了点时间做了一下</p>
-</blockquote>
-<h2 id="附录2018年南师大浙江招生情况"><a href="#附录2018年南师大浙江招生情况" class="headerlink" title="附录2018年南师大浙江招生情况"></a>附录2018年南师大浙江招生情况</h2><h3 id="艺术体育类："><a href="#艺术体育类：" class="headerlink" title="艺术体育类："></a>艺术体育类：</h3><table>
-<thead>
-<tr>
-<th>编号</th>
-<th>专业名称</th>
-<th>人数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>播音与主持艺术</td>
-<td>2</td>
-</tr>
-<tr>
-<td>2</td>
-<td>舞蹈学</td>
-<td>1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>音乐学（师范）</td>
-<td>5</td>
-</tr>
-<tr>
-<td>4</td>
-<td>美术学类</td>
-<td>5</td>
-</tr>
-<tr>
-<td>5</td>
-<td>设计学类</td>
-<td>6</td>
-</tr>
-<tr>
-<td>6</td>
-<td>广播电视编导</td>
-<td>3</td>
-</tr>
-<tr>
-<td>7</td>
-<td>体育学类（含体育教育、社会体育指导与管理）</td>
-<td>14</td>
-</tr>
-</tbody>
-</table>
-<h3 id="非艺术体育类："><a href="#非艺术体育类：" class="headerlink" title="非艺术体育类："></a>非艺术体育类：</h3><table>
-<thead>
-<tr>
-<th>编号</th>
-<th>专业名称</th>
-<th>人数</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>物理学</td>
-<td>3</td>
-<td></td>
-</tr>
-<tr>
-<td>2</td>
-<td>能源动力学（含能源动力工程、能源与环境系统工程）</td>
-<td>10</td>
-<td></td>
-</tr>
-<tr>
-<td>3</td>
-<td>化学类（含化学，应用化学）</td>
-<td>8</td>
-<td></td>
-</tr>
-<tr>
-<td>4</td>
-<td>行政管理</td>
-<td>5</td>
-<td></td>
-</tr>
-<tr>
-<td>5</td>
-<td>应用心理学</td>
-<td>3</td>
-<td></td>
-</tr>
-<tr>
-<td>6</td>
-<td>国际经济与贸易</td>
-<td>5</td>
-<td></td>
-</tr>
-<tr>
-<td>7</td>
-<td>社会学</td>
-<td>4</td>
-<td></td>
-</tr>
-<tr>
-<td>8</td>
-<td>教育技术学（师范）</td>
-<td>3</td>
-<td></td>
-</tr>
-<tr>
-<td>9</td>
-<td>中国语言文学类（含汉语言文学（国家文科基地班），秘书学）</td>
-<td>5</td>
-<td></td>
-</tr>
-<tr>
-<td>10</td>
-<td>外国语言文学类（含俄语、西班牙语、法语、日语、朝鲜语）</td>
-<td>5</td>
-<td>五年制</td>
-</tr>
-<tr>
-<td>11</td>
-<td>数学类（含数学与应用数学（基地班），信息与计算科学）</td>
-<td>5</td>
-<td></td>
-</tr>
-<tr>
-<td>12</td>
-<td>物理学（师范）</td>
-<td>4</td>
-<td></td>
-</tr>
-<tr>
-<td>13</td>
-<td>地理科学类（含自然地理与资源环境，人文地理与城乡规划，地理信息科学）</td>
-<td>6</td>
-<td>优势学科</td>
-</tr>
-<tr>
-<td>14</td>
-<td>生物科学类（含生物科学（国家理科基地班）、生物技术）</td>
-<td>5</td>
-<td>真基地班</td>
-</tr>
-<tr>
-<td>15</td>
-<td>电气工程与自动化</td>
-<td>6</td>
-<td></td>
-</tr>
-<tr>
-<td>16</td>
-<td>计算机科学与技术</td>
-<td>3</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p>by zzw 18.6.26 v1.0</p>
-<blockquote>
-<ol>
-<li>将原先 Github上的 Readme 移动到这 Hexo 博客，采用 NextT 模版</li>
-<li>原 Github 地址：<a href="https://github.com/Matrixzw/Matrixz/blob/master/README.md" target="_blank" rel="noopener">https://github.com/Matrixzw/Matrixz/blob/master/README.md</a></li>
-</ol>
-</blockquote>
-<p>by zzw 18.7.18 v1.1 </p>
-<blockquote>
-<ol>
-<li>增加一些可能需要的信息内容</li>
-<li>增加南师助手公众号</li>
-</ol>
-</blockquote>
-<p>by zzw 18.7.28 v1.2</p>
-<blockquote>
-<ol>
-<li>划分可能需要的内容为确定录取之后需要的内容</li>
-<li>添加一些录取之后需要知道的信息内容</li>
-<li>专业前辈推销链接加入南师助手QQ，维小权QQ，以及微信文章专业表情包</li>
-</ol>
-</blockquote>
-
-          
+<li>英语师范和数学师范，数学要降级
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/18/NNU/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
@@ -1419,9 +1226,6 @@
           </div>
           
 
-
-          
-
         </div>
         
           
@@ -1450,44 +1254,55 @@
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+          
+            <nav class="site-state motion-element">
               
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
+                <div class="site-state-item site-state-posts">
                 
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">tags</span>
+                  <a href="/archives/">
                 
-              </div>
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">Tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
             
-
-          </nav>
-
           
-
-          
-
-          
-          
-
-          
-          
-
           
 
         </div>
@@ -1508,20 +1323,28 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">zzw</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
 
 
 
+  <span class="post-meta-divider">|</span>
 
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.4.0</div>
 
 
 
@@ -1531,21 +1354,20 @@
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv">
+    <span class="site-uv" title="Total Visitors">
       <i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
     </span>
   
 
   
-    <span class="site-pv">
+    <span class="site-pv" title="Total Views">
       <i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
     </span>
   
 </div>
+
 
 
 
@@ -1566,7 +1388,10 @@
     
 
     
+	
+    
 
+    
   </div>
 
   
@@ -1585,7 +1410,11 @@
 
 
 
-  
+
+
+
+
+
 
 
 
@@ -1605,16 +1434,6 @@
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
     <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
@@ -1623,18 +1442,13 @@
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
 
 
 
@@ -1642,9 +1456,9 @@
   
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
 
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
 
 
 
@@ -1653,21 +1467,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
 
 
 
@@ -1675,11 +1475,7 @@
 
 
 
-
-
   
-
-
 
 
 
@@ -1707,27 +1503,32 @@
 
   
   
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   
 
+  
+
+
+  
+  
+
+  
+
+  
+
+  
 
   
 
