@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="RESPECT">
 <meta property="og:description" content="习题 2 证明下列命题：   $n$ 维向量 $x$ 的一切范数均等价。 $n$ 阶矩阵 $A$ 的一切范数均等价。 单位矩阵和置换矩阵的 $2-$范数均为 $1$ 矩阵的列范数 $\Vert A\Vert_{1}=\max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|$  ans.   未证明，可以利用 Jordan 标准型切入。 单位矩阵 $E$，$E^TE=E$ 的特征">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-09T01:46:49.677Z">
+<meta property="og:updated_time" content="2018-08-09T07:39:06.914Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解线性方程组的直接方法">
 <meta name="twitter:description" content="习题 2 证明下列命题：   $n$ 维向量 $x$ 的一切范数均等价。 $n$ 阶矩阵 $A$ 的一切范数均等价。 单位矩阵和置换矩阵的 $2-$范数均为 $1$ 矩阵的列范数 $\Vert A\Vert_{1}=\max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|$  ans.   未证明，可以利用 Jordan 标准型切入。 单位矩阵 $E$，$E^TE=E$ 的特征">
@@ -345,7 +345,7 @@
 <ol start="3">
 <li>若 $\Vert B\Vert&lt;1$ ，证明 $I-B$ 非奇异,且有 $\frac{1}{1+\Vert B\Vert}\le\Vert(I-B)^{-1}\Vert\le \frac{1}{1-\Vert B\Vert}$</li>
 </ol>
-<p><strong>ans.</strong> 反证 $I-B$ 奇异吗，则 $\exists \eta \ne 0,s.t. (I-B)\eta=0\implies B\eta =\eta$ ，从而 $\Vert B\Vert\ge 1$ 矛盾。</p>
+<p><strong>ans.</strong> 反证 $I-B$ 奇异，则 $\exists \eta \ne 0,s.t. (I-B)\eta=0\implies B\eta =\eta$ ，从而 $\Vert B\Vert\ge 1$ 矛盾。</p>
 <p>又 $(I-B)^{-1}(I-B)=I\implies (I-B)^{-1}=I+(I-B)^{-1}B$</p>
 <p>两边取范数，且利用三角不等式得  $\Vert (I-B)^{-1}\Vert\le 1+\Vert(I-B)^{-1}B\Vert\le 1+\Vert (I-B)^{-1}\Vert\cdot\Vert B\Vert$</p>
 <p>将 $\Vert (I-B)^{-1}\Vert$ 解得 $\Vert (I-B)^{-1}\Vert\le \frac{1}{1-\Vert B\Vert}$</p>
@@ -361,7 +361,12 @@
 <ol start="5">
 <li>求下列方阵的行范数，列范数，以及条件数。<br>$$A=\begin{pmatrix}5 &amp;7 &amp;3\\<br>7 &amp;11 &amp;2\\<br>3 &amp;2 &amp;6\end{pmatrix},\quad B=\begin{pmatrix}-2 &amp;1 &amp;0\\<br>1 &amp;-2 &amp;1\\<br>0 &amp;1 &amp;-2\end{pmatrix}$$</li>
 </ol>
-<p><strong>ans.</strong> </p>
+<p><strong>ans.</strong> 行范数 $\Vert A\Vert_{\infty}=20,\Vert B\Vert_{\infty}=4$</p>
+<p>列范数 $\Vert A\Vert_1=20,\Vert B\Vert_1=4$</p>
+<p>逆矩阵 $A^{-1}=\begin{pmatrix}62 &amp;-36 &amp;-19\\ -36 &amp;21 &amp;11\\ -19 &amp;11 &amp;6\end{pmatrix},B^{-1}=\frac{1}{8}\begin{pmatrix}-5 &amp;-2 &amp;1 \\ -2 &amp;-4 &amp;2\\ 1 &amp;2 &amp;3\\ \end{pmatrix}$</p>
+<p>条件数 $\mathrm{cond}_{\infty}(A)=20\times 117=2340,\mathrm{cond}_{\infty}(B)=4\times 1=4$</p>
+<p>$\mathrm{cond}_1(A)=20\times117=2340,\mathrm{cond}(B)=4\times 1=4 $</p>
+<hr>
 <ol start="6">
 <li>给定线性方程组 $\begin{pmatrix}10^{-2}&amp;1\\<br>1 &amp;1\end{pmatrix}\begin{pmatrix}x_1\\<br>x_2\end{pmatrix}=\begin{pmatrix}1\\2\end{pmatrix}$</li>
 </ol>
@@ -370,6 +375,13 @@
 <li>用 Guass 消元法过程中采用两位有效数字舍入计算</li>
 <li>按列主元消元法过程中采用两位有效数字舍入计算</li>
 </ul>
+<p><strong>ans.</strong> </p>
+<ul>
+<li>作初等行变换化为： $\begin{pmatrix}10^{-2} &amp;1 &amp;1\\ 0 &amp;-99 &amp;-98\end{pmatrix}$，解得 $x_1=\frac{100}{99},x_2=\frac{98}{99}$</li>
+<li>过程中仅取两位有效数字作变换： $\begin{pmatrix}0.01 &amp;1 &amp;1\\ 0 &amp;-99 &amp;-98\end{pmatrix}$ ，解得 $x_1=1.00,x_2=0.99$</li>
+<li>全主元消元法 $\begin{pmatrix}1 &amp;1 &amp;2\\ 10^{-2} &amp;1 &amp;1\end{pmatrix}\rightarrow\begin{pmatrix}1 &amp;1 &amp;2\\ 0 &amp;0.99 &amp;0.98\end{pmatrix}\implies \begin{cases}x_1=1.01\\ x_2=0.99\end{cases}$</li>
+</ul>
+<hr>
 <ol start="7">
 <li>线性方程组 $\begin{pmatrix}10^{-5} &amp;10^{-5} &amp;1\\<br>10^{-5} &amp;-10^{-5} &amp;1\\<br>1 &amp;1 &amp;2\end{pmatrix}\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}=\begin{pmatrix}2\times 10^{-5}\\-2\times10^{-5}\\1\end{pmatrix}$</li>
 </ol>
@@ -377,6 +389,12 @@
 <li>用 Guass 消元法过程中保留三位有效数字计算</li>
 <li>用全主元消元法</li>
 <li>先做代换 $x_3’=10^5x_3$ 在用选主元消元法求解</li>
+</ul>
+<p><strong>ans.</strong> </p>
+<ul>
+<li>Guass 消元法 $\begin{pmatrix}10^{-5} &amp;10^{-5} &amp;1 &amp;2\times 10^{-5}\\ 10^{-5} &amp;-10^{-5} &amp;1 &amp;-2\times 10^{-5}\\ 1 &amp;1 &amp;2 &amp;1\end{pmatrix}\rightarrow \begin{pmatrix}10^{-5} &amp;10^{-5} &amp;1 &amp;2\times 10^{-5}\\ 0 &amp;-2\times 10^{-5} &amp;0 &amp;-4\times 10^{-5}\\ 0 &amp;0 &amp;10^{5} &amp;-1\end{pmatrix}$ 解得 $x_1=0,x_2=2,x_3=0$</li>
+<li>全主元消元法： $\begin{pmatrix}1 &amp;1 &amp;2 &amp;1\\ 10^{-5} &amp;-10^{-5} &amp;1 &amp;-2\times 10^{-5}\\ 10^{-5} &amp;10^{-5}&amp;1 &amp;-2\times 10^{-5}\\ 10^{-5} &amp;10^{-5} &amp;1 &amp;2\times 10^{-5}\end{pmatrix}\rightarrow\begin{pmatrix}2 &amp;1 &amp;1 &amp;1\\ 1 &amp;-10^{-5} &amp;10^{-5} &amp;-2\times 10^{-5}\\ 1 &amp;10^{-5} &amp;10^{-5} &amp;2\times 10^{-5}\end{pmatrix}\rightarrow \begin{pmatrix}1 &amp;1 &amp;1 &amp;1\\ 0 &amp;-0.5 &amp;-0.5 &amp;-0.5\\ 0 &amp;0 &amp;0 &amp;0\end{pmatrix}$ 方程有无穷多解</li>
+<li>先做替换再消元 $\begin{pmatrix}1 &amp;10^{-5} &amp;10^{-5} &amp;2\times 10^{-5}\\ 1 &amp;-10^{-5} &amp;10^{-5} &amp;-2\times 10^{-5}\\ 2\times 10^{-5} &amp;10^{-5} &amp;10^{-5} &amp;10^{-5}\end{pmatrix}\rightarrow \begin{pmatrix}\end{pmatrix}$</li>
 </ul>
 <ol start="8">
 <li>$A$ 为对称正定矩阵，经过一次 Guass 消元法化为 $\begin{pmatrix}a_{11} &amp;\alpha^T\\<br>0 &amp;A_2 \end{pmatrix}$ 证明：</li>
@@ -398,7 +416,7 @@
 </ol>
 <ul>
 <li>求解线性方程组 $Ax=b$</li>
-<li>求所有满足 $y^TAy&lt;0$ 的 $y$</li>
+<li><del>求所有满足 $y^TAy&lt;0$ 的 $y$</del></li>
 </ul>
 <ol start="11">
 <li>$A$ 为实对称正定矩阵，证明 $D=\mathrm{diag}(a_{11},…a_{nn})$ 仍为实对称正定矩阵</li>
