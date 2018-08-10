@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="RESPECT">
 <meta property="og:description" content="习题 2 Problem 1 证明下列命题：   $n$ 维向量 $x$ 的一切范数均等价。 $n$ 阶矩阵 $A$ 的一切范数均等价。 单位矩阵和置换矩阵的 $2-$范数均为 $1$ 矩阵的列范数 $\Vert A\Vert_{1}=\max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|$  ans.   未证明，可以利用 Jordan 标准型切入。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-10T02:54:09.294Z">
+<meta property="og:updated_time" content="2018-08-10T08:42:41.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解线性方程组的直接方法">
 <meta name="twitter:description" content="习题 2 Problem 1 证明下列命题：   $n$ 维向量 $x$ 的一切范数均等价。 $n$ 阶矩阵 $A$ 的一切范数均等价。 单位矩阵和置换矩阵的 $2-$范数均为 $1$ 矩阵的列范数 $\Vert A\Vert_{1}=\max_{1\le j\le n}\sum_{i=1}^n|a_{ij}|$  ans.   未证明，可以利用 Jordan 标准型切入。">
@@ -356,7 +356,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-10 10:54:09" itemprop="dateModified" datetime="2018-08-10T10:54:09+08:00">2018-08-10</time>
+                <time title="修改时间：2018-08-10 16:42:41" itemprop="dateModified" datetime="2018-08-10T16:42:41+08:00">2018-08-10</time>
               
             
           </span>
@@ -528,6 +528,7 @@
 </ul>
 <p><strong>ans.</strong> $\begin{align}\begin{pmatrix}1 &amp;2 &amp;3 &amp;2\\ 2 &amp;3 &amp;4 &amp;3\\ 3 &amp;4 &amp;4 &amp;3\end{pmatrix}\rightarrow &amp;\begin{pmatrix}1 &amp;2 &amp;3 &amp;2\\ 0 &amp;-1 &amp;-2 &amp;-1\\ 0 &amp;-2 &amp;-5 &amp;-3\end{pmatrix}\\ \rightarrow &amp;\begin{pmatrix}1 &amp;2 &amp;3 &amp;2\\ 0 &amp;-1 &amp;-2 &amp;-1\\ 0 &amp;0 &amp;-1 &amp;-1\end{pmatrix}\end{align}$</p>
 <p>解得 $x_1=1,x_2=-1,x_3=1$</p>
+<p>第二问其实就是一个对角化，但由于数据中涉及根号太过复杂。就略去了。</p>
 <hr>
 <h3 id="Problem-11"><a href="#Problem-11" class="headerlink" title="Problem 11"></a>Problem 11</h3><ol start="11">
 <li>$A$ 为实对称正定矩阵，证明 $D=\mathrm{diag}(a_{11},…a_{nn})$ 仍为实对称正定矩阵</li>
@@ -552,19 +553,46 @@
 </ul>
 <p>$$\begin{pmatrix}2 &amp;1 &amp;2\\ 1 &amp;2 &amp;3\\ 4 &amp;1 &amp;2\end{pmatrix}\rightarrow \begin{pmatrix}2 &amp;1 &amp;2\\ 1/2 &amp;3/2 &amp;2\\ 2 &amp;-2/3 &amp;-2/3\end{pmatrix}$$<br>从而 $A=\begin{pmatrix}1 &amp;0 &amp;0\\ 1/2 &amp;1 &amp;0\\ 2 &amp;-2/3 &amp;1\end{pmatrix}\begin{pmatrix}2 &amp;1 &amp;2\\ 0 &amp;3/2 &amp;2\\ 0 &amp;0 &amp;-2/3\end{pmatrix}$</p>
 <p>求逆： $$\begin{align}A^{-1}&amp;=\begin{pmatrix}1/2 &amp;-1/3 &amp;1/2\\ 0 &amp;2/3 &amp;2\\ 0 &amp;0 &amp;3/2\end{pmatrix}\begin{pmatrix}1 &amp;0 &amp;0\\ -1/2 &amp;1 &amp;0\\ -7/3 &amp;2/3 &amp;1\end{pmatrix}\\ &amp;=\begin{pmatrix}-1/2 &amp;0 &amp;1/2\\ -5 &amp;2 &amp;2\\ 7/2 &amp;-1 &amp;-3/2\end{pmatrix}\end{align}$$</p>
-<ol start="13">
-<li><p>设 $A,B$ 均为 $n$ 阶方阵， $I,O$ 分别为 $n$ 阶单位阵和 $n$ 阶零矩阵，求 $\begin{pmatrix}I &amp;A &amp;0\\<br>0 &amp;I &amp;B\\<br>0 &amp;0 &amp;I\end{pmatrix}$ $3n$ 阶矩阵的逆</p>
-</li>
-<li><p>若 $A$ 为三对角矩阵，即 $A=\begin{pmatrix}a_1 &amp;c_1 &amp; &amp;\\<br>b_2 &amp;\ddots &amp;\ddots &amp;\\<br>&amp;\ddots &amp;\ddots &amp;c_{n-1}\\<br>&amp; &amp;b_n &amp;a_n \end{pmatrix}$ 且 $|a_i|\ge|b_i|+|c_i|,|a_1|&gt;|c_1|,|a_n|&gt;|b_n|,c_ib_i\ne 0$</p>
+<hr>
+<h3 id="Problem-13"><a href="#Problem-13" class="headerlink" title="Problem 13"></a>Problem 13</h3><ol start="13">
+<li>设 $A,B$ 均为 $n$ 阶方阵， $I,O$ 分别为 $n$ 阶单位阵和 $n$ 阶零矩阵，求 $\begin{pmatrix}I &amp;A &amp;0\\<br>0 &amp;I &amp;B\\<br>0 &amp;0 &amp;I\end{pmatrix}$ $3n$ 阶矩阵的逆</li>
+</ol>
+<p><strong>ans.</strong> 方法还是做初等变化，分块矩阵的初等变化要注意左右乘不一样。</p>
+<p>$$\begin{align}\begin{pmatrix}I &amp;A &amp;0 &amp;I &amp;0 &amp;0\\ 0 &amp;I &amp;B &amp;0 &amp;I &amp;0\\ 0 &amp;0 &amp;I &amp;0 &amp;0 &amp;I\end{pmatrix}\\ \rightarrow \begin{pmatrix}I &amp;0 &amp;0 &amp;I &amp;-A &amp;-AB\\ 0 &amp;I &amp;0 &amp;0 &amp;I &amp;-B\\ 0 &amp;0 &amp;I &amp;0 &amp;0 &amp;I\end{pmatrix}\end{align}$$<br>从而 $A^{-1}=\begin{pmatrix}I &amp;-A &amp;-AB\\ 0 &amp;I &amp;-B\\ 0 &amp;0 &amp;I\end{pmatrix}$</p>
+<hr>
+<h3 id="Problem-14"><a href="#Problem-14" class="headerlink" title="Problem 14"></a>Problem 14</h3><ol start="14">
+<li><p>若 $A$ 为三对角矩阵，即 $A=\begin{pmatrix}a_1 &amp;c_1 &amp; &amp;\\<br>b_2 &amp;\ddots &amp;\ddots &amp;\\<br>&amp;\ddots &amp;\ddots &amp;c_{n-1}\\<br>&amp; &amp;b_n &amp;a_n \end{pmatrix}$</p>
+<p>且 $|a_i|\ge|b_i|+|c_i|,|a_1|&gt;|c_1|,|a_n|&gt;|b_n|,c_ib_i\ne 0$</p>
 </li>
 </ol>
 <p>证明 $A$ 的顺序主子式皆不为零</p>
-<ol start="15">
-<li><p>求三对角矩阵 $\begin{pmatrix}1 &amp;1 &amp; &amp;\\<br>1 &amp;2 &amp;1 &amp; &amp;\\<br>&amp;1 &amp;3 &amp;1 &amp;\\<br>&amp; &amp;1 &amp;4 &amp;1\\<br>&amp; &amp; &amp;1 &amp;5\end{pmatrix}$的 $LU$ 分解及其行列式的值</p>
-</li>
-<li><p>若 $A\in M^{n\times n}$ 为实对称矩阵或 Hermite 矩阵，证明 $\Vert A\Vert_2=\rho(A)$</p>
-</li>
+<p><strong>ans.</strong> 这题课本中其实已经给出了证明，这里我们再重新叙述一遍。</p>
+<p>对 $n$ 进行数学归纳法，当 $n=1$ 时，$a_1&gt;0$ 成立。</p>
+<p>假设 $n-1$ 阶三对角矩阵成立。 由于</p>
+<p> $$\det \begin{align}\begin{pmatrix}a_1 &amp;c_1 &amp; &amp;\\<br>0 &amp;a_2-\frac{b_2}{a_1}c_1 &amp;c_2 &amp;\\<br> &amp;b_3 &amp;\ddots &amp;\ddots\\ &amp; &amp;\ddots &amp;\ddots &amp;c_{n-1}\\<br>  &amp; &amp; &amp; &amp;b_n &amp;a_n \end{pmatrix}=a_1\det\begin{pmatrix} a_2-\frac{b_2}{a_1}c_1 &amp;c_2 &amp;\\ b_3 &amp;\ddots &amp;\ddots\\ &amp;\ddots &amp;\ddots &amp;c_{n-1}\\ &amp; &amp; &amp;b_n &amp;a_n \end{pmatrix}\end{align}$$<br>注意到 $|a_2-\frac{b_2}{a_1}c_1|\ge |a_2|-|\frac{c_1}{a_1}b_2|&gt; |a_2|-|b_2|\ge|c_2|$ 从而为 $n-1$ 阶三对角矩阵，利用归纳原理即证。</p>
+<hr>
+<h3 id="Problem-15"><a href="#Problem-15" class="headerlink" title="Problem 15"></a>Problem 15</h3><ol start="15">
+<li>求三对角矩阵 $\begin{pmatrix}1 &amp;1 &amp; &amp;\\<br>1 &amp;2 &amp;1 &amp; &amp;\\<br>&amp;1 &amp;3 &amp;1 &amp;\\<br>&amp; &amp;1 &amp;4 &amp;1\\<br>&amp; &amp; &amp;1 &amp;5\end{pmatrix}$的 $LU$ 分解及其行列式的值</li>
+</ol>
+<p><strong>ans.</strong> $\begin{pmatrix}1 &amp;1 &amp; &amp; &amp;\\ 1 &amp;2 &amp;1 &amp; &amp;\\ &amp;1 &amp;3 &amp;1 &amp;\\ &amp; &amp;1 &amp;4 &amp;1\\ &amp; &amp; &amp;1 &amp;5\end{pmatrix}\rightarrow \begin{pmatrix}1 &amp;1 &amp; &amp; &amp;\\ 1 &amp;1 &amp;1 &amp; &amp;\\ &amp;1 &amp;2 &amp;1 &amp;\\ &amp; &amp;1/2 &amp;7/2 &amp;1\\ &amp; &amp; &amp;2/7 &amp;33/7\end{pmatrix}$</p>
+<p>从而 $A=\begin{pmatrix}1 &amp; &amp; &amp; &amp;\\ 1 &amp;1 &amp; &amp; &amp;\\ &amp;1 &amp;1 &amp; &amp;\\ &amp; &amp;1/2 &amp;1 &amp;\\ &amp; &amp; &amp;2/7 &amp;1\end{pmatrix}\begin{pmatrix}1 &amp;1 &amp; &amp; &amp;\\ &amp;1 &amp;1 &amp; &amp;\\ &amp; &amp;2 &amp;1 &amp;\\ &amp; &amp; &amp;7/2 &amp;1\\ &amp; &amp; &amp; &amp;33/7\end{pmatrix}$</p>
+<p>$\det A=1\cdot 1\cdot 2\cdot 7/2\cdot 33/7=33$</p>
+<hr>
+<h3 id="Problem-16"><a href="#Problem-16" class="headerlink" title="Problem 16"></a>Problem 16</h3><ol start="16">
+<li>若 $A\in M^{n\times n}$ 为实对称矩阵或 Hermite 矩阵，证明 $\Vert A\Vert_2=\rho(A)$</li>
+</ol>
+<p><strong>ans.</strong> 实对称矩阵 $A^T=A$ ，</p>
+<p>则 $\Vert A\Vert_2=\sqrt{\lambda_{\max}(A^TA)}=\max\sqrt{\lambda(A^2)}=\max|\lambda_i|$</p>
+<p>即 $\Vert A\Vert_2=\rho(A)$</p>
+<p>Hermite 矩阵 $A^\ast=A$ ，注意此时 $2-$ 范数的定义为 $\Vert A\Vert_2=\sqrt{\lambda_{\max}(A^\ast A)}$</p>
+<p>其余只需模仿上面即可，不证。</p>
+<hr>
+<h3 id="Problem-17"><a href="#Problem-17" class="headerlink" title="Problem 17"></a>Problem 17</h3><ol start="17">
 <li>若 $A\in M^{n\times n}$ 为正交矩阵，证明 $\mathbb{cond}_2(A)=1$</li>
+</ol>
+<p><strong>ans.</strong> 只需说明两点，正交矩阵的 $2-$ 范数为 $1$ ，正交矩阵的逆矩阵也是正交矩阵。而这两点是明显的，不证。</p>
+<hr>
+<h3 id="Problem-18"><a href="#Problem-18" class="headerlink" title="Problem 18"></a>Problem 18</h3><ol start="18">
 <li>设 $m\times n$ 阶矩阵 $A$ 为列满秩矩阵，矩阵 $A$ 的条件数：</li>
 </ol>
 <p>$$\begin{align}\mathbb{cond}_2(A):=\max_{\Vert x\Vert_2=1}\Vert Ax\Vert_2/\min_{\Vert x\Vert_2=1}\Vert Ax\Vert_2\end{align}$$</p>
@@ -576,14 +604,46 @@
 <ul>
 <li>求 $\begin{pmatrix}1 &amp;1 &amp;\cdots &amp;1\\ \epsilon &amp;0 &amp;\cdots &amp;0\\ 0 &amp;\epsilon &amp;\cdots &amp;0\\ \vdots &amp;\vdots &amp; &amp;\vdots\\ 0 &amp;0 &amp;\cdots &amp;\epsilon\end{pmatrix}$ 的条件数 $\mathbb{cond}_2(A)$</li>
 </ul>
-<ol start="19">
+<p><strong>ans.</strong> 我们先来证明一个引理： 以下范数均指 $2-$范数</p>
+<p>则 $\max_{\Vert x\Vert=1}\Vert Ax\Vert^2=\lambda_{\max}(A^TA),\min_{\Vert x\Vert=1}\Vert Ax\Vert^2=\lambda_{\min}(A^TA)$</p>
+<p>实对称矩阵正交相似于对角矩阵，且对角元素为特征根。</p>
+<p>从而 $\max_{\Vert x\Vert=1}\Vert Ax\Vert^2=\max_{\Vert x\Vert=1}x^TA^TAx=\max_{\Vert x\Vert=1}x^TP^TDPx$</p>
+<p>其中 $P$ 为正交矩阵，所以 $y:=Px,\Vert y\Vert=1$ 。这样我们不妨设 $\lambda_1$ 为特征值中模最大元素，$\lambda_2$ 为最小元素</p>
+<p>则有 $\lambda_1y_1^2+…\lambda_ny_n^2$ ，则我们取 $y=e_1$，有最大值 $|\lambda_1|$ ，$y=e_2$ ，有最小值 $|\lambda_2|$</p>
+<ul>
+<li>证明 $\max_{\Vert x\Vert_2=1}\Vert Ax\Vert_2/\min_{\Vert x\Vert_2=1}\Vert Ax\Vert_2$ 按照引理，这其实就是 $A^TA$ 的特征值的模的最大值除以最小值然后开平方。而 $\Vert A\Vert$ 就是 $A^TA$ 的模的最大值，只需说明 $\Vert A^{-1}\Vert$ 其实是 $A^TA$ 的特征值的模的最小值的倒数。</li>
+</ul>
+<p>$\Vert A^{-1}\Vert =\sqrt{\lambda_{\max}(A^{-1})^TA^{-1}}=\sqrt{1/\lambda_{\min}A^TA}$ </p>
+<p>这里运用了  $A^{-1}$ 的特征值就是 $A$ 的特征值的倒数。</p>
+<ul>
+<li>第二问其实第一问中已经做了回答</li>
+<li>第三问<br>$$\begin{align}A^TA&amp;=\begin{pmatrix}1 &amp;\epsilon &amp; &amp; &amp;\\ 1 &amp; &amp;\epsilon&amp; &amp;\\ \vdots &amp; &amp; &amp;\ddots &amp;\\ 1 &amp; &amp; &amp; &amp;\epsilon\end{pmatrix}\begin{pmatrix}1 &amp;1 &amp;\cdots &amp;1\\ \epsilon &amp;0 &amp; &amp;\\ &amp;\epsilon &amp; &amp;\\ &amp; &amp;\ddots &amp;\\ &amp; &amp; &amp;\epsilon\end{pmatrix}\\<br>&amp;=\begin{pmatrix}1+\epsilon^2 &amp;1 &amp;\cdots &amp;1\\ 1 &amp;1+\epsilon^2 &amp;\cdots &amp;1\\ \vdots &amp; &amp;\ddots &amp;\vdots\\ 1 &amp; &amp; &amp;1+\epsilon^2\end{pmatrix}\end{align}$$</li>
+</ul>
+<p>$$\begin{align}|\lambda I-A|&amp;=\begin{pmatrix}\lambda-(1+\epsilon^2) &amp;-1 &amp;\cdots &amp;-1\\ -1 &amp;\lambda-(1+\epsilon^2) &amp;\cdots &amp;-1\\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots\\ -1 &amp;-1 &amp;\cdots &amp;\lambda-(1+\epsilon^2)\end{pmatrix}\\ &amp;=\left|\begin{pmatrix}\lambda-\epsilon^2 &amp; &amp;\\ &amp;\ddots &amp;\\ &amp; &amp; &amp;\lambda-\epsilon^2\end{pmatrix}-\begin{pmatrix}1\\ \vdots \\1\end{pmatrix}\begin{pmatrix}1 &amp;\cdots &amp;1\end{pmatrix}\right|\\&amp;=(\lambda-\epsilon^2)^n\left(1-\begin{pmatrix}1 &amp;\cdots &amp;1\end{pmatrix}\begin{pmatrix}(\lambda-\epsilon^2)^{-1} &amp; &amp;\\ &amp;\ddots &amp;\\ &amp; &amp;(\lambda-\epsilon^2)^{-1}\end{pmatrix}\begin{pmatrix}1\\ \vdots\\1\end{pmatrix}\right)\\<br>&amp;=(\lambda-\epsilon^2)^{n-1 }(\lambda-\epsilon^2-n)\end{align}$$<br>最大值为 $\epsilon^2+n$ ，最小值 $\epsilon^2$ 。从而条件数为 $(\epsilon^2+n)/{\epsilon^2}$</p>
+<hr>
+<h3 id="Problem-19"><a href="#Problem-19" class="headerlink" title="Problem 19"></a>Problem 19</h3><ol start="19">
 <li>设 $A$ 为非奇异矩阵，且 $\Vert A^{-1}\Vert\cdot \Vert \delta A\Vert&lt;1$ ，证明 $(A+\delta A)^{-1}$ 存在且有下列关系式：</li>
 </ol>
 <p>$$\frac{\Vert A^{-1}-(A+\delta A)^{-1}\Vert}{\Vert A^{-1}\Vert}\le \frac{\mathbb{cond}(A)\cdot\frac{\Vert \delta A\Vert}{\Vert A\Vert}}{1-\mathbb{cond}(A)\frac{\Vert \delta A\Vert}{\Vert A\Vert}}$$</p>
-<ol start="20">
+<p><strong>ans.</strong> 先证非奇异，反证则 $\exists \eta \ne 0,s.t. (A+\delta A)\eta=0$ 再由 $A$ 非奇异，$(I+A^{-1}\delta A)\eta=0$ 有 $A^{-1}\delta A\eta=-\eta$ ，从而 $\Vert A^{-1}\delta A\Vert\ge 1$ 矛盾</p>
+<p>又设 $(A\delta A)(A^{-1}+\delta A^{-1})=E$ </p>
+<p>则有 $A+\delta A^{-1}+\delta A A^{-1}+\delta A\delta A^{-1}=0$ </p>
+<p>$$\implies \delta A^{-1}=-\delta A \cdot A^{-1}(A+\delta A)^{-1}$$<br>而 $\delta A^{-1}=(A+\delta A)^{-1}-A^{-1}$ ，两边取模得 </p>
+<p>$$\Vert (A+\delta A)^{-1}-A^{-1}\Vert\le \frac{\Vert \delta A\Vert\cdot \Vert A^{-1}\Vert}{1-\Vert A^{-1}\delta A\Vert}$$</p>
+<p>两边同除以 $\Vert A^{-1}\Vert$</p>
+<p>$$\frac{\Vert (A+\delta A)^{-1}-A^{-1}\Vert}{\Vert A^{-1}\Vert}\le \frac{\Vert \delta A\Vert}{1-\Vert A^{-1}\delta A\Vert}\le \frac{\mathrm{cond}(A)\frac{\Vert \delta A\Vert}{\Vert A\Vert}}{1-\mathrm{cond}(A)\frac{\Vert \delta A\Vert}{\Vert A\Vert}}$$</p>
+<hr>
+<h3 id="Problem-20"><a href="#Problem-20" class="headerlink" title="Problem 20"></a>Problem 20</h3><ol start="20">
 <li>$A\in M^{n\times n}$ 非奇异， $b\in\mathbb{R}^n$ 非零，$A,b$ 分别有扰动 $\delta A,\delta b$ 若 $\Vert A^{-1}\Vert&lt;1$ 证明：</li>
 </ol>
 <p>$$\frac{\Vert x-\widetilde{x}\Vert}{\Vert x\Vert}\le\frac{\Vert A^{-1}\Vert\cdot \Vert A\Vert}{1-\Vert A^{-1}\Vert\cdot \Vert A\Vert\frac{\Vert \delta A\Vert}{\Vert A\Vert}}\cdot \left(\frac{\Vert\delta A\Vert}{\Vert A\Vert}+\frac{\Vert \delta b\Vert}{\Vert b\Vert}\right)$$</p>
+<p><strong>ans.</strong> 设 $(A+\delta A)(x+\delta x)=b+\delta b$</p>
+<p>从而 $A\delta x+\delta A x+\delta A\delta x=\delta b$</p>
+<p>解出 $\delta x$</p>
+<p>$$\delta x=(\delta b-\delta Ax)(A+\delta A)^{-1}$$</p>
+<p>两边取范数<br>$$\Vert \delta x\Vert\le \frac{\Vert \delta b-\delta Ax\Vert\cdot \Vert A^{-1}\Vert}{1-\Vert A\Vert\cdot \Vert \delta A \Vert}\le\frac{(\Vert \delta b\Vert+\Vert\delta A\Vert\Vert x\Vert)\cdot \Vert A^{-1}\Vert}{1-\Vert A\Vert\cdot \Vert \delta \Vert}$$<br>同除以 $\Vert x\Vert$ ：</p>
+<p>$$\frac{\Vert \delta x\Vert}{\Vert x\Vert}\le \frac{\Vert \delta b-\delta Ax\Vert\cdot \Vert A^{-1}\Vert}{1-\Vert A\Vert\cdot \Vert \delta A\Vert}\le\frac{ \Vert A^{-1}\Vert}{1-\Vert A\Vert\cdot \Vert \delta A\Vert}\left(\frac{\Vert \delta b\Vert}{\Vert x\Vert}+\Vert \delta A\Vert\right)$$<br>注意到 $\Vert A\Vert\Vert x\Vert\ge\Vert b\Vert$整理最后一项就得到</p>
+<p>$$\frac{ \Vert A^{-1}\Vert\cdot \Vert A\Vert}{1-\Vert A\Vert\cdot \Vert \delta A\Vert}\left(\frac{\Vert \delta b\Vert}{\Vert b\Vert}+\frac{\Vert \delta A\Vert}{\Vert A\Vert}\right)$$</p>
 
       
     </div>
@@ -756,7 +816,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#习题-2"><span class="nav-number">1.</span> <span class="nav-text">习题 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-1"><span class="nav-number">1.1.</span> <span class="nav-text">Problem 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-2"><span class="nav-number">1.2.</span> <span class="nav-text">Problem 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-3"><span class="nav-number">1.3.</span> <span class="nav-text">Problem 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-4"><span class="nav-number">1.4.</span> <span class="nav-text">Problem 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-5"><span class="nav-number">1.5.</span> <span class="nav-text">Problem 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-6"><span class="nav-number">1.6.</span> <span class="nav-text">Problem 6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-7"><span class="nav-number">1.7.</span> <span class="nav-text">Problem 7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-8"><span class="nav-number">1.8.</span> <span class="nav-text">Problem 8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-9"><span class="nav-number">1.9.</span> <span class="nav-text">Problem 9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-10"><span class="nav-number">1.10.</span> <span class="nav-text">Problem 10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-11"><span class="nav-number">1.11.</span> <span class="nav-text">Problem 11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-12"><span class="nav-number">1.12.</span> <span class="nav-text">Problem 12</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#习题-2"><span class="nav-number">1.</span> <span class="nav-text">习题 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-1"><span class="nav-number">1.1.</span> <span class="nav-text">Problem 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-2"><span class="nav-number">1.2.</span> <span class="nav-text">Problem 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-3"><span class="nav-number">1.3.</span> <span class="nav-text">Problem 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-4"><span class="nav-number">1.4.</span> <span class="nav-text">Problem 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-5"><span class="nav-number">1.5.</span> <span class="nav-text">Problem 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-6"><span class="nav-number">1.6.</span> <span class="nav-text">Problem 6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-7"><span class="nav-number">1.7.</span> <span class="nav-text">Problem 7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-8"><span class="nav-number">1.8.</span> <span class="nav-text">Problem 8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-9"><span class="nav-number">1.9.</span> <span class="nav-text">Problem 9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-10"><span class="nav-number">1.10.</span> <span class="nav-text">Problem 10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-11"><span class="nav-number">1.11.</span> <span class="nav-text">Problem 11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-12"><span class="nav-number">1.12.</span> <span class="nav-text">Problem 12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-13"><span class="nav-number">1.13.</span> <span class="nav-text">Problem 13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-14"><span class="nav-number">1.14.</span> <span class="nav-text">Problem 14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-15"><span class="nav-number">1.15.</span> <span class="nav-text">Problem 15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-16"><span class="nav-number">1.16.</span> <span class="nav-text">Problem 16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-17"><span class="nav-number">1.17.</span> <span class="nav-text">Problem 17</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-18"><span class="nav-number">1.18.</span> <span class="nav-text">Problem 18</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-19"><span class="nav-number">1.19.</span> <span class="nav-text">Problem 19</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-20"><span class="nav-number">1.20.</span> <span class="nav-text">Problem 20</span></a></li></ol></li></ol></div>
             
 
           </div>
