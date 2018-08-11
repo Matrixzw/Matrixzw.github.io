@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/09/CCT3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/CCT7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zzw">
@@ -312,8 +312,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/09/CCT3/" itemprop="url">
-                  CCT3
+                <a class="post-title-link" href="/2018/08/11/CCT7/" itemprop="url">
+                  CCT7
                 </a>
               
             
@@ -339,7 +339,7 @@
                 
               
 
-              <time title="创建时间：2018-08-09 17:19:22" itemprop="dateCreated datePublished" datetime="2018-08-09T17:19:22+08:00">2018-08-09</time>
+              <time title="创建时间：2018-08-11 19:26:47" itemprop="dateCreated datePublished" datetime="2018-08-11T19:26:47+08:00">2018-08-11</time>
             
 
             
@@ -376,6 +376,748 @@
         
           
             
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/CCT6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RESPECT">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/11/CCT6/" itemprop="url">
+                  插值与逼近
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-11 17:32:40 / 修改时间：19:25:42" itemprop="dateCreated datePublished" datetime="2018-08-11T17:32:40+08:00">2018-08-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="习题-6"><a href="#习题-6" class="headerlink" title="习题 6"></a>习题 6</h2><hr>
+<h3 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem 1"></a>Problem 1</h3><ol>
+<li>分别求次数不超过 $2$ 和 $3$ 的多项式 $p_2(x),p_3(x)$ ，使得：<br>$$p_2(0)=p_3(0)=0,p_2(1)=p_3(1)=1,p_2(2)=p_3(2)=8,p_3(3)=27$$</li>
+</ol>
+<hr>
+<h3 id="Problem-2"><a href="#Problem-2" class="headerlink" title="Problem 2"></a>Problem 2</h3><ol start="2">
+<li>设 $f(x)$ 关于节点 $2,4,6,8$ 的三次插值多项式为 $p_3(x)$ ，若在区间 $[2,8]$ 上 $|f^{(4)}(x)|\le M$ ，求次区间上 $|f(x)-p_3(x)|$ 的上界</li>
+</ol>
+<hr>
+<h3 id="Problem-3"><a href="#Problem-3" class="headerlink" title="Problem 3"></a>Problem 3</h3><ol start="3">
+<li>求 $3$ 次多项式 $p_3(x)$ ，满足下列条件：<br>$$p_3(0)=0,p_3(1)=1,p_3’(0)=3,p_3’(1)=9$$</li>
+</ol>
+<hr>
+<h3 id="Problem-4"><a href="#Problem-4" class="headerlink" title="Problem 4"></a>Problem 4</h3><ol start="4">
+<li>设 $x_i,i=0,1,…n$ 为 $n+1$ 个互异的插值节点， $l_i(x),i=0,1,…n$ 为 Lagrange 插值基函数，证明下列结论：</li>
+</ol>
+<ul>
+<li>$\sum_{i=0}^nl_i(x)\equiv 1$</li>
+<li>$\sum_{i=1}^nx_i^kl_i(x)\equiv x^k,k=0,1,…n$</li>
+<li>$\sum_{i=0}^n(x_i-x)^kl_i(x)\equiv 0,k=1,2,…n$</li>
+<li>$\sum_{i=0}^nl_i(0)x_i^k=\begin{cases}1 &amp;k=0\\ 0 &amp;k=1,2…n\\ (-1)^n\prod_{i=0}^nx_i &amp;k=n+1\end{cases}$</li>
+</ul>
+<hr>
+<h3 id="Problem-5"><a href="#Problem-5" class="headerlink" title="Problem 5"></a>Problem 5</h3><ol start="5">
+<li>设 $y_n=z_n,\Delta y_n=\Delta z_n,…\Delta^k y_n=\Delta^kz_n$ ，则有<br>$$y_{n+1}=z_{n+1},…y_{n+k}=z_{n+k}$$</li>
+</ol>
+<hr>
+<h3 id="Problem-6"><a href="#Problem-6" class="headerlink" title="Problem 6"></a>Problem 6</h3><ol start="6">
+<li>证明下列差分性质：（其中 $a,b$ 均为常数）<ol>
+<li>$\Delta(ay_i+bz_i)=a\Delta y_i+b\Delta z_i$</li>
+<li>$\Delta(y_iz_i)=y_i\Delta z_i+(\Delta y_i)z_{i+1}$</li>
+<li>$\Delta(y_i/z_i)=(z_i\Delta y_i-y_i\Delta z_i)/(z_iz_{i+1})$</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h3 id="Problem-7"><a href="#Problem-7" class="headerlink" title="Problem 7"></a>Problem 7</h3><ol start="7">
+<li>设有序列 $e^x,x^{x+h},…e^{x+nh}$ 。证明 $\Delta^ne^x=e^x(e^h-1)^n$</li>
+</ol>
+<hr>
+<h3 id="Problem-8"><a href="#Problem-8" class="headerlink" title="Problem 8"></a>Problem 8</h3><ol start="8">
+<li>证明若 $\Delta^0y_n=y_n$ ，则 $y_{n+k}=\sum_{j=0}^k\binom{k}{j}\Delta^jy_n$</li>
+</ol>
+<hr>
+<h3 id="Problem-9"><a href="#Problem-9" class="headerlink" title="Problem 9"></a>Problem 9</h3><ol start="9">
+<li>若 $\Delta^nf(x_i)=\mathrm{const}$ ，判断 $f(x)$ 是否为一多项式</li>
+</ol>
+<hr>
+<h3 id="Problem-10"><a href="#Problem-10" class="headerlink" title="Problem 10"></a>Problem 10</h3><ol start="10">
+<li>利用差分性质证明下列个等式<ol>
+<li>$1^3+2^3+…n^3=(\frac{n(n+1)}{2})^2$</li>
+<li>$1\times 2+2\times 3+…n\times (n+1)=\frac{1}{3}n(n+1)(n+2)$</li>
+<li>$1\times 3+2\times 4+…n\times(n+2)=\frac{1}{6}n(n+1)(2n+7)$</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h3 id="Problem-11"><a href="#Problem-11" class="headerlink" title="Problem 11"></a>Problem 11</h3><ol start="11">
+<li>给定函数 $y=\ln x$ 的数据如下：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>$x_i$</th>
+<th>0.40</th>
+<th>0.50</th>
+<th>0.60</th>
+<th>0.70</th>
+<th>0.80</th>
+<th>0.90</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$f(x_i)$</td>
+<td>-0.916291</td>
+<td>-0.693147</td>
+<td>-0.510826</td>
+<td>-0.356675</td>
+<td>-0.223144</td>
+<td>-0.105361</td>
+</tr>
+</tbody>
+</table>
+<pre><code>1. 用线性插值及二次插值计算 $\ln 0.54$ 的值
+2. 用 Netwon 后插值公式计算 $0.78$ 的值，并估计其误差
+</code></pre><hr>
+<h3 id="Problem-12"><a href="#Problem-12" class="headerlink" title="Problem 12"></a>Problem 12</h3><ol start="12">
+<li>已知对数函数 $\ln x$ 和他的倒数 $1/x$ 的数值表如下：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>$x_i$</th>
+<th>0.40</th>
+<th>0.50</th>
+<th>0.70</th>
+<th>0.80</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\ln x$</td>
+<td>-0.916291</td>
+<td>-0.693147</td>
+<td>-0.356675</td>
+<td>-0.223144</td>
+</tr>
+<tr>
+<td>$1/x$</td>
+<td>2.50</td>
+<td>2.00</td>
+<td>1.43</td>
+<td>1.25</td>
+</tr>
+</tbody>
+</table>
+<pre><code>1. 利用 Lagrange 插值公式计算 $\ln 0.60$
+2. 利用 Hermite 插值公式计算 $\ln 0.60$
+</code></pre><hr>
+<h3 id="Problem-13"><a href="#Problem-13" class="headerlink" title="Problem 13"></a>Problem 13</h3><ol start="13">
+<li>求次数不超过 $4$ 的多项式 $p_4(x)$ ，使得其满：<br>$$p_4(0)=p_4’(0)=0,p_4(1)=p_4’(1)=1,p_4(2)=1$$<br>并求其插值余项</li>
+</ol>
+<hr>
+<h3 id="Problem-14"><a href="#Problem-14" class="headerlink" title="Problem 14"></a>Problem 14</h3><ol start="14">
+<li>试证明若 $f(x)\in C^{2n+2}[a,b],H_{2n+1}(x)$ 为 $f(x)$ 的 Hermite 插值多项式，则存在 $\xi \in (a,b)$ 使得<br>$$R_{2n+1}(x)=f(x)-H_{2n+1}(x)=\frac{f^{(2n+2)(\xi)}}{(2n+2)!}\omega^2_{n+1}(x)$$</li>
+</ol>
+<hr>
+<h3 id="Problem-15"><a href="#Problem-15" class="headerlink" title="Problem 15"></a>Problem 15</h3><ol start="15">
+<li>若 $n$ 次多项式函数 $f(x)=\sum_{i=0}^na_ix^i$ 有 $n$ 个不同的实根 $x_j,j=1,2,..n$ ，试证明：<br>$$\sum_{j=1}^n\frac{x_j^i}{f’(x_j)}=\begin{cases}0 &amp;0\le i\le n-2\\ 1/a_n &amp;i=n-1\end{cases}$$</li>
+</ol>
+<hr>
+<h3 id="Probelm-16"><a href="#Probelm-16" class="headerlink" title="Probelm 16"></a>Probelm 16</h3><ol start="16">
+<li>给定插值条件 </li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>$x_i$</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$f(x_i)$</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="Problem-17"><a href="#Problem-17" class="headerlink" title="Problem 17"></a>Problem 17</h3><ol start="17">
+<li>若 $f(x)=x^7+x^3+1$ 求 $f[2^0,2^1,…2^7],f[2^0,2^1,…2^8]$</li>
+</ol>
+<hr>
+<h3 id="Problem-18"><a href="#Problem-18" class="headerlink" title="Problem 18"></a>Problem 18</h3><ol start="18">
+<li>设 $x_i,i=0,1…n$ 互异，若 $f(x)=\omega(x)=\prod_{i=0}^n(x-x_i)$ 求 $f[x_0,x_1,…x_p]$ 。其中 $p\le n+1$</li>
+</ol>
+<hr>
+<h3 id="Problem-19"><a href="#Problem-19" class="headerlink" title="Problem 19"></a>Problem 19</h3><ol start="19">
+<li>在区间 $[a,b]$ 上任意取插值节点 $a\le x_0&lt;x_1&lt;…x_n\le b$ ，作函数 $f(x)$ 不超过 $n$ 的插值多项式 $p_n(x)$ 。假定 $f(x)\in C^\infty[a,b]$ 且 $|f^{(k)}(x)|\le M,k=0,1… ,x\in [a,b]$ </li>
+</ol>
+<p>证明 $\lim_{n\to \infty}p_n(x)=f(x)$</p>
+<hr>
+<h3 id="Problem-20"><a href="#Problem-20" class="headerlink" title="Problem 20"></a>Problem 20</h3><ol start="20">
+<li>设 $l_0(x)$ 是以 $x_i,i=0,1,…n$ 为插值节点的 Lagrange 基本插值多项式：<br>$$l_0(x)=\frac{(x-x_1)(x-x_2)\cdots(x-x_i)}{(x_0-x_1)(x_0-x_2)\cdots (x_0-x_n)}$$<br>证明：<br>$$l_0(x)=1+\frac{x-x_0}{x_0-x_1}+\frac{(x-x_0)(x-x_1)}{(x_0-x_1)(x_0-x_2)}+\cdots \frac{(x-x_0)(x-x_1)\cdots (x-x_n)}{(x_0-x_1)(x_0-x_2)\cdots (x_0-x_n)}$$</li>
+</ol>
+<hr>
+<h3 id="Problem-21"><a href="#Problem-21" class="headerlink" title="Problem 21"></a>Problem 21</h3><ol start="21">
+<li>设 $P_{n+1}(x)$ 为任一一个首项系数为 $1$ 的 $n+1$ 次多项式，证明：<ol>
+<li>$$P_{n+1}(x)-\sum_{i=0}^nP_{n+1}(x_i)l_i(x)=\omega_{n+1}(x)$$</li>
+<li>$$\frac{P_{n+1}}{\omega_{n+1}(x)}=1+\sum_{i=0}^n\frac{P_{n+1}(x)}{(x-x_i)\omega_{n+1}’(x_i)}$$</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h3 id="Problem-22"><a href="#Problem-22" class="headerlink" title="Problem 22"></a>Problem 22</h3><ol start="22">
+<li>求三次多项式 $p_3(x)$ ，使其在 $x=0,x=\pi/2$ 处与曲线 $y=\cos x$ 相切，并写出余项</li>
+</ol>
+<hr>
+<h3 id="Problem-23"><a href="#Problem-23" class="headerlink" title="Problem 23"></a>Problem 23</h3><ol start="23">
+<li>试推导分段三次样条函数 $\phi_i(x)$ 所满足的式子</li>
+</ol>
+<hr>
+<h3 id="Problem-24"><a href="#Problem-24" class="headerlink" title="Problem 24"></a>Problem 24</h3><ol start="24">
+<li>设 $f(x)\in C^2[a,b]$ ，且 $f(a)=f(b)=0$ 证明<br>$$\max_{x\in[a,b]}|f(x)|\le \frac{1}{8}(b-a)^2\max_{x\in [a,b]}|f’’(x)|$$</li>
+</ol>
+<hr>
+<h3 id="Problem-25"><a href="#Problem-25" class="headerlink" title="Problem 25"></a>Problem 25</h3><ol start="25">
+<li>设 $f(x)\in C^{n+1}[a,b]$ ，且 $a=x_0&lt;x_1&lt;\cdots x_n=b,h=\max_{1\le i\le n}(x_i-x_{i-1})$ ，证明<br>$$\max_{x\in[a,b]}|f(x)-p_n(x)|\le \frac{h^{n+1}}{4(n+1)}\max_{x\in[a,b]}|f^{(n+1)}(x)|$$</li>
+</ol>
+<hr>
+<h3 id="Problem-26"><a href="#Problem-26" class="headerlink" title="Problem 26"></a>Problem 26</h3><ol start="26">
+<li>用正交多项式作基，求下列函数在指定区间上的一次，二次最佳平方逼近多项式<ol>
+<li>$f(x)=x^3-1,x\in[0,2]$</li>
+<li>$f(x)=e^{-x},x\in[0,1]$</li>
+<li>$f(x)=\ln x,x\in[1,2]$</li>
+</ol>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/CCT5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RESPECT">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/11/CCT5/" itemprop="url">
+                  解非线性方程组和方程组的迭代法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-11 16:31:17 / 修改时间：17:31:33" itemprop="dateCreated datePublished" datetime="2018-08-11T16:31:17+08:00">2018-08-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="习题5"><a href="#习题5" class="headerlink" title="习题5"></a>习题5</h2><hr>
+<h3 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem 1"></a>Problem 1</h3><ol>
+<li>设 $\phi(x)=3-|x|/2$</li>
+</ol>
+<ul>
+<li>证明 $\phi$ 有不动点</li>
+<li>计算 $\phi$ 的不动点</li>
+</ul>
+<hr>
+<h3 id="Problem-2"><a href="#Problem-2" class="headerlink" title="Problem 2"></a>Problem 2</h3><ol start="2">
+<li>$f(x)=2x^2+6e^{-x}-4$ ，用不动点的方法求  $f(x)$ 的零点</li>
+</ol>
+<hr>
+<h3 id="Problem-3"><a href="#Problem-3" class="headerlink" title="Problem 3"></a>Problem 3</h3><ol start="3">
+<li>证明对于任何 $x_0\in \mathbb{R}$ ，迭代 $x_{k+1}=\cos x_k$ 收敛到不动点 $\zeta=\cos \zeta$</li>
+</ol>
+<hr>
+<h3 id="Problem-4"><a href="#Problem-4" class="headerlink" title="Problem 4"></a>Problem 4</h3><ol start="4">
+<li>若 $x_{k+1}=x_k+\frac{f(x_k)}{f’(x_k)}$ 试问这个迭代可以用来求 $f(x)$ 的零点，收敛阶为多少</li>
+</ol>
+<hr>
+<h3 id="Problem-5"><a href="#Problem-5" class="headerlink" title="Problem 5"></a>Problem 5</h3><ol start="5">
+<li>考虑 Steffensen 迭代格式<br>$$x_{k+1}=x_k-\frac{f(x_k)}{\phi(x_k)},\phi(x_k)=\frac{f(x_k+f(x_k))-f(x_k)}{f(x_k)}$$</li>
+</ol>
+<ul>
+<li>证明这个方法是二阶收敛</li>
+<li>用这个方法解非线性方程 $e^{-x}-\sin x=0$</li>
+</ul>
+<hr>
+<h3 id="Problem-6"><a href="#Problem-6" class="headerlink" title="Problem 6"></a>Problem 6</h3><p>在区间 $[1.5,3.5]$ 上运用二分法，需要多少迭代步才能使得根的相对误差小于等于 $10^{-12}$</p>
+<hr>
+<h3 id="Problem-7"><a href="#Problem-7" class="headerlink" title="Problem 7"></a>Problem 7</h3><p>二分法求零点 $\alpha$ ，设区间中点 $c_k=(a_k+b_k)/2$ ，我们有 $|c_k-\alpha|\le (b_k-a_k)/2\le(b_0-a_0)/(2^{k+1})$</p>
+<hr>
+<h3 id="Problem-8"><a href="#Problem-8" class="headerlink" title="Problem 8"></a>Problem 8</h3><ol start="8">
+<li>分别讨论 Newton 法，割线法，和弦方法的收敛速度</li>
+</ol>
+<hr>
+<h3 id="Problem-9"><a href="#Problem-9" class="headerlink" title="Problem 9"></a>Problem 9</h3><ol start="9">
+<li>推导不精确 Newton 法的 Newton-Gauss-Seidel 公式和 Newton-SOR 公式</li>
+</ol>
+<hr>
+<h3 id="Problem-10"><a href="#Problem-10" class="headerlink" title="Problem 10"></a>Problem 10</h3><ol start="10">
+<li>利用 Broyden 方法求解<br>$$F(x)=\begin{pmatrix}x_1+x_2-3\\ x_1^2+x_2^2-9\end{pmatrix}=0$$<br>证明该方法产生的矩阵序列 $B_k$ 收敛到 $\begin{pmatrix}1 &amp;1\\ 1.5 &amp;7.5\end{pmatrix}$</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/09/CCT3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RESPECT">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/09/CCT3/" itemprop="url">
+                  解线性方程组的迭代算法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-09 17:19:22" itemprop="dateCreated datePublished" datetime="2018-08-09T17:19:22+08:00">2018-08-09</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-11 16:10:38" itemprop="dateModified" datetime="2018-08-11T16:10:38+08:00">2018-08-11</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="习题-3"><a href="#习题-3" class="headerlink" title="习题 3"></a>习题 3</h2><hr>
+<h3 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem 1"></a>Problem 1</h3><ol>
+<li>设有方程组<br>$$\begin{pmatrix}-8 &amp;1 &amp;1\\ 1 &amp;-5 &amp;1 \\1 &amp;1 &amp;-4\end{pmatrix}\begin{pmatrix}x_1\\ x_2\\ x_3\end{pmatrix}=\begin{pmatrix}1\\ 16\\ 7\end{pmatrix}$$</li>
+</ol>
+<ul>
+<li>用 Jacobi 迭代法迭代 5 次</li>
+<li>用 G-S 迭代法迭代 3 次，并说明两种迭代法都是收敛的</li>
+</ul>
+<hr>
+<h3 id="Problem-2"><a href="#Problem-2" class="headerlink" title="Problem 2"></a>Problem 2</h3><ol start="2">
+<li>方程组<br>$$\begin{pmatrix}3.02 &amp;-1.05 &amp;2.53\\ 0.56 &amp;4.33 &amp;-1.78\\ -0.83 &amp;-0.54 &amp;1.47\end{pmatrix}\begin{pmatrix}x_1\\ x_2\\ x_3\end{pmatrix}=\begin{pmatrix}-1.61\\ 7.23\\ -3.38\end{pmatrix}$$</li>
+</ol>
+<ul>
+<li>计算 $\mathrm{cond}<em>1(A),\mathrm{cond}\</em>{\infty}(A)$</li>
+<li>用 Jacobi 迭代法和 G-S 迭代法求解，精确到四位有效数字</li>
+</ul>
+<hr>
+<h3 id="Problem-3"><a href="#Problem-3" class="headerlink" title="Problem 3"></a>Problem 3</h3><ol start="3">
+<li>对下列线性方程组<br>$$\begin{pmatrix}1 &amp;2 &amp;-2\\ 1 &amp;1 &amp;1\\ 2 &amp;2 &amp;1\end{pmatrix}\begin{pmatrix}x_1\\ x_2\\ x_3\end{pmatrix}=\begin{pmatrix}6\\ 4\\ 1\end{pmatrix},\quad \begin{pmatrix}5 &amp;2 &amp;2\\ 2 &amp;5 &amp;4\\ 2 &amp;4 &amp;5\end{pmatrix}\begin{pmatrix}x_1\\ x_2\\ x_3\end{pmatrix}=\begin{pmatrix}0\\ 20\\ 15\end{pmatrix}$$<br>判断 Jacobi 迭代法和 G-S 迭代法的收敛性</li>
+</ol>
+<hr>
+<h3 id="Problem-4"><a href="#Problem-4" class="headerlink" title="Problem 4"></a>Problem 4</h3><ol start="4">
+<li>利用 SOR 方法，取松弛因子 $\omega_1=1.0,\omega_2=1.7$ ，误差 $\epsilon=0.5\times 10^{-5}$ 解方程<br>$$\begin{cases}-4x_1+x_2+x_3+x_4=1\\ x_1-4x_2+x_3+x_4=1\\ x_1+x_2-4x_3+x_4=1\\ x_1+x_2+x_3-4x_4=1\end{cases}$$</li>
+</ol>
+<hr>
+<h3 id="Problem-5"><a href="#Problem-5" class="headerlink" title="Problem 5"></a>Problem 5</h3><ol start="5">
+<li>设有方程组 $Ax=b$ ，其中<br>$$A=\begin{pmatrix}1 &amp;a &amp;a\\ a &amp;1 &amp;a\\ a &amp;a &amp;1\end{pmatrix}$$</li>
+</ol>
+<ul>
+<li>$a$ 取何值时， $A$ 正定</li>
+<li>$a$ 取何值时，Jacobi 迭代收敛</li>
+</ul>
+<hr>
+<h3 id="Problem-6"><a href="#Problem-6" class="headerlink" title="Problem 6"></a>Problem 6</h3><ol start="6">
+<li>设有方程组 $Ax=b$ ，$0&lt;\lambda(A)&lt;\beta$ ，迭代公式<br>$$x^{(k+1)}=x^{(k)}+\omega(b-Ax^{(k)}),k=0,1,…$$<br>证明当 $0&lt;\omega&lt;2/\beta$ 时上述迭代过程收敛</li>
+</ol>
+<hr>
+<h3 id="Problem-7"><a href="#Problem-7" class="headerlink" title="Problem 7"></a>Problem 7</h3><ol start="7">
+<li>设 $A\in M^{2\times 2}$ ，且 $a_{ii}\ne 0,i=1,2$ ，证明对方程组 $Ax=b$ 的 Jacobi 迭代法和 G-S 迭代法具有相同的收敛性</li>
+</ol>
+<hr>
+<h3 id="Problem-8"><a href="#Problem-8" class="headerlink" title="Problem 8"></a>Problem 8</h3><ol start="8">
+<li>证明 求解线性方程组 $Ax=b$ 迭代格式<br>$$x^{(k+1)}=(I-B^{-1}A)x^{(k)}+B^{-1}b$$<br>当 $(A-B)(A-B)^T$ 的最大值特征值小于 $BB^T$ 的特征值时时收敛</li>
+</ol>
+<hr>
+<h3 id="Problem-9"><a href="#Problem-9" class="headerlink" title="Problem 9"></a>Problem 9</h3><ol start="9">
+<li>若存在实对称正定矩阵 $P$ ，使 $B=P-H^TPH$ 也为实对称正定矩阵，试证明下列迭代格式收敛<br>$$x^{(k+1)}=Hx^{(k)}+b,k=0,1,…$$</li>
+</ol>
+<hr>
+<h3 id="Problem-10"><a href="#Problem-10" class="headerlink" title="Problem 10"></a>Problem 10</h3><ol start="10">
+<li>给定方程组<br>$$\begin{pmatrix}2 &amp;-1 &amp;1\\ 1 &amp;1 &amp;1\\ 1 &amp;1 &amp;-2\end{pmatrix}\begin{pmatrix}x_1\\ x_2\\ x_3\end{pmatrix}=\begin{pmatrix}1\\ 1\\ 1\end{pmatrix}$$<br>证明 Jacobi 迭代法发散而 G-S 迭代收敛</li>
+</ol>
+<hr>
+<h3 id="Problem-11"><a href="#Problem-11" class="headerlink" title="Problem 11"></a>Problem 11</h3><ol start="11">
+<li>设矩阵 $A$ 对称正定，$D=\mathrm{diag}(a_{11},a_{22},…a_{nn})$ 。证明若 $2D-A$ 正定，则 Jacobi 迭代法求解线性方程组必有解</li>
+</ol>
+<hr>
+<h3 id="Problem-12"><a href="#Problem-12" class="headerlink" title="Problem 12"></a>Problem 12</h3><ol start="12">
+<li>设 $A$ 为对称正定矩阵，如下迭代格式<br>$$x^{(k+1)}=x^{(k)}-\frac{1}{2}\left(A(x^{(k+1)}+x^{(k)})-2b\right),\omega&gt;0$$</li>
+</ol>
+<ul>
+<li>对任意初始向量 $x^{(0)}$ ，迭代序列收敛</li>
+<li>迭代序列收敛到 $Ax=b$ 的解</li>
+</ul>
+
           
         
       
@@ -491,7 +1233,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-10 16:42:41" itemprop="dateModified" datetime="2018-08-10T16:42:41+08:00">2018-08-10</time>
+                <time title="修改时间：2018-08-10 17:15:30" itemprop="dateModified" datetime="2018-08-10T17:15:30+08:00">2018-08-10</time>
               
             
           </span>
@@ -660,7 +1402,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-09 17:12:22" itemprop="dateModified" datetime="2018-08-09T17:12:22+08:00">2018-08-09</time>
+                <time title="修改时间：2018-08-10 16:48:29" itemprop="dateModified" datetime="2018-08-10T16:48:29+08:00">2018-08-10</time>
               
             
           </span>
@@ -694,14 +1436,13 @@
 
       
         
-          <h4 id="习题-1"><a href="#习题-1" class="headerlink" title="习题 1"></a>习题 1</h4><hr>
-<ol>
+          <h2 id="习题-1"><a href="#习题-1" class="headerlink" title="习题 1"></a>习题 1</h2><hr>
+<h3 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem 1"></a>Problem 1</h3><ol>
 <li>什么是绝对误差，相对误差与有效数字，它们之间有何关系？</li>
 </ol>
 <p><strong>ans.</strong> 绝对误差：某个量的准确值 $x$ ，近似值 $x^\ast$ ，称 $\mathcal{E}(x):=|x^\ast-x|$ 为绝对误差</p>
 <p>相对误差： 绝对误差与准确值之比： $\mathcal{E}_r:=\mathcal{E}/x=(x^*-x)/x$ ，也可以定义为绝对误差与近似值的。</p>
 <p>有效数字：近似值 $x^\ast$ 的误差不超过某一位的半个单位，该位到 $x^\ast$ 的第一位非零数字共有 $n$ 位，则称 $x^\ast$ 有 $n$ 位有效数字 $\Box$</p>
-<hr>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/06/CCT/#more" rel="contents">
@@ -1265,7 +2006,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1503,6 +2244,12 @@
 
   
   
+    
+      
+    
+      
+    
+      
     
       
     
