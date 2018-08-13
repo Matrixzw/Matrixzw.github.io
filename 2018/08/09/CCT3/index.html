@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="RESPECT">
 <meta property="og:description" content="习题 3 手工计算复杂时给出计算机计算结果，并附上 Mathematica 代码 所有代码均运行通过并得到给定的答案   Problem 1 设有方程组$$\begin{pmatrix}-8 &amp;amp;1 &amp;amp;1\\ 1 &amp;amp;-5 &amp;amp;1 \\1 &amp;amp;1 &amp;amp;-4\end{pmatrix}\begin{pmatrix}x_1\\ x_2\\ x_3\end{pmatr">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-12T14:26:12.135Z">
+<meta property="og:updated_time" content="2018-08-13T11:07:15.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解线性方程组的迭代算法">
 <meta name="twitter:description" content="习题 3 手工计算复杂时给出计算机计算结果，并附上 Mathematica 代码 所有代码均运行通过并得到给定的答案   Problem 1 设有方程组$$\begin{pmatrix}-8 &amp;amp;1 &amp;amp;1\\ 1 &amp;amp;-5 &amp;amp;1 \\1 &amp;amp;1 &amp;amp;-4\end{pmatrix}\begin{pmatrix}x_1\\ x_2\\ x_3\end{pmatr">
@@ -372,7 +372,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-12 22:26:12" itemprop="dateModified" datetime="2018-08-12T22:26:12+08:00">2018-08-12</time>
+                <time title="修改时间：2018-08-13 19:07:15" itemprop="dateModified" datetime="2018-08-13T19:07:15+08:00">2018-08-13</time>
               
             
           </span>
@@ -498,21 +498,18 @@
 <td>-0.125</td>
 <td>-3.225</td>
 <td>-2.5875</td>
-<td>0.875</td>
 </tr>
 <tr>
 <td>2</td>
 <td>-0.851563</td>
 <td>-3.88781</td>
 <td>-2.93484</td>
-<td>0.148438</td>
 </tr>
 <tr>
 <td>3</td>
 <td>-0.977832</td>
 <td>-3.98254</td>
 <td>-2.99009</td>
-<td>0.022168</td>
 </tr>
 </tbody>
 </table>
@@ -526,16 +523,32 @@
 <li>计算 $\mathrm{cond}<em>1(A),\mathrm{cond}\</em>{\infty}(A)$</li>
 <li>用 Jacobi 迭代法和 G-S 迭代法求解，精确到四位有效数字</li>
 </ul>
-<p><strong>ans.</strong> 可以说是非常的复杂的第一小问了，根本不是手算能完成的<br>$$A^{-1}=\begin{pmatrix}<br> 0.222897 &amp; 0.00539421 &amp; -0.390157 \\<br> -0.069994 &amp; 0.198953 &amp; -0.120443 \\<br> 0.100141 &amp; 0.0761305 &amp; 0.415735 \\<br>\end{pmatrix}$$<br>从而 $\mathrm{cond}_1=4.12505,\mathrm{cond}_\infty=5.48391$ </p>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">A = &#123;&#123;3.02, -1.05, 2.53&#125;, &#123;0.56, 4.33, 1.78&#125;, &#123;-0.83, -0.54, 1.47&#125;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">(*行向量的最大值，1-范数*)</span></span><br><span class="line">f[A_] := A // <span class="keyword">Abs</span> // <span class="keyword">Total</span> /@ # &amp; // <span class="keyword">Max</span></span><br><span class="line"><span class="comment">(*列向量的最大值，无穷范数*)</span></span><br><span class="line">g[A_] := A // <span class="keyword">Abs</span> // <span class="keyword">Total</span> // <span class="keyword">Max</span></span><br><span class="line"><span class="comment">(*计算条件数*)</span></span><br><span class="line">f[A] f[<span class="keyword">Inverse</span>[A]]</span><br><span class="line">g[A] g[<span class="keyword">Inverse</span>[A]]</span><br></pre></td></tr></table></figure>
+<p><strong>ans.</strong> </p>
+<ul>
+<li>可以说是非常的复杂的第一小问了，根本不是手算能完成的<br>$$A^{-1}=\begin{pmatrix}<br>0.222897 &amp; 0.00539421 &amp; -0.390157 \\<br>-0.069994 &amp; 0.198953 &amp; -0.120443 \\<br>0.100141 &amp; 0.0761305 &amp; 0.415735 \\<br>\end{pmatrix}$$<br>从而 $\mathrm{cond}_1=5.41676,\mathrm{cond}_\infty=7.2993$ </li>
+</ul>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">A = &#123;&#123;3.02, -1.05, 2.53&#125;, &#123;0.56, 4.33, -1.78&#125;, &#123;-0.83, -0.54, 1.47&#125;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">(*行向量的最大值，1-范数*)</span></span><br><span class="line">f[A_] := A // <span class="keyword">Abs</span> // <span class="keyword">Total</span> /@ # &amp; // <span class="keyword">Max</span></span><br><span class="line"><span class="comment">(*列向量的最大值，无穷范数*)</span></span><br><span class="line">g[A_] := A // <span class="keyword">Abs</span> // <span class="keyword">Total</span> // <span class="keyword">Max</span></span><br><span class="line"><span class="comment">(*计算条件数*)</span></span><br><span class="line">f[A] f[<span class="keyword">Inverse</span>[A]]</span><br><span class="line">g[A] g[<span class="keyword">Inverse</span>[A]]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>对于第二小问其中的精确到四位有效数字有两种理解，一种利用 $\epsilon=|x_{k+1}-x_{k}|\le 10^{-4}$ ，另外一种利用 $\epsilon=|x_{k}-x^\ast|\le 10^{-4}$ ，这里我们采用第一种方法，这也是实际可以操作的办法，当然也只能利用计算机实现。</li>
+</ul>
+<p>Jacobi 方法经过 26 次迭代得到 $x_1=0.97207, x_2=0.971115, x_3=-1.39376$</p>
+<p>G-S 方法经过 17 次迭代得到 $x_1=0.972086, x_2=0.971094, x_3=-1.39373$</p>
 <hr>
 <h3 id="Problem-3"><a href="#Problem-3" class="headerlink" title="Problem 3"></a>Problem 3</h3><ol start="3">
 <li>对下列线性方程组<br>$$\begin{pmatrix}1 &amp;2 &amp;-2\\ 1 &amp;1 &amp;1\\ 2 &amp;2 &amp;1\end{pmatrix}\begin{pmatrix}x_1\\ x_2\\ x_3\end{pmatrix}=\begin{pmatrix}6\\ 4\\ 1\end{pmatrix},\quad \begin{pmatrix}5 &amp;2 &amp;2\\ 2 &amp;5 &amp;4\\ 2 &amp;4 &amp;5\end{pmatrix}\begin{pmatrix}x_1\\ x_2\\ x_3\end{pmatrix}=\begin{pmatrix}0\\ 20\\ 15\end{pmatrix}$$<br>判断 Jacobi 迭代法和 G-S 迭代法的收敛性</li>
 </ol>
+<p><strong>ans.</strong> 判断敛散性最直接的办法是计算迭代矩阵 $A$ 的谱半径 $\rho(A)$ ，但是这个方法可能有点复杂，特征值很多时候是很难计算的。这里我们还是应用计算机去求谱半径。</p>
+<p> $$J_1=\begin{pmatrix}0 &amp;-2 &amp;2\\ -1 &amp;0 &amp;-1\\ -2 &amp;-2 &amp;0\end{pmatrix},J_2=\begin{pmatrix} 0 &amp; -\frac{2}{5} &amp; -\frac{2}{5} \\<br> -\frac{2}{5} &amp; 0 &amp; -\frac{4}{5} \\<br> -\frac{2}{5} &amp; -\frac{4}{5} &amp; 0 \end{pmatrix}$$<br>计算得 $\rho(J_1)=0&lt;1,\rho(J_2)=2(1+\sqrt{3})/5&gt;1$</p>
+<p>从而第一个矩阵 Jacobi 迭代收敛，第二个不收敛。</p>
+<p>$$G_1=\begin{pmatrix}1 &amp;0 &amp;0\\ 1 &amp;1 &amp;0\\ 2 &amp;2 &amp;1\end{pmatrix}^{-1}\begin{pmatrix}0&amp;-2 &amp;2\\ 0 &amp;0 &amp;-1\\ 0 &amp;0 &amp;0\end{pmatrix}=\begin{pmatrix} 0 &amp; -2 &amp; 2 \\<br> 0 &amp; 2 &amp; -3 \\<br> 0 &amp; 0 &amp; 5 \end{pmatrix}$$<br>计算 $\rho(G_1)=2&gt;0$ 不收敛</p>
+<p>$$G_2=\begin{pmatrix}5 &amp;0 &amp;0\\ 2 &amp;5 &amp;0\\ 2 &amp;4 &amp;5\end{pmatrix}^{-1}\begin{pmatrix}0 &amp;2 &amp;2\\ 0 &amp;0  &amp;4\\ 0 &amp;0 &amp;0\end{pmatrix}=\begin{pmatrix} 0 &amp; \frac{2}{5} &amp; \frac{2}{5} \\<br> 0 &amp; -\frac{4}{25} &amp; \frac{16}{25} \\<br> 0 &amp; -\frac{4}{125} &amp; -\frac{84}{125} \end{pmatrix}$$</p>
+<p>计算 $\rho(G_2)=4(13+2\sqrt{11})/125\lt 1 $ 从而收敛，这里也可以说明该矩阵为对称正定矩阵，从而 G-S 方法收敛。</p>
 <hr>
 <h3 id="Problem-4"><a href="#Problem-4" class="headerlink" title="Problem 4"></a>Problem 4</h3><ol start="4">
 <li>利用 SOR 方法，取松弛因子 $\omega_1=1.0,\omega_2=1.7$ ，误差 $\epsilon=0.5\times 10^{-5}$ 解方程<br>$$\begin{cases}-4x_1+x_2+x_3+x_4=1\\ x_1-4x_2+x_3+x_4=1\\ x_1+x_2-4x_3+x_4=1\\ x_1+x_2+x_3-4x_4=1\end{cases}$$</li>
 </ol>
+<p><strong>ans.</strong> 这里依然不是手算可以完成的事。还不如把这几题放到后面的上机实验题部分</p>
+<p>这题就略过了</p>
 <hr>
 <h3 id="Problem-5"><a href="#Problem-5" class="headerlink" title="Problem 5"></a>Problem 5</h3><ol start="5">
 <li>设有方程组 $Ax=b$ ，其中<br>$$A=\begin{pmatrix}1 &amp;a &amp;a\\ a &amp;1 &amp;a\\ a &amp;a &amp;1\end{pmatrix}$$</li>
@@ -544,30 +557,68 @@
 <li>$a$ 取何值时， $A$ 正定</li>
 <li>$a$ 取何值时，Jacobi 迭代收敛</li>
 </ul>
+<p><strong>ans.</strong> 终于到了正常点的题目了</p>
+<ul>
+<li>正定矩阵的判定方法， $1-a^2&gt;0,1-a^2-a(a-a^2)+a(a^2-a)=(a-1)^2(2a+1)&gt;0$</li>
+</ul>
+<p>解得： $-1/2&lt;a&lt;1$</p>
+<ul>
+<li>迭代矩阵 $\begin{pmatrix} 0 &amp; -a &amp; -a \\<br>-a &amp; 0 &amp; -a \\<br>-a &amp; -a &amp; 0\end{pmatrix}$</li>
+</ul>
+<p>求特征根 $|\lambda I-A|=\begin{vmatrix}\lambda &amp;a &amp;a\\ a &amp;\lambda &amp;\lambda\\ a &amp;a &amp;\lambda\end{vmatrix}=(\lambda-a)^2(\lambda+2a)$ </p>
+<p>解得 $\lambda_1=a,\lambda_2=a,\lambda_3=-2a$</p>
+<p>从而当 $-1/2&lt;a&lt;1/2$ 时，Jacobi 迭代收敛</p>
 <hr>
 <h3 id="Problem-6"><a href="#Problem-6" class="headerlink" title="Problem 6"></a>Problem 6</h3><ol start="6">
 <li>设有方程组 $Ax=b$ ，$0&lt;\lambda(A)&lt;\beta$ ，迭代公式<br>$$x^{(k+1)}=x^{(k)}+\omega(b-Ax^{(k)}),k=0,1,…$$<br>证明当 $0&lt;\omega&lt;2/\beta$ 时上述迭代过程收敛</li>
 </ol>
+<p><strong>ans.</strong> 迭代矩阵 $B=I-\omega A$</p>
+<p>设 $A$ 的特征根为 $\lambda$ 则 $B$ 的特征根为 $1-\omega \lambda$</p>
+<p>从而收敛的充要条件 $0\lt 1-\omega \lambda\lt 1$</p>
+<p>而已知 $0\lt \lambda(A)\le \beta,0\lt \omega \lt 1/\beta$</p>
+<p>满足上述充要条件，从而收敛。</p>
+<blockquote>
+<p>本题对书本题目做了一些修改，不影响结果</p>
+</blockquote>
 <hr>
 <h3 id="Problem-7"><a href="#Problem-7" class="headerlink" title="Problem 7"></a>Problem 7</h3><ol start="7">
 <li>设 $A\in M^{2\times 2}$ ，且 $a_{ii}\ne 0,i=1,2$ ，证明对方程组 $Ax=b$ 的 Jacobi 迭代法和 G-S 迭代法具有相同的收敛性</li>
 </ol>
+<p><strong>ans.</strong> 设 $A=\begin{pmatrix}a &amp;b\\ c &amp;d\end{pmatrix}$ </p>
+<p>则 Jacobi 迭代矩阵<br>$$\begin{align}D^{-1}(L+U)&amp;=\begin{pmatrix}a^{-1} &amp;0\\ 0 &amp;d^{-1}\end{pmatrix}\begin{pmatrix}0 &amp;-b\\ -c &amp;0\end{pmatrix}\\ &amp;=\begin{pmatrix}0 &amp;-b/a\\ -c/d &amp;0\end{pmatrix}\end{align}$$<br>求出谱半径为 $|cb/ad|$</p>
+<p>G-S 迭代矩阵为<br>$$\begin{align}(D-L)^{-1}U&amp;=\begin{pmatrix}1 &amp;0\\ c &amp;d\end{pmatrix}\begin{pmatrix}0 &amp;-b &amp;0 &amp;0\end{pmatrix}\\<br>&amp;=\frac{1}{ad}\begin{pmatrix}d &amp;0\\ -c &amp;a\end{pmatrix}\begin{pmatrix}0 &amp;-b\\ 0 &amp;0\end{pmatrix}\\<br>&amp;=\frac{1}{ad}\begin{pmatrix}0 &amp;-db\\ 0 &amp;-cb\end{pmatrix}\end{align}$$<br>解得谱半径为 $|cd/ad|$ ，注意计算时系数不要丢。</p>
+<p>从而两者同敛散性</p>
 <hr>
 <h3 id="Problem-8"><a href="#Problem-8" class="headerlink" title="Problem 8"></a>Problem 8</h3><ol start="8">
 <li>证明 求解线性方程组 $Ax=b$ 迭代格式<br>$$x^{(k+1)}=(I-B^{-1}A)x^{(k)}+B^{-1}b$$<br>当 $(A-B)(A-B)^T$ 的最大值特征值小于 $BB^T$ 的特征值时时收敛</li>
 </ol>
+<p><strong>ans.</strong> 这题其实就是习题二第 18 题证明过程的一种类似方法</p>
+<p>迭代矩阵的 $2-$范数 $\Vert I-B^{-1}A\Vert_2\le \Vert B^{-1}\Vert_2\cdot \Vert B-A\Vert_2$</p>
+<p>其实按照 18 题的证明方法，后者就是<br>$$\sqrt{\frac{\lambda_{\max}(A-B)^{T}(A-B)}{\lambda_{\min}(B^TB)}}&lt;1$$</p>
+<blockquote>
+<p>注意过程中应用了一个简单的结论 $\lambda(AA^T)=\lambda(A^TA)$ ，这个容易的结论留作简单的思考吧</p>
+</blockquote>
 <hr>
 <h3 id="Problem-9"><a href="#Problem-9" class="headerlink" title="Problem 9"></a>Problem 9</h3><ol start="9">
 <li>若存在实对称正定矩阵 $P$ ，使 $B=P-H^TPH$ 也为实对称正定矩阵，试证明下列迭代格式收敛<br>$$x^{(k+1)}=Hx^{(k)}+b,k=0,1,…$$</li>
 </ol>
+<p><strong>ans.</strong> 本题需要一些技巧的，特别注意实对称矩阵的特征根和特征向量均为实的。需要证明的是谱半径小于 1</p>
+<p>反证： $|\lambda|&gt;1$ ，则 $\exists \delta\ne 0,s.t.H\delta=\lambda \delta$</p>
+<p>则<br>$$\begin{align}\delta^TB\delta&amp;=\delta^TP\delta-\delta^TH^TPH\delta\\<br>&amp;=(1-\lambda^2)\delta^TP\delta &gt;0\end{align}$$<br>解得 $|\lambda|&lt;1$ 矛盾</p>
 <hr>
 <h3 id="Problem-10"><a href="#Problem-10" class="headerlink" title="Problem 10"></a>Problem 10</h3><ol start="10">
 <li>给定方程组<br>$$\begin{pmatrix}2 &amp;-1 &amp;1\\ 1 &amp;1 &amp;1\\ 1 &amp;1 &amp;-2\end{pmatrix}\begin{pmatrix}x_1\\ x_2\\ x_3\end{pmatrix}=\begin{pmatrix}1\\ 1\\ 1\end{pmatrix}$$<br>证明 Jacobi 迭代法发散而 G-S 迭代收敛</li>
 </ol>
+<p><strong>ans.</strong> 又是计算谱半径的题目，不做了，不是手算可以完成的。</p>
 <hr>
 <h3 id="Problem-11"><a href="#Problem-11" class="headerlink" title="Problem 11"></a>Problem 11</h3><ol start="11">
 <li>设矩阵 $A$ 对称正定，$D=\mathrm{diag}(a_{11},a_{22},…a_{nn})$ 。证明若 $2D-A$ 正定，则 Jacobi 迭代法求解线性方程组必有解</li>
 </ol>
+<p><strong>ans.</strong> 题目中设了太多的符号了，其实化简一下如下</p>
+<p>$A=D-L-L^T$ 对称正定， $2D-A=D-L-L^T$ 对称正定，要证明 $D^{-1}(L+L^T)$ 的谱半径小于 $1$</p>
+<p>反证 $|\lambda|\gt 1$ 注意此时由于迭代矩阵对称所以 $\lambda\in \mathbb{R}$</p>
+<p>存在 $\delta\ne 0,s.t,D^{-1}(L+L^T)\delta =\lambda\delta$<br>从而 $(L+L^T)\delta=\lambda D\delta$</p>
+<p>处理一下上面的式子得到<br>$$\begin{align}\delta^T(D+L+L^T)\delta=(1+\lambda)\delta^T\delta&gt;0\\<br>\delta^T(D-L-L^T)\delta =(1-\lambda)\delta^T\delta&gt;0\end{align}$$<br>解得 $|\lambda|\lt 1$ ，矛盾</p>
 <hr>
 <h3 id="Problem-12"><a href="#Problem-12" class="headerlink" title="Problem 12"></a>Problem 12</h3><ol start="12">
 <li>设 $A$ 为对称正定矩阵，如下迭代格式<br>$$x^{(k+1)}=x^{(k)}-\frac{1}{2}\left(A(x^{(k+1)}+x^{(k)})-2b\right),\omega&gt;0$$</li>
@@ -576,6 +627,10 @@
 <li>对任意初始向量 $x^{(0)}$ ，迭代序列收敛</li>
 <li>迭代序列收敛到 $Ax=b$ 的解</li>
 </ul>
+<p><strong>ans.</strong> 迭代方程整理一下得<br>$$(I+\frac{1}{2}\omega A)x^{(k+1)}=(I-\frac{1}{2}\omega A)x^{(k)}+\omega b$$<br>设 $A$ 的特征根为 $\lambda$ 则由于 $A$ 对称正定，从而 $\lambda\gt 0$ </p>
+<p>从而迭代矩阵<br>$$\lambda((I+\frac{1}{2}\omega A)^{-1}(I-\frac{1}{2}\omega A))=(1+\frac{1}{2}\omega \lambda)^{-1}(1-\frac{1}{2}\omega \lambda)$$</p>
+<p>当 $\lambda&gt;0,\omega&gt;0$ 时，上述式子在 $-1$ 到 $1$ 之间，即证。</p>
+<p>显然收敛到方程的解，不证。</p>
 
       
     </div>
@@ -691,7 +746,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
