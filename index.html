@@ -364,7 +364,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-18 17:15:37" itemprop="dateModified" datetime="2018-09-18T17:15:37+08:00">2018-09-18</time>
+                <time title="修改时间：2018-09-18 20:34:11" itemprop="dateModified" datetime="2018-09-18T20:34:11+08:00">2018-09-18</time>
               
             
           </span>
@@ -400,8 +400,7 @@
         
           
             <h1 id="偏微分方程数值解——第三次上机作业"><a href="#偏微分方程数值解——第三次上机作业" class="headerlink" title="偏微分方程数值解——第三次上机作业"></a><center>偏微分方程数值解——第三次上机作业</center></h1><h2 id="姓名：郑志伟-学号：06150120"><a href="#姓名：郑志伟-学号：06150120" class="headerlink" title="姓名：郑志伟   学号：06150120"></a><center>姓名：郑志伟   学号：06150120</center></h2><h3 id="一、任务描述"><a href="#一、任务描述" class="headerlink" title="一、任务描述"></a>一、任务描述</h3><p>算例1.1  应用差分格式计算如下两点边值问题：</p>
-<p>$$\begin{align}&amp;-u’’(x)+u(x)=e^x(\sin x-2\cos x),\quad 0\le x\le \pi\\ &amp;u(0)=0, \quad u(\pi)=0\end{align}$$</p>
-<p>已知该问题的的精确解为 $u(x)=e^x\sin x$ <!-- no more --></p>
+<p>$$\begin{align}&amp;-u’’(x)+u(x)=e^x(\sin x-2\cos x),\quad 0\le x\le \pi\\ &amp;u(0)=0, \quad u(\pi)=0\end{align}$$<br><!-- no more --><br>已知该问题的的精确解为 $u(x)=e^x\sin x$ <!-- no more --></p>
 <h3 id="二、方法描述"><a href="#二、方法描述" class="headerlink" title="二、方法描述"></a>二、方法描述</h3><p>利用差分格式对 $[0,\pi]$ 作 $m$ 等分，记 $h=\pi/m,x_i=ih,0\le i\le m$ 从而差分格式为：<br>$$\begin{align}&amp;-\delta_x^2u_i+u_i =e^{x_i}(\sin x_i-2\cos x_i), \quad 1\le i\le m-1\\ &amp;u_0=0 \quad u_m=0\end{align}$$</p>
 <p>以上的差分方程其实就是一个线性方程组 $Ax=b$ 。对于一般的两点边值问题（边值条件非零）：<br>$$A=\begin{pmatrix}2+h^2q(x_1) &amp;-1 &amp; &amp; &amp;\\ -1 &amp;2+h^2q(x_2) &amp;-1 &amp; &amp; \\ &amp;\ddots &amp;\ddots &amp;\ddots &amp; &amp;\\ &amp; &amp;-1 &amp;2+h^2q(x_{m-2} &amp;-1\\ &amp; &amp; &amp;-1 &amp;2+h^2q(x_{m-1} \end{pmatrix}$$<br>$$b=\begin{pmatrix}h^2f(x_1)+\alpha\\ h^2f(x_2)\\ \vdots \\ h^2f(x_{m-2})\\ h^2f(x_{m-1})+\beta\end{pmatrix}$$</p>
 <p>注意到 $A$ 为严格对角占优矩阵，由高等代数的知识立刻可知， $A$ 非奇异（证明可以利用 Getschgorin 圆盘定理），从而存在唯一解。</p>
