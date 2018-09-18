@@ -301,6 +301,539 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/12/PDE2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RESPECT">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/12/PDE2/" itemprop="url">
+                  PDE2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-12 20:11:30" itemprop="dateCreated datePublished" datetime="2018-09-12T20:11:30+08:00">2018-09-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-18 17:15:37" itemprop="dateModified" datetime="2018-09-18T17:15:37+08:00">2018-09-18</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="偏微分方程数值解——第三次上机作业"><a href="#偏微分方程数值解——第三次上机作业" class="headerlink" title="偏微分方程数值解——第三次上机作业"></a><center>偏微分方程数值解——第三次上机作业</center></h1><h2 id="姓名：郑志伟-学号：06150120"><a href="#姓名：郑志伟-学号：06150120" class="headerlink" title="姓名：郑志伟   学号：06150120"></a><center>姓名：郑志伟   学号：06150120</center></h2><h3 id="一、任务描述"><a href="#一、任务描述" class="headerlink" title="一、任务描述"></a>一、任务描述</h3><p>算例1.1  应用差分格式计算如下两点边值问题：</p>
+<p>$$\begin{align}&amp;-u’’(x)+u(x)=e^x(\sin x-2\cos x),\quad 0\le x\le \pi\\ &amp;u(0)=0, \quad u(\pi)=0\end{align}$$</p>
+<p>已知该问题的的精确解为 $u(x)=e^x\sin x$ <!-- no more --></p>
+<h3 id="二、方法描述"><a href="#二、方法描述" class="headerlink" title="二、方法描述"></a>二、方法描述</h3><p>利用差分格式对 $[0,\pi]$ 作 $m$ 等分，记 $h=\pi/m,x_i=ih,0\le i\le m$ 从而差分格式为：<br>$$\begin{align}&amp;-\delta_x^2u_i+u_i =e^{x_i}(\sin x_i-2\cos x_i), \quad 1\le i\le m-1\\ &amp;u_0=0 \quad u_m=0\end{align}$$</p>
+<p>以上的差分方程其实就是一个线性方程组 $Ax=b$ 。对于一般的两点边值问题（边值条件非零）：<br>$$A=\begin{pmatrix}2+h^2q(x_1) &amp;-1 &amp; &amp; &amp;\\ -1 &amp;2+h^2q(x_2) &amp;-1 &amp; &amp; \\ &amp;\ddots &amp;\ddots &amp;\ddots &amp; &amp;\\ &amp; &amp;-1 &amp;2+h^2q(x_{m-2} &amp;-1\\ &amp; &amp; &amp;-1 &amp;2+h^2q(x_{m-1} \end{pmatrix}$$<br>$$b=\begin{pmatrix}h^2f(x_1)+\alpha\\ h^2f(x_2)\\ \vdots \\ h^2f(x_{m-2})\\ h^2f(x_{m-1})+\beta\end{pmatrix}$$</p>
+<p>注意到 $A$ 为严格对角占优矩阵，由高等代数的知识立刻可知， $A$ 非奇异（证明可以利用 Getschgorin 圆盘定理），从而存在唯一解。</p>
+<p>再利用计算方法的知识可知 $A$ 为三对角矩阵，有专门的 LU 分解方法来解这个方程：追赶法。运算量仅为 $5N-4=O(N)$</p>
+<h3 id="三、程序运行结果"><a href="#三、程序运行结果" class="headerlink" title="三、程序运行结果"></a>三、程序运行结果</h3><h4 id="1-表格绘制"><a href="#1-表格绘制" class="headerlink" title="1. 表格绘制"></a>1. 表格绘制</h4><p>下面给出的源代码运行结果为每一点的数值，从那些数值中提取出 $\pi/5,2\pi/5,3\pi/5,4\pi/5$ 对应的数值。</p>
+<table>
+<thead>
+<tr>
+<th>m</th>
+<th>$\pi/5$</th>
+<th>$2\pi/5$</th>
+<th>$3\pi/5$</th>
+<th>$4\pi/5$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>1.06401</td>
+<td>3.26655</td>
+<td>6.16619</td>
+<td>7.17873</td>
+</tr>
+<tr>
+<td>20</td>
+<td>1.09231</td>
+<td>3.32283</td>
+<td>6.23935</td>
+<td>7.23704</td>
+</tr>
+<tr>
+<td>40</td>
+<td>1.09941</td>
+<td>3.33692</td>
+<td>6.25763</td>
+<td>7.25155</td>
+</tr>
+<tr>
+<td>80</td>
+<td>1.10119</td>
+<td>3.34044</td>
+<td>6.26219</td>
+<td>7.25517</td>
+</tr>
+<tr>
+<td>160</td>
+<td>1.10163</td>
+<td>3.34132</td>
+<td>6.26334</td>
+<td>7.25607</td>
+</tr>
+<tr>
+<td>精确解</td>
+<td>1.10178</td>
+<td>3.34162</td>
+<td>6.26372</td>
+<td>7.25638</td>
+</tr>
+</tbody>
+</table>
+<p>由这个表就可以构造出各点误差的绝对值，进而求得误差的无穷范数。为了验证这种差分格式的收敛阶为 $2$ 。即 $\epsilon=O(h^2)$ 。理论上 $h$ 减小一半（ $m$ 增大一倍），误差 $\epsilon$ 变为原来的 $1/4$</p>
+<p>构造下表即可：</p>
+<table>
+<thead>
+<tr>
+<th>m</th>
+<th>$\pi/5$</th>
+<th>$2\pi/5$</th>
+<th>$3\pi/5$</th>
+<th>$4\pi/5$</th>
+<th>$\Vert x \Vert_{\infty}$</th>
+<th>$\epsilon(2h)/\epsilon(h)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>0.03777</td>
+<td>0.07507</td>
+<td>0.09753</td>
+<td>0.07765</td>
+<td>0.09753</td>
+<td>*</td>
+</tr>
+<tr>
+<td>20</td>
+<td>0.00947</td>
+<td>0.01879</td>
+<td>0.02437</td>
+<td>0.01934</td>
+<td>0.02437</td>
+<td>4.00205</td>
+</tr>
+<tr>
+<td>40</td>
+<td>0.00237</td>
+<td>0.00470</td>
+<td>0.00609</td>
+<td>0.00483</td>
+<td>0.00609</td>
+<td>4.00164</td>
+</tr>
+<tr>
+<td>80</td>
+<td>0.00059</td>
+<td>0.00118</td>
+<td>0.00153</td>
+<td>0.00121</td>
+<td>0.00153</td>
+<td>3.98039</td>
+</tr>
+<tr>
+<td>160</td>
+<td>0.00015</td>
+<td>0.00030</td>
+<td>0.00038</td>
+<td>0.00031</td>
+<td>0.00038</td>
+<td>4.02632</td>
+</tr>
+</tbody>
+</table>
+<p>注意到最后一行为基本接近 $4$ 可知，收敛阶可能为 $O(h^2)$ 。</p>
+<h4 id="2-图像绘制"><a href="#2-图像绘制" class="headerlink" title="2. 图像绘制"></a>2. 图像绘制</h4><p>其中取 $160$ 个点的时候，计算量已经非常大了，程序运行时间也更长。<br>更精确的运行结果数据为 ${1.1016296097349845, 3.34132483218602, 6.263336593206693, 7.25607409539749}$</p>
+<p>$80$ 个点的时候结果已经非常接近了，下图为数值解绘制的图像：</p>
+<p><img src="_v_images/_1536758553_30208.png" alt=""></p>
+<p>当取 $m=10$ 个点的时候，精确解和数值解的图像为：</p>
+<p><img src="_v_images/_1536758471_3114.png" alt=""></p>
+<h3 id="四、源代码"><a href="#四、源代码" class="headerlink" title="四、源代码"></a>四、源代码</h3><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">(*function name: sol*)</span></span><br><span class="line"><span class="comment">(*use: solve special linear equation: a.x=b*)</span></span><br><span class="line"><span class="comment">(*input: a,b where a.x=b*)</span></span><br><span class="line"><span class="comment">(*output: solution *)</span></span><br><span class="line"><span class="comment">(*time:2018.9.12 by zzw*)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">(*追赶法解决对角矩阵问题*)</span></span><br><span class="line"><span class="keyword">Clear</span>[a, b];</span><br><span class="line"><span class="comment">(*test data*)</span></span><br><span class="line">a = &#123;&#123;-1, -1, -1&#125;, &#123;2, 2, 2, 2&#125;, &#123;-1, -1, -1&#125;&#125;; b = &#123;1, 0, 0, 1&#125;;</span><br><span class="line"><span class="comment">(*a=&#123;&#123;2,2&#125;,&#123;3,4,5&#125;,&#123;2,1&#125;&#125;;b=&#123;-1,-7,9&#125;;*)</span></span><br><span class="line"><span class="keyword">LinearSolve</span>[&#123;&#123;2, -1, 0, 0&#125;, &#123;-1, 2, -1, 0&#125;, &#123;0, -1, 2, -1&#125;, &#123;0, 0, -1,</span><br><span class="line">    2&#125;&#125;, b]</span><br><span class="line"></span><br><span class="line">sol[a0_, b0_] := <span class="keyword">Block</span>[&#123;a = a0, b = b0, n&#125;,</span><br><span class="line">   n = <span class="keyword">Length</span> /@ a // <span class="keyword">Max</span>;</span><br><span class="line">   <span class="comment">(*追过程*)</span></span><br><span class="line">   &#123;a[[1, #]] = a[[1, #]]/a[[2, #]], </span><br><span class="line">      a[[2, # + 1]] = a[[2, # + 1]] - a[[1, #]] a[[3, #]]&#125; &amp; /@ </span><br><span class="line">    <span class="keyword">Range</span>[n - <span class="number">1</span>];</span><br><span class="line">   <span class="comment">(*赶过程*)</span></span><br><span class="line">   &#123;b[[# + 1]] = b[[# + 1]] - a[[1, #]] b[[#]]&#125; &amp; /@ <span class="keyword">Range</span>[n - <span class="number">1</span>];</span><br><span class="line">   b[[n]] = b[[n]]/a[[<span class="number">2</span>, n]];</span><br><span class="line">   &#123;b[[#]] = (b[[#]] - a[[3, #]] b[[# + 1]])/a[[2, #]]&#125; &amp; /@ </span><br><span class="line">    <span class="keyword">Reverse</span>[<span class="keyword">Range</span>[n - <span class="number">1</span>]];</span><br><span class="line">   b];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">(*function name: main*)</span></span><br><span class="line"><span class="comment">(*use: calculate differial equation -u''+q(x)u=f(x)*)</span></span><br><span class="line"><span class="comment">(*input m, q, f, alpha, beta*)</span></span><br><span class="line"><span class="comment">(*output u(x_i)*)</span></span><br><span class="line"><span class="comment">(*time 2018.9.12 by zzw*)</span></span><br><span class="line">main[m0_, q0_, f0_, \[Alpha]<span class="number">0</span>_, \[<span class="keyword">Beta</span>]<span class="number">0</span>_] := </span><br><span class="line"> <span class="keyword">Block</span>[&#123;m = m0, q = q0, </span><br><span class="line">   f = f0, \[Alpha] = \[Alpha]0, \[Beta] = \[Beta]0&#125;,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">(*构造矩阵 a*)</span></span><br><span class="line">  const = <span class="keyword">ConstantArray</span>[<span class="number">-1</span>, m - <span class="number">2</span>];</span><br><span class="line">  h = \[<span class="keyword">Pi</span>]/m // <span class="keyword">N</span>;</span><br><span class="line">  xi = h <span class="keyword">Range</span>[m - <span class="number">1</span>];</span><br><span class="line">  a = &#123;const, 2 + h^2 q /@ xi, const&#125;;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">(*构造向量 b*)</span></span><br><span class="line">  b = h^<span class="number">2</span> f /@ xi;</span><br><span class="line">  b[[<span class="number">1</span>]] = b[[<span class="number">1</span>]] + \[Alpha]; b[[<span class="number">-1</span>]] = b[[<span class="number">-1</span>]] + \[<span class="keyword">Beta</span>];</span><br><span class="line">  </span><br><span class="line">  <span class="comment">(*调用 sol function 解方程*)</span></span><br><span class="line">  sol[a, b]]</span><br><span class="line"></span><br><span class="line">m = <span class="number">10</span>;</span><br><span class="line">q[x_] = <span class="number">1</span>;</span><br><span class="line">f[x_] := <span class="keyword">E</span>^x (<span class="keyword">Sin</span>[x] - <span class="number">2</span> <span class="keyword">Cos</span>[x]);</span><br><span class="line">\[Alpha] = <span class="number">0</span>; \[<span class="keyword">Beta</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">ans = main[m, q, f, \[Alpha], \[<span class="keyword">Beta</span>]]</span><br><span class="line">ans[[m/<span class="number">5</span> ;; <span class="number">-1</span> ;; m/<span class="number">5</span>]]</span><br></pre></td></tr></table></figure>
+<h3 id="五、扩展例子"><a href="#五、扩展例子" class="headerlink" title="五、扩展例子"></a>五、扩展例子</h3><p>用上述的结果再来计算一个例子，课本作业题，习题1的第三小题。</p>
+<p>利用差分格式计算如下两点边值问题：</p>
+<p>$$\begin{align}&amp;-u’’(x)+(x-\frac{1}{2})^2u(x)=(x^2-x+\frac{5}{4})\sin x \quad 0&lt;x&lt;\frac{\pi}{2}\\ &amp;u(0)=0,\quad u(\frac{\pi}{2})=1\end{align}$$</p>
+<p>已知其精确解为 $u(x)=\sin x$</p>
+<hr>
+<p>解答：</p>
+<p>利用上述程序代码，稍作修改得到如下部分节点处的数值解：</p>
+<table>
+<thead>
+<tr>
+<th>m</th>
+<th>$\pi/16$</th>
+<th>$2\pi/16$</th>
+<th>$3\pi/16$</th>
+<th>$4\pi/16$</th>
+<th>$5\pi/16$</th>
+<th>$6\pi/16$</th>
+<th>$7\pi/16$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>0.195308</td>
+<td>0.383096</td>
+<td>0.55613</td>
+<td>0.707746</td>
+<td>0.832102</td>
+<td>0.924409</td>
+<td>0.981106</td>
+</tr>
+<tr>
+<td>16</td>
+<td>0.195145</td>
+<td>0.382786</td>
+<td>0.55571</td>
+<td>0.707266</td>
+<td>0.831628</td>
+<td>0.924012</td>
+<td>0.980865</td>
+</tr>
+<tr>
+<td>32</td>
+<td>0.195104</td>
+<td>0.382709</td>
+<td>0.555605</td>
+<td>0.707147</td>
+<td>0.831509</td>
+<td>0.923913</td>
+<td>0.980805</td>
+</tr>
+<tr>
+<td>64</td>
+<td>0.195094</td>
+<td>0.38269</td>
+<td>0.555579</td>
+<td>0.707117</td>
+<td>0.831479</td>
+<td>0.923888</td>
+<td>0.98079</td>
+</tr>
+<tr>
+<td>精确解</td>
+<td>0.19509</td>
+<td>0.382683</td>
+<td>0.55557</td>
+<td>0.707107</td>
+<td>0.83147</td>
+<td>0.92388</td>
+<td>0.980785</td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/PDE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RESPECT">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/10/PDE/" itemprop="url">
+                  PDE
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-10 20:29:14" itemprop="dateCreated datePublished" datetime="2018-09-10T20:29:14+08:00">2018-09-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-18 18:30:48" itemprop="dateModified" datetime="2018-09-18T18:30:48+08:00">2018-09-18</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Problem-5"><a href="#Problem-5" class="headerlink" title="Problem 5"></a>Problem 5</h3><p>设 $\Omega_{h}={x_i\mid 0\le i\le m}$ ，其中 $x_i=a+ih,h=(b-a)/m$ 。又设 $u={u_i\mid 0\le i\le m}$ 为 $\Omega_h$ 上的网格函数，且 $u_0=0$ ，证明: <!-- no more --><br>$$\Vert u\Vert_{\infty}\le \sqrt{b-a}|u|_1,\quad \Vert u\Vert\le \frac{b-a}{\sqrt{2}}|u|_1$$</p>
+<p><strong>ans.</strong> </p>
+<ol>
+<li>$$\forall i ,u_i^2=\left(\sum_{l=0}^m\delta_x u_{i+1/2}\right)^2h^2\le m\sum_{l=0}^{m-1}(\delta_xu_{i+1/2})^2h^2\le(b-a)|u|_1^2$$</li>
+</ol>
+<p>从而 $\Vert u\Vert_{\infty}^2=\max u_{i}^2\le(b-a)|u|_1^2$</p>
+<p>即有 $\Vert u\Vert_{\infty}\le\sqrt{b-a}|u|_1$</p>
+<ol start="2">
+<li>由于<br>$$|u_j|^2=\left(\sum_{k=1}^j\delta_xu_{k-1/2}\right)^2h^2\le j\sum_{k=1}^j(\delta u_{k-1/2})^2h^2$$<br>同理有：<br>$$|u_m|^2\le m\sum_{k=1}^m(\delta_xu_{k-1/2})^2h^2$$<br>从而：<br>$$\begin{align}\Vert u\Vert^2&amp;=h\left(\sum_{j=1}^m|u_j|^2-\frac{1}{2}u_m^2\right) \\<br>&amp;=h \left(\sum_{j=1}^mj\sum_{k=1}^j(\delta_x u_{k-1/2})^2h^2-\frac{m}{2}\sum_{k=1}^m(\delta_xu_{k-1/2})^2h^2\right)\\<br>&amp;=h\left(\sum_{k=1}^m \sum_{j=k}^m j(\delta_x u_{k-1/2})^2h^2-\frac{m}{2}\sum_{k=1}^m(\delta_xu_{k-1/2})^2h^2\right)\\<br>&amp;=\frac{h^3}{2}\sum_{k=1}^m(m^2+k-k^2)(\delta_xu_{k-1/2})^2\\<br>&amp;\le \frac{n^2h^3}{2}\sum_{k=1}^m(\delta_xu_{k-1/2})^2=\frac{(b-a)^2}{2}|u|_1^2\end{align}$$</li>
+</ol>
+<p>即：<br>$$\Vert u\Vert\le \frac{b-a}{\sqrt{2}}|u|_1^2$$</p>
+<h3 id="Problem-6"><a href="#Problem-6" class="headerlink" title="Problem 6"></a>Problem 6</h3><p>设 $u={u_i\mid 0\le i\le m}\in V_h$ 。证明 :</p>
+<ul>
+<li>$$\Vert u\Vert_{\infty}^2\le 2\max {u_0^2,u_m^2}+\frac{b-a}{2}|u|_1^2$$</li>
+<li>对任意的 $\epsilon&gt;0$ 有<br>$$\Vert u\Vert_{\infty}^2\le \epsilon |u|_1^2+\left(\frac{1}{\epsilon}+\frac{1}{b-a}\right)\Vert u \Vert^2$$</li>
+</ul>
+<ol>
+<li>$$\forall,i v_i=h\sum_{j=1}^i\delta_xv_{j-1/2}+v_0=-h\sum_{j=i+1}^m\delta_xv_{j-1/2}+v_m$$</li>
+</ol>
+<p>利用 $(a+b)^2\le2(a^2+b^2)$ ，得：<br>$$v_i^2\le 2h^2i\sum_{j=1}^i(\delta x)v_{j-1/2}^2+2v_0^2$$<br>$$v_i^2\le 2h^2(m-i)\sum_{j=i+1}^m(\delta_xv_{j-1/2})^2+2v_m^2$$</p>
+<p>第一个式子乘以 $m-i$ 加上第二个式子乘以 $i$ ，得到：<br>$$\begin{align}mv_i^2 &amp;\le 2h^2i(m-i)\sum_{j=1}^m(\delta_xv_{j-1/2})^2+2((m-i)v_0^2iv_m^2)\\<br>&amp;\le \frac{m^2h^2}{2}\sum_{j=1}^m(\delta_xv_{j-1/2})^2+2((m-i)v_0^2+iv_m^2)\end{align}$$</p>
+<p>即有 $$v_i^2\le \frac{b-a}{2}|v|_1^2+2\max \{v_0,v_m\}$$</p>
+<p>取 $i$ 的最大值就有：<br>$$\Vert v\Vert_{\infty}^2\le \frac{b-a}{2}|v|_1^2+2\max\{v_0,v_m\}$$</p>
+<ol start="2">
+<li>设 $v_i$ 中当 $\max v_i=v_k,\min v_i =v_l$ 不妨就设 $k&gt;l$<br>则<br>$$\begin{align}v_k^2&amp;=\left(\sum_{i=l}^{k-1}\delta_xv_{i+1/2}^2\right)h+v_l^2\\<br>&amp;=2h\sum_{i=l}^{k-1}v_{i+1/2}\delta_xv_{i+1/2}+v_l^2\\<br>&amp;\le h\sum_{i=0}^{m-1}\frac{1}{\epsilon}v_{i+1/2}^2+\epsilon(\delta-x v_{i+1/2})^2+v_l^2\\<br>&amp;\le h\sum_{i=0}^{m-1}\frac{1}{\epsilon}v_{i+1/2}^2+\epsilon(\delta_xv_{i+1/2})^2+\frac{1}{b-a}\Vert v\Vert^2\\<br>&amp;=(\frac{1}{\epsilon}+\frac{1}{b-a})\Vert v\Vert^2+\epsilon|v|_1^2\end{align}$$<br>其中利用 $$\Vert v\Vert^2=h(\frac{1}{2}v_0^2+\frac{1}{2}v_m^2+\sum_{i=1}^mv_i^2)\ge mhv_l^2=(b-a)v_l^2$$</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/INT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1640,342 +2173,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/06/CCT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RESPECT">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/06/CCT/" itemprop="url">
-                  绪论
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-08-06 14:12:55" itemprop="dateCreated datePublished" datetime="2018-08-06T14:12:55+08:00">2018-08-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-08-11 21:18:19" itemprop="dateModified" datetime="2018-08-11T21:18:19+08:00">2018-08-11</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="习题-1"><a href="#习题-1" class="headerlink" title="习题 1"></a>习题 1</h2><hr>
-<h3 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem 1"></a>Problem 1</h3><ol>
-<li>什么是绝对误差，相对误差与有效数字，它们之间有何关系？</li>
-</ol>
-<p><strong>ans.</strong> 绝对误差：某个量的准确值 $x$ ，近似值 $x^\ast$ ，称 $\mathcal{E}(x):=|x^\ast-x|$ 为绝对误差</p>
-<p>相对误差： 绝对误差与准确值之比： $\mathcal{E}_r:=\mathcal{E}/x=(x^*-x)/x$ ，也可以定义为绝对误差与近似值的。</p>
-<p>有效数字：近似值 $x^\ast$ 的误差不超过某一位的半个单位，该位到 $x^\ast$ 的第一位非零数字共有 $n$ 位，则称 $x^\ast$ 有 $n$ 位有效数字 $\Box$</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/06/CCT/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/fortest/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RESPECT">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/01/fortest/" itemprop="url">
-                  数学物理方程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-08-01 16:45:10" itemprop="dateCreated datePublished" datetime="2018-08-01T16:45:10+08:00">2018-08-01</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-08-12 12:29:54" itemprop="dateModified" datetime="2018-08-12T12:29:54+08:00">2018-08-12</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="数学物理方程答案"><a href="#数学物理方程答案" class="headerlink" title="数学物理方程答案"></a>数学物理方程答案</h1><h2 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h2><h3 id="1-推导细杆的纵向振动位移偏移量-u-x-t-满足的微分方程。"><a href="#1-推导细杆的纵向振动位移偏移量-u-x-t-满足的微分方程。" class="headerlink" title="1. 推导细杆的纵向振动位移偏移量 $u(x,t)$ 满足的微分方程。 "></a>1. 推导细杆的纵向振动位移偏移量 $u(x,t)$ 满足的微分方程。 <img src="http://img2.ph.126.net/LdQZgtgXNsixjM8nrQGiMQ==/6597577741030954259.png" alt="pic1.1"></h3><p><strong>ans.</strong> 有<br>$$\begin{align}\rho S \Delta S\frac{\partial^2u}{\partial t^2} &amp;=(P(x+\Delta x,t)-P(x,t))S\\<br>    &amp;= \frac{\partial P}{\partial x}\Delta x S\\<br>    \implies \rho\frac{\partial^2u}{\partial t^2}&amp;=\frac{\partial P}{\partial x} \end{align}$$<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/01/fortest/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2023,7 +2220,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
