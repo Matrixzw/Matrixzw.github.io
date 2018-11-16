@@ -112,20 +112,20 @@
 
 
 
-  <meta name="description" content="偏微分方程数值解——第三次上机作业姓名：郑志伟   学号：06150120一、任务描述算例1.1  应用差分格式计算如下两点边值问题： $$\begin{align}&amp;amp;-u’’(x)+u(x)=e^x(\sin x-2\cos x),\quad 0\le x\le \pi\\ &amp;amp;u(0)=0, \quad u(\pi)=0\end{align}$$已知该问题的的精确解为 $u(x)">
-<meta name="keywords" content="math">
+  <meta name="description" content="偏微分方程数值解——第三次上机作业姓名：郑志伟   学号：06150120一、任务描述算例1.1  应用差分格式计算如下两点边值问题： \begin{cases}&amp;-u&apos;&apos;(x)+u(x)=e^x(\sin x-2\cos x),\quad 0\le x\le \pi\\\\ &amp;u(0)=0, \quad u(\pi)=0\end{cases}已知该问题的的精确解为 $u(x)=e^x\sin x">
+<meta name="keywords" content="math,PDE">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PDE2">
 <meta property="og:url" content="http://yoursite.com/2018/09/12/PDE2/index.html">
 <meta property="og:site_name" content="RESPECT">
-<meta property="og:description" content="偏微分方程数值解——第三次上机作业姓名：郑志伟   学号：06150120一、任务描述算例1.1  应用差分格式计算如下两点边值问题： $$\begin{align}&amp;amp;-u’’(x)+u(x)=e^x(\sin x-2\cos x),\quad 0\le x\le \pi\\ &amp;amp;u(0)=0, \quad u(\pi)=0\end{align}$$已知该问题的的精确解为 $u(x)">
+<meta property="og:description" content="偏微分方程数值解——第三次上机作业姓名：郑志伟   学号：06150120一、任务描述算例1.1  应用差分格式计算如下两点边值问题： \begin{cases}&amp;-u&apos;&apos;(x)+u(x)=e^x(\sin x-2\cos x),\quad 0\le x\le \pi\\\\ &amp;u(0)=0, \quad u(\pi)=0\end{cases}已知该问题的的精确解为 $u(x)=e^x\sin x">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2018/09/12/PDE2/_v_images/_1536758553_30208.png">
 <meta property="og:image" content="http://yoursite.com/2018/09/12/PDE2/_v_images/_1536758471_3114.png">
-<meta property="og:updated_time" content="2018-09-18T12:37:17.331Z">
+<meta property="og:updated_time" content="2018-11-16T01:36:12.473Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PDE2">
-<meta name="twitter:description" content="偏微分方程数值解——第三次上机作业姓名：郑志伟   学号：06150120一、任务描述算例1.1  应用差分格式计算如下两点边值问题： $$\begin{align}&amp;amp;-u’’(x)+u(x)=e^x(\sin x-2\cos x),\quad 0\le x\le \pi\\ &amp;amp;u(0)=0, \quad u(\pi)=0\end{align}$$已知该问题的的精确解为 $u(x)">
+<meta name="twitter:description" content="偏微分方程数值解——第三次上机作业姓名：郑志伟   学号：06150120一、任务描述算例1.1  应用差分格式计算如下两点边值问题： \begin{cases}&amp;-u&apos;&apos;(x)+u(x)=e^x(\sin x-2\cos x),\quad 0\le x\le \pi\\\\ &amp;u(0)=0, \quad u(\pi)=0\end{cases}已知该问题的的精确解为 $u(x)=e^x\sin x">
 <meta name="twitter:image" content="http://yoursite.com/2018/09/12/PDE2/_v_images/_1536758553_30208.png">
 
 
@@ -367,7 +367,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-18 20:37:17" itemprop="dateModified" datetime="2018-09-18T20:37:17+08:00">2018-09-18</time>
+                <time title="修改时间：2018-11-16 09:36:12" itemprop="dateModified" datetime="2018-11-16T09:36:12+08:00">2018-11-16</time>
               
             
           </span>
@@ -409,12 +409,13 @@
 
       
         <h1 id="偏微分方程数值解——第三次上机作业"><a href="#偏微分方程数值解——第三次上机作业" class="headerlink" title="偏微分方程数值解——第三次上机作业"></a><center>偏微分方程数值解——第三次上机作业</center></h1><h2 id="姓名：郑志伟-学号：06150120"><a href="#姓名：郑志伟-学号：06150120" class="headerlink" title="姓名：郑志伟   学号：06150120"></a><center>姓名：郑志伟   学号：06150120</center></h2><h3 id="一、任务描述"><a href="#一、任务描述" class="headerlink" title="一、任务描述"></a>一、任务描述</h3><p>算例1.1  应用差分格式计算如下两点边值问题：</p>
-<p>$$\begin{align}&amp;-u’’(x)+u(x)=e^x(\sin x-2\cos x),\quad 0\le x\le \pi\\ &amp;u(0)=0, \quad u(\pi)=0\end{align}$$<br><!-- no more --><br>已知该问题的的精确解为 $u(x)=e^x\sin x$ <a id="more"></a></p>
-<h3 id="二、方法描述"><a href="#二、方法描述" class="headerlink" title="二、方法描述"></a>二、方法描述</h3><p>利用差分格式对 $[0,\pi]$ 作 $m$ 等分，记 $h=\pi/m,x_i=ih,0\le i\le m$ 从而差分格式为：<br>$$\begin{align}&amp;-\delta_x^2u_i+u_i =e^{x_i}(\sin x_i-2\cos x_i), \quad 1\le i\le m-1\\ &amp;u_0=0 \quad u_m=0\end{align}$$</p>
-<p>以上的差分方程其实就是一个线性方程组 $Ax=b$ 。对于一般的两点边值问题（边值条件非零）：<br>$$A=\begin{pmatrix}2+h^2q(x_1) &amp;-1 &amp; &amp; &amp;\\ -1 &amp;2+h^2q(x_2) &amp;-1 &amp; &amp; \\ &amp;\ddots &amp;\ddots &amp;\ddots &amp; &amp;\\ &amp; &amp;-1 &amp;2+h^2q(x_{m-2} &amp;-1\\ &amp; &amp; &amp;-1 &amp;2+h^2q(x_{m-1} \end{pmatrix}$$<br>$$b=\begin{pmatrix}h^2f(x_1)+\alpha\\ h^2f(x_2)\\ \vdots \\ h^2f(x_{m-2})\\ h^2f(x_{m-1})+\beta\end{pmatrix}$$</p>
-<p>注意到 $A$ 为严格对角占优矩阵，由高等代数的知识立刻可知， $A$ 非奇异（证明可以利用 Getschgorin 圆盘定理），从而存在唯一解。</p>
+<script type="math/tex; mode=display">\begin{cases}&-u''(x)+u(x)=e^x(\sin x-2\cos x),\quad 0\le x\le \pi\\\\ &u(0)=0, \quad u(\pi)=0\end{cases}</script><p>已知该问题的的精确解为 $u(x)=e^x\sin x$ <a id="more"></a></p>
+<h3 id="二、方法描述"><a href="#二、方法描述" class="headerlink" title="二、方法描述"></a>二、方法描述</h3><p>利用差分格式对 $[0,\pi]$ 作 $m$ 等分，记 $h=\pi/m,x_i=ih,0\le i\le m$ 从而差分格式为：</p>
+<script type="math/tex; mode=display">\begin{cases}&-\delta_x^2u_i+u_i =e^{x_i}(\sin x_i-2\cos x_i), \quad 1\le i\le m-1\\\\ &u_0=0 \quad u_m=0\end{cases}</script><p>以上的差分方程其实就是一个线性方程组 $Ax=b$ 。对于一般的两点边值问题（边值条件非零）：</p>
+<script type="math/tex; mode=display">A=\begin{pmatrix}2+h^2q(x_1) &-1 & & &\\\\ -1 &2+h^2q(x_2) &-1 & & \\\\ &\ddots &\ddots &\ddots & &\\\\ & &-1 &2+h^2q(x\_{m-2} &-1\\\\ & & &-1 &2+h^2q(x\_{m-1} \end{pmatrix}</script><script type="math/tex; mode=display">b=\begin{pmatrix}h^2f(x_1)+\alpha\\\\ h^2f(x_2)\\\\ \vdots \\\\ h^2f(x\_{m-2})\\\\ h^2f(x\_{m-1})+\beta\end{pmatrix}</script><p>注意到 $A$ 为严格对角占优矩阵，由高等代数的知识立刻可知， $A$ 非奇异（证明可以利用 Getschgorin 圆盘定理），从而存在唯一解。</p>
 <p>再利用计算方法的知识可知 $A$ 为三对角矩阵，有专门的 LU 分解方法来解这个方程：追赶法。运算量仅为 $5N-4=O(N)$</p>
 <h3 id="三、程序运行结果"><a href="#三、程序运行结果" class="headerlink" title="三、程序运行结果"></a>三、程序运行结果</h3><h4 id="1-表格绘制"><a href="#1-表格绘制" class="headerlink" title="1. 表格绘制"></a>1. 表格绘制</h4><p>下面给出的源代码运行结果为每一点的数值，从那些数值中提取出 $\pi/5,2\pi/5,3\pi/5,4\pi/5$ 对应的数值。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -470,8 +471,10 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>由这个表就可以构造出各点误差的绝对值，进而求得误差的无穷范数。为了验证这种差分格式的收敛阶为 $2$ 。即 $\epsilon=O(h^2)$ 。理论上 $h$ 减小一半（ $m$ 增大一倍），误差 $\epsilon$ 变为原来的 $1/4$</p>
 <p>构造下表即可：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -532,6 +535,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>注意到最后一行为基本接近 $4$ 可知，收敛阶可能为 $O(h^2)$ 。</p>
 <h4 id="2-图像绘制"><a href="#2-图像绘制" class="headerlink" title="2. 图像绘制"></a>2. 图像绘制</h4><p>其中取 $160$ 个点的时候，计算量已经非常大了，程序运行时间也更长。<br>更精确的运行结果数据为 ${1.1016296097349845, 3.34132483218602, 6.263336593206693, 7.25607409539749}$</p>
 <p>$80$ 个点的时候结果已经非常接近了，下图为数值解绘制的图像：</p>
@@ -541,11 +545,11 @@
 <h3 id="四、源代码"><a href="#四、源代码" class="headerlink" title="四、源代码"></a>四、源代码</h3><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">(*function name: sol*)</span></span><br><span class="line"><span class="comment">(*use: solve special linear equation: a.x=b*)</span></span><br><span class="line"><span class="comment">(*input: a,b where a.x=b*)</span></span><br><span class="line"><span class="comment">(*output: solution *)</span></span><br><span class="line"><span class="comment">(*time:2018.9.12 by zzw*)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">(*追赶法解决对角矩阵问题*)</span></span><br><span class="line"><span class="keyword">Clear</span>[a, b];</span><br><span class="line"><span class="comment">(*test data*)</span></span><br><span class="line">a = &#123;&#123;-1, -1, -1&#125;, &#123;2, 2, 2, 2&#125;, &#123;-1, -1, -1&#125;&#125;; b = &#123;1, 0, 0, 1&#125;;</span><br><span class="line"><span class="comment">(*a=&#123;&#123;2,2&#125;,&#123;3,4,5&#125;,&#123;2,1&#125;&#125;;b=&#123;-1,-7,9&#125;;*)</span></span><br><span class="line"><span class="keyword">LinearSolve</span>[&#123;&#123;2, -1, 0, 0&#125;, &#123;-1, 2, -1, 0&#125;, &#123;0, -1, 2, -1&#125;, &#123;0, 0, -1,</span><br><span class="line">    2&#125;&#125;, b]</span><br><span class="line"></span><br><span class="line">sol[a0_, b0_] := <span class="keyword">Block</span>[&#123;a = a0, b = b0, n&#125;,</span><br><span class="line">   n = <span class="keyword">Length</span> /@ a // <span class="keyword">Max</span>;</span><br><span class="line">   <span class="comment">(*追过程*)</span></span><br><span class="line">   &#123;a[[1, #]] = a[[1, #]]/a[[2, #]], </span><br><span class="line">      a[[2, # + 1]] = a[[2, # + 1]] - a[[1, #]] a[[3, #]]&#125; &amp; /@ </span><br><span class="line">    <span class="keyword">Range</span>[n - <span class="number">1</span>];</span><br><span class="line">   <span class="comment">(*赶过程*)</span></span><br><span class="line">   &#123;b[[# + 1]] = b[[# + 1]] - a[[1, #]] b[[#]]&#125; &amp; /@ <span class="keyword">Range</span>[n - <span class="number">1</span>];</span><br><span class="line">   b[[n]] = b[[n]]/a[[<span class="number">2</span>, n]];</span><br><span class="line">   &#123;b[[#]] = (b[[#]] - a[[3, #]] b[[# + 1]])/a[[2, #]]&#125; &amp; /@ </span><br><span class="line">    <span class="keyword">Reverse</span>[<span class="keyword">Range</span>[n - <span class="number">1</span>]];</span><br><span class="line">   b];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">(*function name: main*)</span></span><br><span class="line"><span class="comment">(*use: calculate differial equation -u''+q(x)u=f(x)*)</span></span><br><span class="line"><span class="comment">(*input m, q, f, alpha, beta*)</span></span><br><span class="line"><span class="comment">(*output u(x_i)*)</span></span><br><span class="line"><span class="comment">(*time 2018.9.12 by zzw*)</span></span><br><span class="line">main[m0_, q0_, f0_, \[Alpha]<span class="number">0</span>_, \[<span class="keyword">Beta</span>]<span class="number">0</span>_] := </span><br><span class="line"> <span class="keyword">Block</span>[&#123;m = m0, q = q0, </span><br><span class="line">   f = f0, \[Alpha] = \[Alpha]0, \[Beta] = \[Beta]0&#125;,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">(*构造矩阵 a*)</span></span><br><span class="line">  const = <span class="keyword">ConstantArray</span>[<span class="number">-1</span>, m - <span class="number">2</span>];</span><br><span class="line">  h = \[<span class="keyword">Pi</span>]/m // <span class="keyword">N</span>;</span><br><span class="line">  xi = h <span class="keyword">Range</span>[m - <span class="number">1</span>];</span><br><span class="line">  a = &#123;const, 2 + h^2 q /@ xi, const&#125;;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">(*构造向量 b*)</span></span><br><span class="line">  b = h^<span class="number">2</span> f /@ xi;</span><br><span class="line">  b[[<span class="number">1</span>]] = b[[<span class="number">1</span>]] + \[Alpha]; b[[<span class="number">-1</span>]] = b[[<span class="number">-1</span>]] + \[<span class="keyword">Beta</span>];</span><br><span class="line">  </span><br><span class="line">  <span class="comment">(*调用 sol function 解方程*)</span></span><br><span class="line">  sol[a, b]]</span><br><span class="line"></span><br><span class="line">m = <span class="number">10</span>;</span><br><span class="line">q[x_] = <span class="number">1</span>;</span><br><span class="line">f[x_] := <span class="keyword">E</span>^x (<span class="keyword">Sin</span>[x] - <span class="number">2</span> <span class="keyword">Cos</span>[x]);</span><br><span class="line">\[Alpha] = <span class="number">0</span>; \[<span class="keyword">Beta</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">ans = main[m, q, f, \[Alpha], \[<span class="keyword">Beta</span>]]</span><br><span class="line">ans[[m/<span class="number">5</span> ;; <span class="number">-1</span> ;; m/<span class="number">5</span>]]</span><br></pre></td></tr></table></figure>
 <h3 id="五、扩展例子"><a href="#五、扩展例子" class="headerlink" title="五、扩展例子"></a>五、扩展例子</h3><p>用上述的结果再来计算一个例子，课本作业题，习题1的第三小题。</p>
 <p>利用差分格式计算如下两点边值问题：</p>
-<p>$$\begin{align}&amp;-u’’(x)+(x-\frac{1}{2})^2u(x)=(x^2-x+\frac{5}{4})\sin x \quad 0&lt;x&lt;\frac{\pi}{2}\\ &amp;u(0)=0,\quad u(\frac{\pi}{2})=1\end{align}$$</p>
-<p>已知其精确解为 $u(x)=\sin x$</p>
+<script type="math/tex; mode=display">\begin{align}&-u''(x)+(x-\frac{1}{2})^2u(x)=(x^2-x+\frac{5}{4})\sin x \quad 0<x<\frac{\pi}{2}\\\\ &u(0)=0,\quad u(\frac{\pi}{2})=1\end{align}</script><p>已知其精确解为 $u(x)=\sin x$</p>
 <hr>
 <p>解答：</p>
 <p>利用上述程序代码，稍作修改得到如下部分节点处的数值解：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -612,6 +616,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 
       
     </div>
@@ -634,6 +639,8 @@
           
             <a href="/tags/math/" rel="tag"># math</a>
           
+            <a href="/tags/PDE/" rel="tag"># PDE</a>
+          
         </div>
       
 
@@ -645,8 +652,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/10/PDE/" rel="next" title="PDE">
-                <i class="fa fa-chevron-left"></i> PDE
+              <a href="/2018/09/10/PDE/" rel="next" title="偏微分方程习题">
+                <i class="fa fa-chevron-left"></i> 偏微分方程习题
               </a>
             
           </div>
@@ -727,7 +734,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -769,7 +776,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
