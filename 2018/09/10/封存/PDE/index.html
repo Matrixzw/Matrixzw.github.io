@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Problem 1设 $\Omega_{h}=\{x_i\mid 0\le i\le m\}$ ，其中 $x_i=a+ih,h=(b-a)/m$ 。又设 $u=\{u_i\mid 0\le i\le m\}$ 为 $\Omega_h$ 上的网格函数，且 $u_0=0$ ，证明:">
+<meta name="keywords" content="math,PDE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="偏微分方程习题">
+<meta property="og:url" content="http://yoursite.com/2018/09/10/封存/PDE/index.html">
+<meta property="og:site_name" content="RESPECT">
+<meta property="og:description" content="Problem 1设 $\Omega_{h}=\{x_i\mid 0\le i\le m\}$ ，其中 $x_i=a+ih,h=(b-a)/m$ 。又设 $u=\{u_i\mid 0\le i\le m\}$ 为 $\Omega_h$ 上的网格函数，且 $u_0=0$ ，证明:">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-16T01:34:46.220Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="偏微分方程习题">
+<meta name="twitter:description" content="Problem 1设 $\Omega_{h}=\{x_i\mid 0\le i\le m\}$ ，其中 $x_i=a+ih,h=(b-a)/m$ 。又设 $u=\{u_i\mid 0\le i\le m\}$ 为 $\Omega_h$ 上的网格函数，且 $u_0=0$ ，证明:">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/10/封存/PDE/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>偏微分方程习题 | RESPECT</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">RESPECT</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">To All Master</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/封存/PDE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RESPECT">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">偏微分方程习题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-10 20:29:14" itemprop="dateCreated datePublished" datetime="2018-09-10T20:29:14+08:00">2018-09-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-16 09:34:46" itemprop="dateModified" datetime="2018-11-16T09:34:46+08:00">2018-11-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem 1"></a>Problem 1</h3><p>设 $\Omega_{h}=\{x_i\mid 0\le i\le m\}$ ，其中 $x_i=a+ih,h=(b-a)/m$ 。又设 $u=\{u_i\mid 0\le i\le m\}$ 为 $\Omega_h$ 上的网格函数，且 $u_0=0$ ，证明: <a id="more"></a></p>
+<script type="math/tex; mode=display">\Vert u\Vert_{\infty}\le \sqrt{b-a}|u|_1,\quad \Vert u\Vert\le \frac{b-a}{\sqrt{2}}|u|_1</script><p><strong>ans.</strong></p>
+<ol>
+<li><script type="math/tex; mode=display">\forall i ,u_i^2=\left(\sum_{l=0}^m\delta_x u_{i+1/2}\right)^2h^2\le m\sum_{l=0}^{m-1}(\delta_xu_{i+1/2})^2h^2\le(b-a)|u|_1^2</script></li>
+</ol>
+<p>从而 $\Vert u\Vert_{\infty}^2=\max u_{i}^2\le(b-a)|u|_1^2$</p>
+<p>即有 $\Vert u\Vert_{\infty}\le\sqrt{b-a}|u|_1$</p>
+<ol>
+<li>由于</li>
+</ol>
+<script type="math/tex; mode=display">|u_j|^2=\left(\sum_{k=1}^j\delta_xu_{k-1/2}\right)^2h^2\le j\sum_{k=1}^j(\delta u_{k-1/2})^2h^2</script><p>同理有：</p>
+<script type="math/tex; mode=display">|u_m|^2\le m\sum_{k=1}^m(\delta_xu_{k-1/2})^2h^2</script><p>从而：</p>
+<script type="math/tex; mode=display">\begin{align}\Vert u\Vert^2&=h\left(\sum_{j=1}^m|u_j|^2-\frac{1}{2}u_m^2\right) \\
+&=h \left(\sum_{j=1}^mj\sum_{k=1}^j(\delta_x u_{k-1/2})^2h^2-\frac{m}{2}\sum_{k=1}^m(\delta_xu_{k-1/2})^2h^2\right)\\
+&=h\left(\sum_{k=1}^m \sum_{j=k}^m j(\delta_x u_{k-1/2})^2h^2-\frac{m}{2}\sum_{k=1}^m(\delta_xu_{k-1/2})^2h^2\right)\\
+&=\frac{h^3}{2}\sum_{k=1}^m(m^2+k-k^2)(\delta_xu_{k-1/2})^2\\
+&\le \frac{n^2h^3}{2}\sum_{k=1}^m(\delta_xu_{k-1/2})^2=\frac{(b-a)^2}{2}|u|_1^2\end{align}</script><p>即：</p>
+<script type="math/tex; mode=display">\Vert u\Vert\le \frac{b-a}{\sqrt{2}}|u|_1^2</script><h3 id="Problem-2"><a href="#Problem-2" class="headerlink" title="Problem 2"></a>Problem 2</h3><p>设 $u=\{u_i\mid 0\le i\le m\}\in V_h$ 。证明 :</p>
+<ul>
+<li><script type="math/tex; mode=display">\Vert u\Vert_{\infty}^2\le 2\max \{u_0^2,u_m^2\}+\frac{b-a}{2}|u|_1^2</script></li>
+<li>对任意的 $\epsilon&gt;0$ 有</li>
+</ul>
+<script type="math/tex; mode=display">\Vert u\Vert_{\infty}^2\le \epsilon |u|_1^2+\left(\frac{1}{\epsilon}+\frac{1}{b-a}\right)\Vert u \Vert^2</script><ol>
+<li><script type="math/tex; mode=display">\forall,i v_i=h\sum_{j=1}^i\delta_xv_{j-1/2}+v_0=-h\sum_{j=i+1}^m\delta_xv_{j-1/2}+v_m</script></li>
+</ol>
+<p>利用 $(a+b)^2\le2(a^2+b^2)$ ，得：</p>
+<script type="math/tex; mode=display">v_i^2\le 2h^2i\sum_{j=1}^i(\delta_xv_{j-1/2})^2+2v_0^2</script><script type="math/tex; mode=display">v_i^2\le 2h^2(m-i)\sum_{j=i+1}^m(\delta_xv_{j-1/2})^2+2v_m^2</script><p>第一个式子乘以 $m-i$ 加上第二个式子乘以 $i$ ，得到：</p>
+<script type="math/tex; mode=display">\begin{align}mv_i^2 &\le 2h^2i(m-i)\sum_{j=1}^m(\delta_xv_{j-1/2})^2+2((m-i)v_0^2+iv_m^2)\\
+&\le \frac{m^2h^2}{2}\sum_{j=1}^m(\delta_xv_{j-1/2})^2+2((m-i)v_0^2+iv_m^2)\end{align}</script><p>即有</p>
+<script type="math/tex; mode=display">v_i^2\le \frac{b-a}{2}|v|_1^2+2\max \{v_0,v_m\}</script><p>取 $i$ 的最大值就有：</p>
+<script type="math/tex; mode=display">\Vert v\Vert_{\infty}^2\le \frac{b-a}{2}|v|_1^2+2\max\{v_0,v_m\}</script><ol>
+<li>设 $v_i$ 中当 $\max v_i=v_k,\min v_i =v_l$ 不妨就设 $k&gt;l$<br>则 </li>
+</ol>
+<script type="math/tex; mode=display">\begin{align}v_k^2&=\left(\sum_{i=l}^{k-1}\delta_xv_{i+1/2}^2\right)h+v_l^2\\
+&=2h\sum_{i=l}^{k-1}v_{i+1/2}\delta_xv_{i+1/2}+v_l^2\\
+&\le h\sum_{i=0}^{m-1}\frac{1}{\epsilon}v_{i+1/2}^2+\epsilon(\delta_x v_{i+1/2})^2+v_l^2\\
+&\le h\sum_{i=0}^{m-1}\frac{1}{\epsilon}v_{i+1/2}^2+\epsilon(\delta_xv_{i+1/2})^2+\frac{1}{b-a}\Vert v\Vert^2\\
+&=(\frac{1}{\epsilon}+\frac{1}{b-a})\Vert v\Vert^2+\epsilon|v|_1^2\end{align}</script><p>其中利用 </p>
+<script type="math/tex; mode=display">\Vert v\Vert^2=h(\frac{1}{2}v_0^2+\frac{1}{2}v_m^2+\sum_{i=1}^mv_i^2)\ge mhv_l^2=(b-a)v_l^2</script><h3 id="Problem-3"><a href="#Problem-3" class="headerlink" title="Problem 3"></a>Problem 3</h3><p>设 $\Omega_h=\{(x_i,y_j)\mid 0\le i\le m,0\le j\le n\},v=\{v_{ij}\}$ 为 $\Omega_h$ 上的网格函数，且有：</p>
+<script type="math/tex; mode=display">(L_hv)_{ij}\equiv -(\delta_x^2+\delta_y^2)\ge 0,\quad (i,j)\in \omega</script><p>证明： $\min_{(i,j)\in\omega}v_{ij}\ge \min_{(i,j)\in \gamma}v_{ij}$</p>
+<p><strong>ans.</strong></p>
+<p>令 $u_{ij}=-v_{ij}$ 则有  $(L_hu)_{ij}\le 0, \forall (i,j)\in \omega$</p>
+<p>利用极值原理有:</p>
+<p>$\max_{(i,j)\in\omega} u_{ij}\le \max_{(i,j)\in \gamma}u_{ij}$  即：$\min_{(i,j)\in\omega} v_{ij}\ge \min_{(i,j)\in \gamma}v_{ij}$</p>
+<h3 id="Problem-4"><a href="#Problem-4" class="headerlink" title="Problem 4"></a>Problem 4</h3><p>考虑定解问题：</p>
+<script type="math/tex; mode=display">\begin{cases}-\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}\right)=f(x,y),\quad (x,y)\in \Omega\\
+u=\varphi(x,y),\quad (x,y)\in\Gamma\end{cases}</script><p>其中 $\Omega=(0,1)\times(0,1)$ ，$\Gamma$ 为 $\Omega$ 的边界，作正方形网格剖分 $h_1=h_2=1/m$ 。分析下列差分格式的截断误差：</p>
+<script type="math/tex; mode=display">\begin{cases}-\frac{1}{2h^2}(u_{i-1,j}+u_{i+1,j-1}+u_{i-1,j+1}+u_{i+1,j+1}-4u_{i,j})=f(x_i,y_j),\quad (i,j)\in \omega\\
+u_{i,j}\in \varphi(x_i,y_j),\quad (i,j)\in \gamma \end{cases}</script><p>证明极值原理成立，并且差分格式是二阶收敛的。</p>
+<p><strong>ans.</strong></p>
+<h4 id="1-截断误差"><a href="#1-截断误差" class="headerlink" title="(1) 截断误差"></a>(1) 截断误差</h4><script type="math/tex; mode=display">\begin{align}
+&u_{i-1,j-1}=u_{ij}-\frac{\partial^2u_{ij}}{\partial^2x}h+\frac{1}{2}\left(\frac{\partial^2u_{ij}}{\partial x^2}h^2+2\frac{\partial^2u_{ij}}{\partial x\partial y}h^2+\frac{\partial^2u_{ij}}{\partial y^2 }h^2 \right)+\frac{1}{6}\left(-h\frac{\partial}{\partial x}-h\frac{\partial}{\partial y}\right)^3u_{ij}+O(h^4) \label{eq1}\\
+&u_{i+1,j-1}=u_{ij}+\frac{\partial^2u_{ij}}{\partial^2x}h+\frac{1}{2}\left(\frac{\partial^2u_{ij}}{\partial x^2}h^2-2\frac{\partial^2u_{ij}}{\partial x\partial y}h^2+\frac{\partial^2u_{ij}}{\partial y^2 }h^2 \right)+\frac{1}{6}\left(h\frac{\partial}{\partial x}-h\frac{\partial}{\partial y}\right)^3u_{ij}+O(h^4) \\
+&u_{i-1,j+1}=u_{ij}-\frac{\partial^2u_{ij}}{\partial^2x}h+\frac{1}{2}\left(\frac{\partial^2u_{ij}}{\partial x^2}h^2-2\frac{\partial^2u_{ij}}{\partial x\partial y}h^2+\frac{\partial^2u_{ij}}{\partial y^2 }h^2 \right)+\frac{1}{6}\left(-h\frac{\partial}{\partial x}+h\frac{\partial}{\partial y}\right)^3u_{ij}+O(h^4)\\
+&u_{i+1,j+1}=u_{ij}+\frac{\partial^2u_{ij}}{\partial^2x}h+\frac{1}{2}\left(\frac{\partial^2u_{ij}}{\partial x^2}h^2+2\frac{\partial^2u_{ij}}{\partial x\partial y}h^2+\frac{\partial^2u_{ij}}{\partial y^2 }h^2 \right)+\frac{1}{6}\left(h\frac{\partial}{\partial x}+h\frac{\partial}{\partial y}\right)^3u_{ij}+O(h^4) \label{eq2}
+\end{align}​</script><p>设 $(L_hu)_{ij}=-\frac{1}{2h^2}(u_{i-1,j-1}+u_{i+1,j-1}+u_{i-1,j+1}+u_{i+1,j+1}-4u_{ij})$</p>
+<p>设偏微分方程离散化后化为精确的差分格式为：$(L_hu)_{ij}=f(x_i,y_j)+R_{ij}$ 其中 $R_{ij}$ 为方程的截断误差，带入上述式子得到：</p>
+<script type="math/tex; mode=display">R_{ij}=O(h^2)</script><p>可以将 $\eqref{eq1}-\eqref{eq2}$ 展开到 $O(h^6)$ 项，得到：</p>
+<script type="math/tex; mode=display">R_{ij}=-\frac{h^2}{12}\left(\frac{\partial^4u_{ij}}{\partial x^4}+6\frac{\partial^4u_{ij}}{\partial x^2\partial y^2}+\frac{\partial^4u_{ij}}{\partial y^4}\right)+O(h^4)</script><h4 id="2-极值原理"><a href="#2-极值原理" class="headerlink" title="(2) 极值原理"></a>(2) 极值原理</h4><p>反证，设 $M=\max_{(i,j)\in \omega}u_{ij}=u_{i_0,j_0}$ 且不妨设 $u_{i-1,j-1},u_{i-1,j+1},u_{i+1,j-1},u_{i+1,j+1}$ 中至少存在一项严格小于 $M$ 这总是能够做到。</p>
+<p>则 $(L_hu)_{ij} \gt -\frac{1}{2h^2}(4M-4M)=0$</p>
+<p>这与极值原理的假设 $f(x,y)\le 0$ 矛盾，即证。</p>
+<h4 id="3-二阶收敛"><a href="#3-二阶收敛" class="headerlink" title="(3) 二阶收敛"></a>(3) 二阶收敛</h4><p>令 $w_{ij}=\frac{\Vert f\Vert_{\infty}}{4}(\frac{1}{2}-(x_i-1/2)^2-(y_j-1/2)^2 )\ge 0$ （此处注意到函数定义在$[0,1]\times[0,1]$ 上）</p>
+<p>且有 $(L_h w)_{ij}=\Vert f\Vert_{\infty}\ge 0$ 这里用到了截断误差的表达式，相当于原偏微分方程加上截断误差项。</p>
+<p>从而利用极值原理有： $(L_h(u-w))_{ij}=f(x_i,y_j)-\Vert f\Vert_\infty\le 0$ 则</p>
+<script type="math/tex; mode=display">\max_{(i,j)\in\omega}(u_{ij}-w_{ij})\le \max_{(i,j)\in \gamma}(u_{ij}-w_{ij})\le \max_{(i,j)\in \gamma}|u_{ij}|=\max_{(i,j)\in \gamma}|\varphi_{ij}|</script><p>从而：</p>
+<script type="math/tex; mode=display">\max_{(i,j)\in\omega}u_{ij}=\max_{(i,j)\in \omega}(u_{ij}-w_{ij})+\max_{(i,j)\in\omega}w_{ij}\le \max_{(i,j)\in \gamma}|\varphi_{ij}|+\frac{1}{8}\Vert f\Vert_{\infty}</script><p>同样的我们也可以证明：（以上证明添加负号，过程不变）</p>
+<script type="math/tex; mode=display">\max_{(i,j)\in\omega}-u_{ij}\le \max_{(i,j)\in \gamma}|\varphi_{ij}|+\frac{1}{8}\Vert f\Vert_{\infty}</script><p>由于原方程对于的误差方程为：</p>
+<script type="math/tex; mode=display">\begin{cases}
+&L_h\delta u_{ij}=-\frac{h^2}{12}\left(-\frac{h^2}{12}\left(\frac{\partial^4u_{ij}}{\partial x^4}+6\frac{\partial^4u_{ij}}{\partial x^2\partial y^2}+\frac{\partial^4u_{ij}}{\partial y^4}\right)+O(h^4)\right)\\
+&\varphi_{ij}=0
+\end{cases}</script><p>则有 $\max_{(i,j)\in \omega}|\delta u_{ij}|\le \frac{M}{96}h^2$ 即证</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/math/" rel="tag"># math</a>
+          
+            <a href="/tags/PDE/" rel="tag"># PDE</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/03/封存/INT/" rel="next" title="特殊积分技巧">
+                <i class="fa fa-chevron-left"></i> 特殊积分技巧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/12/封存/PDE2/" rel="prev" title="PDE2">
+                PDE2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">zzw</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-1"><span class="nav-number">1.</span> <span class="nav-text">Problem 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-2"><span class="nav-number">2.</span> <span class="nav-text">Problem 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-3"><span class="nav-number">3.</span> <span class="nav-text">Problem 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-4"><span class="nav-number">4.</span> <span class="nav-text">Problem 4</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-截断误差"><span class="nav-number">4.1.</span> <span class="nav-text">(1) 截断误差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-极值原理"><span class="nav-number">4.2.</span> <span class="nav-text">(2) 极值原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-二阶收敛"><span class="nav-number">4.3.</span> <span class="nav-text">(3) 二阶收敛</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zzw</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.4.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

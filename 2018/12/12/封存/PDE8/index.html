@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="偏微分方程数值解——第九次上机作业姓名： 郑志伟  学号：06150120一、任务描述Dirichlet 初边值问题模型：  \begin{cases} &amp;\frac{\partial^2 u}{\partial t^2}-a^2\frac{\partial^2u}{\partial x^2}=f(x,t),&amp;0">
+<meta name="keywords" content="math,PDE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PDE8">
+<meta property="og:url" content="http://yoursite.com/2018/12/12/封存/PDE8/index.html">
+<meta property="og:site_name" content="RESPECT">
+<meta property="og:description" content="偏微分方程数值解——第九次上机作业姓名： 郑志伟  学号：06150120一、任务描述Dirichlet 初边值问题模型：  \begin{cases} &amp;\frac{\partial^2 u}{\partial t^2}-a^2\frac{\partial^2u}{\partial x^2}=f(x,t),&amp;0">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2018/12/12/封存/PDE8/_v_images/1212-1.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/12/封存/PDE8/_v_images/1212-2.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/12/封存/PDE8/_v_images/1212-3.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/12/封存/PDE8/_v_images/1212-4.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/12/封存/PDE8/_v_images/1212-5.png">
+<meta property="og:updated_time" content="2018-12-12T07:57:34.737Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PDE8">
+<meta name="twitter:description" content="偏微分方程数值解——第九次上机作业姓名： 郑志伟  学号：06150120一、任务描述Dirichlet 初边值问题模型：  \begin{cases} &amp;\frac{\partial^2 u}{\partial t^2}-a^2\frac{\partial^2u}{\partial x^2}=f(x,t),&amp;0">
+<meta name="twitter:image" content="http://yoursite.com/2018/12/12/封存/PDE8/_v_images/1212-1.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/12/封存/PDE8/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>PDE8 | RESPECT</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">RESPECT</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">To All Master</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/12/封存/PDE8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RESPECT">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">PDE8
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-12 11:10:00 / 修改时间：15:57:34" itemprop="dateCreated datePublished" datetime="2018-12-12T11:10:00+08:00">2018-12-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="偏微分方程数值解——第九次上机作业"><a href="#偏微分方程数值解——第九次上机作业" class="headerlink" title="偏微分方程数值解——第九次上机作业"></a><center>偏微分方程数值解——第九次上机作业</center></h1><h2 id="姓名：-郑志伟-学号：06150120"><a href="#姓名：-郑志伟-学号：06150120" class="headerlink" title="姓名： 郑志伟  学号：06150120"></a><center>姓名： 郑志伟  学号：06150120</center></h2><h3 id="一、任务描述"><a href="#一、任务描述" class="headerlink" title="一、任务描述"></a>一、任务描述</h3><p>Dirichlet 初边值问题模型：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+&\frac{\partial^2 u}{\partial t^2}-a^2\frac{\partial^2u}{\partial x^2}=f(x,t),&0<x<1,0<t\le T\\
+&u(x,0)=\phi(x),\frac{\partial u}{\partial t}(x,0)=\psi(x) &0< x\le 1\\
+&u(0,t)=\alpha(t),u(1,t)=\beta (t),&0<t\le T\\
+\end{cases}</script><a id="more"></a>
+<p>其中$a$为正常数，$f(x,t),\phi(x),\psi(x),\alpha(x),\beta(x)$为已知函数，且满足相容性条件。</p>
+<p>算例：应用格式计算下面定解问题：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\frac{\partial^2 u}{\partial t^2}-\frac{\partial^2u}{\partial x^2}=0 &0<x<1,0<t\le 1\\
+u(x,0)=e^x,\frac{\partial u}{\partial t}(x,0)=e^x &0\le x\le 1\\
+u(0,t)=e^t,u(1,t)=e^{1+t} &0<t\le 1
+\end{cases}</script><p>该方程的精确解为：</p>
+<script type="math/tex; mode=display">
+u(x,t)=e^{x+t}</script><p>作业要求：</p>
+<ol>
+<li><p>显格式一 要求：</p>
+<p>1.1 第一层用书本上方法计算<br>1.2 验证格式的精度<br>1.3 验证网格比条件</p>
+</li>
+<li><p>显格式二 要求：<br>2.1 第一层用$u_i^k=\phi_i+\tau\psi_i ,i=1,..m-1$计算</p>
+<p>2.2 验证格式精度</p>
+</li>
+</ol>
+<h3 id="二、方法表述"><a href="#二、方法表述" class="headerlink" title="二、方法表述"></a>二、方法表述</h3><ul>
+<li>仅表述显格式要求一，显格式要求二与一基本类似，只给出结果不做表述。</li>
+<li>误差分析略去</li>
+</ul>
+<p>此为线性双曲型方程，将方程离散化为如下方程组（显示差分格式）</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\delta_t^2u_i^k-a^2\delta_x^2u_i^k=f(x_i,t_k), & 1\le i\le m-1,1\le k\le n-1\\
+u_i^0=\phi(x_i),u_i^1=\phi(x_i)+\tau\phi(x_i)+\frac{\tau^2}{2}(a^2\phi''(x_i)+f(x_i,t_0)) &1\le i\le m-1\\
+u_0^k=\alpha(t_k),u_m^k=\beta(t_k) &0\le k\le n
+\end{cases}</script><p>其主要格式截断误差$|R_{ij} | \le c( \tau^2+h^2)$</p>
+<p>注意此时计算$u_i^1$时仍然有截断误差$|R_{ij}|\le c_1 \tau^3$</p>
+<p>展开写成矩阵的形式为：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\begin{pmatrix}
+u_1^{k+1}\\
+u_2^{k+1}\\
+\vdots\\
+u_{m-2}^{k+1}\\
+u_{m-1}^{k+1}\\
+\end{pmatrix}
+&=\begin{pmatrix}
+2(1-s^2) & s^2 & & &\\
+s^2 & 2(1-s^2) & s^2 & &\\
+ & \ddots & \ddots & \ddots & &\\
+ & & s^2 & 2(1-s^2) &s^2 \\
+ & & & s^2 & 2(1-s^2) &\\
+\end{pmatrix}
+\begin{pmatrix}
+u_1^k\\
+u_2^k\\
+\vdots\\
+u_{m-2}^k\\
+u_{m-1}^k\\
+\end{pmatrix}\\
+&-\begin{pmatrix}
+u_1^{k-1}\\
+u_2^{k -1}\\
+\vdots\\
+u_{m-2}^{k-1}\\
+u_{m-1}^{k-1}\\
+\end{pmatrix}
++\begin{pmatrix}
+\tau^2f(x_1,t_k)+s^2u_0^k\\
+\tau^2f(x_2,t_k)\\
+\vdots\\
+\tau^2f(x_{m-2},t_k)\\
+\tau^2f(x_{m-1},t_k)+s^2u_m^k\\
+\end{pmatrix},1\le k\le n-1
+\end{align}</script><p>其中 $s=a\tau/h$ 称为步长比</p>
+<p>通过解这个线性方程组，可以由 k-1，k 时间层上的值解出 k+1层上面的数值。</p>
+<h3 id="三、程序运行结果（显格式一）"><a href="#三、程序运行结果（显格式一）" class="headerlink" title="三、程序运行结果（显格式一）"></a>三、程序运行结果（显格式一）</h3><ul>
+<li><p>算例为一维的情况，只需要构造相应的系数矩阵，然后利用解线性方程组的相关知识进行求解即可。</p>
+</li>
+<li><p>第 k=0 时间层上面的数据即为边界数据，已知。</p>
+</li>
+<li><p>第 k=1 时间层上面的数据通过另外计算得到，在差分格式中已经给出对 k=1 时间层上面的计算</p>
+</li>
+</ul>
+<h4 id="3-1-算例部分结点处的数值解，精确解和误差的绝对值-h-1-100-tau-1-200"><a href="#3-1-算例部分结点处的数值解，精确解和误差的绝对值-h-1-100-tau-1-200" class="headerlink" title="3.1 算例部分结点处的数值解，精确解和误差的绝对值 $(h=1/100,\tau=1/200)$"></a>3.1 算例部分结点处的数值解，精确解和误差的绝对值 $(h=1/100,\tau=1/200)$</h4><script type="math/tex; mode=display">
+\begin{array}{c|c|cc|c}
+\hline
+k & t & \text{numeric value} &\text{real value} & \text{error} \\
+\hline
+ 20 & 0.1 & 1.82212 & 1.82212 & \text{6.347874255130392e-7} \\
+ 40 & 0.2 & 2.01375 & 2.01375 & \text{1.1618557409498464e-6} \\
+ 60 & 0.3 & 2.22554 & 2.22554 & \text{1.574482950683631e-6} \\
+ 80 & 0.4 & 2.4596 & 2.4596 & \text{1.8635398646438261e-6} \\
+ 100 & 0.5 & 2.71828 & 2.71828 & \text{1.9508043953564425e-6} \\
+ 120 & 0.6 & 3.00417 & 3.00417 & \text{5.895137782374604e-7} \\
+ 140 & 0.7 & 3.32012 & 3.32012 & \text{7.712292160455547e-7} \\
+ 160 & 0.8 & 3.6693 & 3.6693 & \text{2.0429680391842453e-6} \\
+ 180 & 0.9 & 4.0552 & 4.0552 & \text{3.2648427534809343e-6} \\
+ 200 & 1. & 4.48169 & 4.48169 & \text{4.42612692008737e-6} \\
+ \hline
+\end{array}</script><ul>
+<li>验证了当 $s=1/2$ 时，收敛。</li>
+</ul>
+<h4 id="3-2-算例部分结点处的数值解、精确解和误差的绝对值-h-1-100-tau-1-100"><a href="#3-2-算例部分结点处的数值解、精确解和误差的绝对值-h-1-100-tau-1-100" class="headerlink" title="3.2 算例部分结点处的数值解、精确解和误差的绝对值 $(h=1/100,\tau=1/100)$"></a>3.2 算例部分结点处的数值解、精确解和误差的绝对值 $(h=1/100,\tau=1/100)$</h4><script type="math/tex; mode=display">
+\begin{array}{ccccc}
+\hline
+ k & t & \text{numeric value} & \text{real value} & \text{error} \\
+ \hline
+ 20 & 0.1 & 1.82212 & 1.82212 & \text{2.752418743368068e-6} \\
+ 40 & 0.2 & 2.01375 & 2.01375 & \text{5.532384617090713e-6} \\
+ 60 & 0.3 & 2.22553 & 2.22554 & \text{8.367720457869154e-6} \\
+ 80 & 0.4 & 2.45959 & 2.4596 & 0.0000112868 \\
+ 100 & 0.5 & 2.71827 & 2.71828 & 0.0000143188 \\
+ 120 & 0.6 & 3.00415 & 3.00417 & 0.0000112868 \\
+ 140 & 0.7 & 3.32011 & 3.32012 & \text{8.36772045520462e-6} \\
+ 160 & 0.8 & 3.66929 & 3.6693 & \text{5.5323846157584455e-6} \\
+ 180 & 0.9 & 4.0552 & 4.0552 & \text{2.7524187435901126e-6} \\
+ 200 & 1. & 4.48169 & 4.48169 & \text{3.552713678800501e-15} \\
+ \hline
+\end{array}</script><ul>
+<li>验证了当 $s=1$ 时收敛。</li>
+</ul>
+<h4 id="3-3-算例部分结点处的数值解、精确解和误差的绝对值-h-1-100-tau-1-50"><a href="#3-3-算例部分结点处的数值解、精确解和误差的绝对值-h-1-100-tau-1-50" class="headerlink" title="3.3 算例部分结点处的数值解、精确解和误差的绝对值$(h=1/100,\tau=1/50)$"></a>3.3 算例部分结点处的数值解、精确解和误差的绝对值$(h=1/100,\tau=1/50)$</h4><script type="math/tex; mode=display">
+\begin{array}{ccccc}
+\hline
+ k & t & \text{numeric value} & \text{real value} & \text{error} \\
+ \hline
+ 20 & 0.1 & 1.82211 & 1.82212 & 0.0000112223 \\
+ 40 & 0.2 & 2.01373 & 2.01375 & 0.0000202619 \\
+ 60 & 0.3 & 0.893864 & 2.22554 & 1.33168 \\
+ 80 & 0.4 & 635073. & 2.4596 & 635071. \\
+ 100 & 0.5 & -3.03262\times 10^{11} & 2.71828 & 3.03262\times 10^{11} \\
+ 120 & 0.6 & 1.45189\times 10^{17} & 3.00417 & 1.45189\times 10^{17} \\
+ 140 & 0.7 & -6.96718\times 10^{22} & 3.32012 & 6.96718\times 10^{22} \\
+ 160 & 0.8 & 3.35102\times 10^{28} & 3.6693 & 3.35102\times 10^{28} \\
+ 180 & 0.9 & -1.61587\times 10^{34} & 4.0552 & 1.61587\times 10^{34} \\
+ 200 & 1. & 7.81487\times 10^{39} & 4.48169 & 7.81487\times 10^{39} \\
+ \hline
+\end{array}</script><ul>
+<li>验证了当 $s=2$ 时发散。</li>
+</ul>
+<h4 id="3-4-算例中取不同步长时数值解的最大误差-s-1-2"><a href="#3-4-算例中取不同步长时数值解的最大误差-s-1-2" class="headerlink" title="3.4 算例中取不同步长时数值解的最大误差 $(s=1/2)$"></a>3.4 算例中取不同步长时数值解的最大误差 $(s=1/2)$</h4><script type="math/tex; mode=display">
+\begin{array}{cccc}
+\hline
+ m & n & E_{\infty}(h,\tau) & E_{\infty}(2h,2\tau)/E_{\infty}(h,\tau) \\
+ \hline
+ 20 & 40 & 0.000436978 & * \\
+ 40 & 80 & 0.000110646 & 0.253208 \\
+ 80 & 160 & 0.0000277119 & 0.250455 \\
+ 160 & 320 & \text{6.926296262754761e-6} & 0.24994 \\
+ 320 & 640 & \text{1.7323719063710996e-6} & 0.250115 \\
+ 640 & 1280 & \text{4.3307545372073264e-7} & 0.24999 \\
+ 1280 & 2560 & \text{1.0826053031820493e-7} & 0.249981 \\
+ 2560 & 5120 & \text{2.7064628760342657e-8} & 0.249995 \\
+ \hline
+\end{array}</script><ul>
+<li>验证了格式精度为 $c(\tau^2+h^2)$</li>
+</ul>
+<h4 id="3-5-算例-t-1-时数值解曲线与精确解曲线-h-1-10-tau-1-20"><a href="#3-5-算例-t-1-时数值解曲线与精确解曲线-h-1-10-tau-1-20" class="headerlink" title="3.5 算例 t=1 时数值解曲线与精确解曲线$(h=1/10,\tau=1/20$"></a>3.5 算例 t=1 时数值解曲线与精确解曲线$(h=1/10,\tau=1/20$</h4><p><img src="_v_images/1212-1.png" alt="1121-1"><img src="_v_images/1212-2.png" alt="1121-1"></p>
+<h4 id="3-6-算例-t-1-时取不同步长数值解的误差曲线-s-1-2"><a href="#3-6-算例-t-1-时取不同步长数值解的误差曲线-s-1-2" class="headerlink" title="3.6 算例 t=1 时取不同步长数值解的误差曲线 $(s=1/2)$"></a>3.6 算例 t=1 时取不同步长数值解的误差曲线 $(s=1/2)$</h4><p><img src="_v_images/1212-3.png" alt=""></p>
+<h4 id="3-7-算例中取不同步长时的误差曲面"><a href="#3-7-算例中取不同步长时的误差曲面" class="headerlink" title="3.7 算例中取不同步长时的误差曲面"></a>3.7 算例中取不同步长时的误差曲面</h4><p><img src="_v_images/1212-4.png" alt=""></p>
+<h3 id="四、程序运行结果（显格式二）"><a href="#四、程序运行结果（显格式二）" class="headerlink" title="四、程序运行结果（显格式二）"></a>四、程序运行结果（显格式二）</h3><ul>
+<li>2.1 第一层用 $u_i^1=\phi_i+\tau\psi_i ,i=1,..m-1$ 计算</li>
+</ul>
+<h4 id="4-1-算例取不同步长的时候的最大误差-s-1-2"><a href="#4-1-算例取不同步长的时候的最大误差-s-1-2" class="headerlink" title="4.1 算例取不同步长的时候的最大误差(s=1/2)"></a>4.1 算例取不同步长的时候的最大误差(s=1/2)</h4><script type="math/tex; mode=display">
+\begin{array}{cccc}
+\hline
+ m & n & E_{\infty}(h,\tau) & E_{\infty}(2h,2\tau)/E_{\infty}(h,\tau) \\
+ \hline
+ 10 & 20 & 0.0197776 & * \\
+ 20 & 40 & 0.0102427 & 0.517892 \\
+ 40 & 80 & 0.00521641 & 0.509283 \\
+ 80 & 160 & 0.00263616 & 0.505359 \\
+ 160 & 320 & 0.00132694 & 0.50336 \\
+ 320 & 640 & 0.000666362 & 0.50218 \\
+ \hline
+\end{array}</script><ul>
+<li>可以猜测其误差为$c(\tau+h)$</li>
+<li>由此可以看出当$u_i^1$利用一阶误差计算的话，对于结果影响也会使得原先的二阶变成一阶。</li>
+<li>这里没有具体的误差分析。 </li>
+</ul>
+<h4 id="4-2-算例-t-1-时不同步长数值解的误差曲线-s-1-2"><a href="#4-2-算例-t-1-时不同步长数值解的误差曲线-s-1-2" class="headerlink" title="4.2 算例$t=1$时不同步长数值解的误差曲线 (s=1/2)"></a>4.2 算例$t=1$时不同步长数值解的误差曲线 (s=1/2)</h4><p><img src="_v_images/1212-5.png" alt=""></p>
+<h3 id="五、源代码"><a href="#五、源代码" class="headerlink" title="五、源代码"></a>五、源代码</h3><p>主要代码：</p>
+<h4 id="4-1-intialization-function-and-constant-notice-the-value-for-m-n-can-always-changed-："><a href="#4-1-intialization-function-and-constant-notice-the-value-for-m-n-can-always-changed-：" class="headerlink" title="4.1 intialization function and constant (notice the value for m,n can always changed)："></a>4.1 intialization function and constant (notice the value for m,n can always changed)：</h4><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f[x_, t_] := <span class="number">0</span>;</span><br><span class="line">T = <span class="number">1</span>;</span><br><span class="line">phi[x_] := <span class="keyword">E</span>^x; psi[x_] := <span class="keyword">E</span>^x;</span><br><span class="line">alpha[t_] := <span class="keyword">E</span>^t; beta[t_] := <span class="keyword">E</span>^(<span class="number">1</span> + t);</span><br><span class="line">m = <span class="number">10</span>; n = <span class="number">20</span>; </span><br><span class="line">a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">h = <span class="number">1</span>/m; tau = T/n; s = a tau/h; <span class="comment">(*a化为参数r后舍去*)</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-2-calculate-the-numeric-value-of-point-m-n-the-dimesion-of-data-1-euqal-n-times-m-1"><a href="#4-2-calculate-the-numeric-value-of-point-m-n-the-dimesion-of-data-1-euqal-n-times-m-1" class="headerlink" title="4.2 calculate the numeric value of point (m,n). the dimesion of data[1] euqal n times m-1"></a>4.2 calculate the numeric value of point (m,n). the dimesion of data[1] euqal n times m-1</h4><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">m = <span class="number">100</span>; n = <span class="number">50</span>; i = <span class="number">11</span> <span class="comment">(*改变i的值存储不同数据*)</span></span><br><span class="line"></span><br><span class="line">a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">h = <span class="number">1</span>/m; tau = T/n; s = a tau/h</span><br><span class="line"></span><br><span class="line"><span class="keyword">Clear</span>[A];</span><br><span class="line">A[<span class="number">1</span>] = <span class="keyword">SparseArray</span>[&#123;&#123;i_, i_&#125; -&gt; </span><br><span class="line">      <span class="number">2</span> (<span class="number">1</span> - s^<span class="number">2</span>), &#123;i_, j_&#125; /; <span class="keyword">Abs</span>[i - j] == <span class="number">1</span> -&gt; s^<span class="number">2</span>&#125;, &#123;m - 1, </span><br><span class="line">     m - 1&#125;] // <span class="keyword">N</span>;</span><br><span class="line">u[<span class="number">0</span>] = u[<span class="number">0</span>] = phi /@ (h <span class="keyword">Range</span>[m - <span class="number">1</span>]) // <span class="keyword">N</span>;</span><br><span class="line">u[<span class="number">1</span>] = <span class="keyword">Table</span>[</span><br><span class="line">    phi[i h] + tau psi[i h] + </span><br><span class="line">     tau^<span class="number">2</span>/<span class="number">2</span> (a^<span class="number">2</span> (phi[(i - <span class="number">1</span>) h] - <span class="number">2</span> phi[i h] + phi[(i + <span class="number">1</span>) h])/h^<span class="number">2</span> +</span><br><span class="line">         f[i h , <span class="number">0</span>]), &#123;i, m - 1&#125;] // <span class="keyword">N</span>; <span class="comment">(*u_i^1 的计算，对于第二种显格式，这里改动一下即可*)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">Clear</span>[b];</span><br><span class="line">b[k_] := <span class="keyword">Table</span>[tau^<span class="number">2</span> f[i h, (k) tau], &#123;i, 2, m - 2&#125;] // </span><br><span class="line">     <span class="keyword">Prepend</span>[#, tau^<span class="number">2</span> f[h, (k) tau] + s^<span class="number">2</span> alpha[k tau]] &amp; // </span><br><span class="line">    <span class="keyword">Append</span>[#, tau^<span class="number">2</span> f[(m - <span class="number">1</span>) h, (k) tau] + s^<span class="number">2</span> beta[k tau]] &amp; // <span class="keyword">N</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">numeric[i] = </span><br><span class="line">  <span class="keyword">Table</span>[u[k + <span class="number">1</span>] = A[<span class="number">1</span>].u[k] - u[k - <span class="number">1</span>] + b[k], &#123;k, 1, n - 1&#125;] // </span><br><span class="line">   <span class="keyword">Prepend</span>[#, u[<span class="number">1</span>]] &amp;;</span><br><span class="line"><span class="keyword">Dimensions</span>[%] <span class="comment">(*利用矩阵的维数来检验计算的正确性*)</span></span><br><span class="line">real[i] = <span class="keyword">Table</span>[<span class="keyword">N</span>@<span class="keyword">E</span>^(x + t), &#123;t, Range[n] tau&#125;, &#123;x, Range[m - 1] h&#125;];</span><br><span class="line"><span class="keyword">Dimensions</span>[%]</span><br><span class="line"><span class="comment">(*real value*)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Abs</span>[real[i] - numeric[i]] // <span class="keyword">Max</span> <span class="comment">(*利用最大误差来检验计算的正确性*)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">(*过程中将所有数据存在real[1]-real[11],numeric[1]-numeric[11]中，供下面函数调用*)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">(*11个结尾的维数分别为：&#123;&#123;20, 9&#125;, &#123;40, 19&#125;, &#123;80, 39&#125;, &#123;160, 79&#125;, &#123;320, 159&#125;, &#123;640, </span></span><br><span class="line"><span class="comment">  319&#125;, &#123;1280, 639&#125;, &#123;2560, 1279&#125;, &#123;200, 99&#125;, &#123;100, 99&#125;, &#123;50, 99&#125;&#125; </span></span><br><span class="line"><span class="comment">  对应于不同图表的绘制*)</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-3-extra-code-for-plot-and-others"><a href="#4-3-extra-code-for-plot-and-others" class="headerlink" title="4.3 extra code for plot and others"></a>4.3 extra code for plot and others</h4><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">(*绘制数值解最大误差的表格*)</span></span><br><span class="line">&#123;m = 10  2^Range[8], 2 m, </span><br><span class="line">   n = Table[Abs[real[i] - numeric[i]] // Max, &#123;i, 8&#125;], </span><br><span class="line">   <span class="keyword">Ratios</span>[n] // <span class="keyword">Prepend</span>[#, <span class="string">"*"</span>] &amp;&#125; // <span class="keyword">Transpose</span> // <span class="keyword">TableForm</span></span><br><span class="line"></span><br><span class="line"><span class="comment">(*绘制数值解，精确解和误差的绝对值表格*)</span></span><br><span class="line">i = <span class="number">11</span> <span class="comment">(*改变i的值，绘制不同表格，这里取9,10,11*)</span></span><br><span class="line">&#123;n, m&#125; = <span class="keyword">Dimensions</span>[numeric[i]] + &#123;0, 1&#125;</span><br><span class="line">h = <span class="number">1</span>/m; tau = <span class="number">1</span>/n;</span><br><span class="line">&#123;20 Range[10], .1 Range[10], </span><br><span class="line">   Table[numeric[i][[t/tau, 0.5/h]], &#123;t, Range[10] .1&#125;], </span><br><span class="line">   <span class="keyword">Table</span>[real[i][[t/tau, <span class="number">0.5</span>/h]], &#123;t, Range[10] .1&#125;], </span><br><span class="line">   <span class="keyword">Table</span>[<span class="keyword">Abs</span>[real[i] - numeric[i]][[t/tau, <span class="number">0.5</span>/h]], &#123;t, </span><br><span class="line">     Range[10] .1&#125;]&#125; // <span class="keyword">Transpose</span> // <span class="keyword">TableForm</span></span><br><span class="line">     </span><br><span class="line"><span class="comment">(*绘制t=1是误差解和精确解的图像*)</span></span><br><span class="line"><span class="keyword">ListPlot</span>[numeric[<span class="number">1</span>][[<span class="number">-1</span>]], <span class="keyword">DataRange</span> -&gt; &#123;0.1, 0.9&#125;, </span><br><span class="line"> <span class="keyword">PlotRange</span> -&gt; &#123;2.5, 7.5&#125;, <span class="keyword">Joined</span> -&gt; <span class="keyword">True</span>, <span class="keyword">PlotStyle</span> -&gt; <span class="keyword">Dashed</span>, </span><br><span class="line"> <span class="keyword">PlotMarkers</span> -&gt; <span class="keyword">Automatic</span>, <span class="keyword">PlotLabel</span> -&gt; <span class="string">"numeric curve at t=1"</span>]</span><br><span class="line"><span class="keyword">ListPlot</span>[real[<span class="number">1</span>][[<span class="number">-1</span>]], <span class="keyword">DataRange</span> -&gt; &#123;0.1, 0.9&#125;, </span><br><span class="line"> <span class="keyword">PlotRange</span> -&gt; &#123;2.5, 7.5&#125;, <span class="keyword">Joined</span> -&gt; <span class="keyword">True</span>, <span class="keyword">PlotStyle</span> -&gt; &#123;Red&#125;, </span><br><span class="line"> <span class="keyword">PlotMarkers</span> -&gt; <span class="keyword">Automatic</span>, <span class="keyword">PlotLabel</span> -&gt; <span class="string">"real curve at t=1"</span>]</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="comment">(*绘制不同步长数值解的误差曲线*)</span></span><br><span class="line"><span class="keyword">ListPlot</span>[<span class="keyword">Table</span>[<span class="keyword">Abs</span>[real[i] - numeric[i]][[<span class="number">-1</span>]], &#123;i, 4&#125;], </span><br><span class="line"> <span class="keyword">DataRange</span> -&gt; &#123;0.1, 0.9&#125;, <span class="keyword">PlotRange</span> -&gt; &#123;0, 5 10^(-4)&#125;, <span class="keyword">Joined</span> -&gt; <span class="keyword">True</span>,</span><br><span class="line">  <span class="keyword">PlotMarkers</span> -&gt; <span class="keyword">Automatic</span>, <span class="keyword">PlotLabel</span> -&gt; <span class="string">"real curve at t=1"</span>, </span><br><span class="line"> <span class="keyword">PlotLegends</span> -&gt; &#123;"h=1/10,\[Tau]=1/20", "h=1/20,\[Tau]=1/40", </span><br><span class="line">   "h=1/40,\[Tau]=1/80", "h=1/80,\[Tau]=1/160"&#125;]</span><br><span class="line">   </span><br><span class="line"><span class="comment">(*三维误差曲面图绘制*)</span></span><br><span class="line"><span class="keyword">ListPlot3D</span>[<span class="keyword">Abs</span>[numeric[#] - real[#]] &amp; /@ <span class="keyword">Range</span>[<span class="number">2</span>], </span><br><span class="line"> <span class="keyword">DataRange</span> -&gt; &#123;&#123;0.1, 0.9&#125;, &#123;0.1, 1&#125;&#125;, <span class="keyword">PlotRange</span> -&gt; <span class="keyword">All</span>, </span><br><span class="line"> <span class="keyword">Boxed</span> -&gt; <span class="keyword">False</span>, </span><br><span class="line"> <span class="keyword">PlotLegends</span> -&gt; &#123;"h=1/10,\[Tau]=1/20", "h=1/20,\[Tau]=1/40"&#125;]</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/math/" rel="tag"># math</a>
+          
+            <a href="/tags/PDE/" rel="tag"># PDE</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/29/封存/PDE7/" rel="next" title="PDE7">
+                <i class="fa fa-chevron-left"></i> PDE7
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/30/封存/PY1/" rel="prev" title="PY1">
+                PY1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">zzw</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#偏微分方程数值解——第九次上机作业"><span class="nav-number">1.</span> <span class="nav-text">偏微分方程数值解——第九次上机作业</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#姓名：-郑志伟-学号：06150120"><span class="nav-number">1.1.</span> <span class="nav-text">姓名： 郑志伟  学号：06150120</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、任务描述"><span class="nav-number">1.1.1.</span> <span class="nav-text">一、任务描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、方法表述"><span class="nav-number">1.1.2.</span> <span class="nav-text">二、方法表述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、程序运行结果（显格式一）"><span class="nav-number">1.1.3.</span> <span class="nav-text">三、程序运行结果（显格式一）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-算例部分结点处的数值解，精确解和误差的绝对值-h-1-100-tau-1-200"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">3.1 算例部分结点处的数值解，精确解和误差的绝对值 $(h=1/100,\tau=1/200)$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-算例部分结点处的数值解、精确解和误差的绝对值-h-1-100-tau-1-100"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">3.2 算例部分结点处的数值解、精确解和误差的绝对值 $(h=1/100,\tau=1/100)$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-算例部分结点处的数值解、精确解和误差的绝对值-h-1-100-tau-1-50"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">3.3 算例部分结点处的数值解、精确解和误差的绝对值$(h=1/100,\tau=1/50)$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-算例中取不同步长时数值解的最大误差-s-1-2"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">3.4 算例中取不同步长时数值解的最大误差 $(s=1/2)$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-5-算例-t-1-时数值解曲线与精确解曲线-h-1-10-tau-1-20"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">3.5 算例 t=1 时数值解曲线与精确解曲线$(h=1/10,\tau=1/20$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-6-算例-t-1-时取不同步长数值解的误差曲线-s-1-2"><span class="nav-number">1.1.3.6.</span> <span class="nav-text">3.6 算例 t=1 时取不同步长数值解的误差曲线 $(s=1/2)$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-7-算例中取不同步长时的误差曲面"><span class="nav-number">1.1.3.7.</span> <span class="nav-text">3.7 算例中取不同步长时的误差曲面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、程序运行结果（显格式二）"><span class="nav-number">1.1.4.</span> <span class="nav-text">四、程序运行结果（显格式二）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-算例取不同步长的时候的最大误差-s-1-2"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">4.1 算例取不同步长的时候的最大误差(s=1/2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-算例-t-1-时不同步长数值解的误差曲线-s-1-2"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">4.2 算例$t=1$时不同步长数值解的误差曲线 (s=1/2)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、源代码"><span class="nav-number">1.1.5.</span> <span class="nav-text">五、源代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-intialization-function-and-constant-notice-the-value-for-m-n-can-always-changed-："><span class="nav-number">1.1.5.1.</span> <span class="nav-text">4.1 intialization function and constant (notice the value for m,n can always changed)：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-calculate-the-numeric-value-of-point-m-n-the-dimesion-of-data-1-euqal-n-times-m-1"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">4.2 calculate the numeric value of point (m,n). the dimesion of data[1] euqal n times m-1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-extra-code-for-plot-and-others"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">4.3 extra code for plot and others</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zzw</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.4.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
