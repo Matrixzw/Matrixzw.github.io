@@ -14,30 +14,12 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-CN">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-  
-  
-  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="theme-color" content="#222"/>
 
 
 
@@ -60,23 +42,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
 
-<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
 
 
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
 
 
 
@@ -84,13 +64,15 @@
 
 
 
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
-    version: '6.4.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    scheme: 'Mist',
+    version: '7.2.0',
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -102,15 +84,14 @@
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
     }
   };
 </script>
-
-
-  
-
-
-
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="RESPECT">
@@ -124,17 +105,19 @@
 
 
 
-
+  
+  
   <link rel="canonical" href="http://yoursite.com/"/>
 
 
 
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
 
+  
   <title>RESPECT</title>
   
 
@@ -146,30 +129,31 @@
 
 
 
+
+
+
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
@@ -182,13 +166,13 @@
     
   
 
-  <div class="container sidebar-position-left 
+  <div class="container sidebar-position-right 
   page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -202,6 +186,7 @@
       
         <p class="site-subtitle">To All Master</p>
       
+    
     
   </div>
 
@@ -224,33 +209,33 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>关于</a>
+
   </li>
 
       
@@ -259,13 +244,12 @@
   
 
   
+    
+
+  
 
   
 </nav>
-
-
-
-  
 
 
 
@@ -278,9 +262,6 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
-            
-
           
           <div id="content" class="content">
             
@@ -301,16 +282,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/14/oneindex/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/14/oneindex/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zzw"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RESPECT">
+      <meta itemprop="name" content="RESPECT"/>
     </span>
 
     
@@ -320,22 +301,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/14/oneindex/" itemprop="url">
-                  oneindex安装
-                </a>
+                
+                <a href="/2019/07/14/oneindex/" class="post-title-link" itemprop="url">oneindex安装</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -348,24 +328,42 @@
               
 
               <time title="创建时间：2019-07-14 17:03:41 / 修改时间：17:04:48" itemprop="dateCreated datePublished" datetime="2019-07-14T17:03:41+08:00">2019-07-14</time>
+            </span>
+          
+
+          
             
 
+            
+          
+
+          
+
+          
+            
             
               
-
-              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
             
-          </span>
-
-          
-
-          
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/07/14/oneindex/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/14/oneindex/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -379,7 +377,7 @@
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -388,11 +386,13 @@
         
           <h1 id="oneindex安装教程"><a href="#oneindex安装教程" class="headerlink" title="oneindex安装教程"></a>oneindex安装教程</h1><h2 id="购买虚拟主机"><a href="#购买虚拟主机" class="headerlink" title="购买虚拟主机"></a>购买虚拟主机</h2>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/14/oneindex/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/14/oneindex/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -401,11 +401,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -445,16 +450,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/22/NNUer/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/22/NNUer/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zzw"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RESPECT">
+      <meta itemprop="name" content="RESPECT"/>
     </span>
 
     
@@ -464,22 +469,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/06/22/NNUer/" itemprop="url">
-                  南师食堂点评
-                </a>
+                
+                <a href="/2019/06/22/NNUer/" class="post-title-link" itemprop="url">南师食堂点评</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -492,168 +496,42 @@
               
 
               <time title="创建时间：2019-06-22 08:52:55 / 修改时间：09:01:54" itemprop="dateCreated datePublished" datetime="2019-06-22T08:52:55+08:00">2019-06-22</time>
+            </span>
+          
+
+          
             
 
+            
+          
+
+          
+
+          
+            
             
               
-
-              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
             
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>1.1 首先一楼的小熊厨房可是4年+的老店了，里面的东西的话没得说，就是感觉扒饭，饭有点少，吃不太饱。我喜欢他家的酸汤鱼，酸菜鱼，11r的。可以免费加饭，挺好吃的。然后各种蛋炒饭的话我大一大二的时候有一段时间吃过，但不是很好吃。有点腻。
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/22/NNUer/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/22/南师食堂点评/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RESPECT">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/22/南师食堂点评/" itemprop="url">
-                  南师食堂点评
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/06/22/NNUer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/22/NNUer/" itemprop="commentCount"></span>
                 </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-22 08:52:55 / 修改时间：09:09:49" itemprop="dateCreated datePublished" datetime="2019-06-22T08:52:55+08:00">2019-06-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
             
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -667,7 +545,7 @@
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -676,11 +554,13 @@
         
           <p>1.1 首先一楼的小熊厨房可是4年+的老店了，里面的东西的话没得说，就是感觉扒饭，饭有点少，吃不太饱。我喜欢他家的酸汤鱼，酸菜鱼，11r的。可以免费加饭，挺好吃的。然后各种蛋炒饭的话我大一大二的时候有一段时间吃过，但不是很好吃。有点腻。
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/22/南师食堂点评/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/06/22/NNUer/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -689,11 +569,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -733,16 +618,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/29/190429/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/29/190429/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zzw"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RESPECT">
+      <meta itemprop="name" content="RESPECT"/>
     </span>
 
     
@@ -752,22 +637,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/29/190429/" itemprop="url">
-                  sublime text3 安装方法
-                </a>
+                
+                <a href="/2019/04/29/190429/" class="post-title-link" itemprop="url">sublime text3 安装方法</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -780,16 +664,14 @@
               
 
               <time title="创建时间：2019-04-29 22:34:20" itemprop="dateCreated datePublished" datetime="2019-04-29T22:34:20+08:00">2019-04-29</time>
+            </span>
+          
+
+          
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
@@ -797,19 +679,37 @@
                   <span class="post-meta-item-text">更新于</span>
                 
                 <time title="修改时间：2019-04-30 09:49:07" itemprop="dateModified" datetime="2019-04-30T09:49:07+08:00">2019-04-30</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
               
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
             
-          </span>
-
-          
-
-          
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/04/29/190429/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/29/190429/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -823,7 +723,7 @@
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -838,11 +738,13 @@
 <li>直接在上面修改把值改为 00 00 00 00 然后export，覆盖原文件。</li>
 <li>打开windows host 文件：<code>c:\windows\System32\drivers\etc</code> 添加
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/29/190429/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/29/190429/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -851,11 +753,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -895,16 +802,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/18/TES/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/18/TES/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zzw"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RESPECT">
+      <meta itemprop="name" content="RESPECT"/>
     </span>
 
     
@@ -914,22 +821,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/18/TES/" itemprop="url">
-                  TES
-                </a>
+                
+                <a href="/2018/09/18/TES/" class="post-title-link" itemprop="url">TES</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -942,16 +848,14 @@
               
 
               <time title="创建时间：2018-09-18 20:39:55" itemprop="dateCreated datePublished" datetime="2018-09-18T20:39:55+08:00">2018-09-18</time>
+            </span>
+          
+
+          
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
@@ -959,19 +863,37 @@
                   <span class="post-meta-item-text">更新于</span>
                 
                 <time title="修改时间：2018-12-02 12:28:59" itemprop="dateModified" datetime="2018-12-02T12:28:59+08:00">2018-12-02</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
               
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
             
-          </span>
-
-          
-
-          
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/09/18/TES/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/18/TES/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -985,7 +907,7 @@
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -999,11 +921,13 @@
 <h3 id="180916-1"><a href="#180916-1" class="headerlink" title="180916-1"></a>180916-1</h3><p>证明：</p>
 <script type="math/tex; mode=display">\int_{-\infty}^\infty e^{-x^2/2}\cos(s+tx)\,\mathrm{d}x=\sqrt{2\pi}e^{-t^2/2}\cos s</script>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/18/TES/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/09/18/TES/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -1012,11 +936,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1056,16 +985,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/19/shici/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/19/shici/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zzw"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RESPECT">
+      <meta itemprop="name" content="RESPECT"/>
     </span>
 
     
@@ -1075,22 +1004,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/19/shici/" itemprop="url">
-                  中国诗词大会
-                </a>
+                
+                <a href="/2018/08/19/shici/" class="post-title-link" itemprop="url">中国诗词大会</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -1103,16 +1031,14 @@
               
 
               <time title="创建时间：2018-08-19 20:06:12" itemprop="dateCreated datePublished" datetime="2018-08-19T20:06:12+08:00">2018-08-19</time>
+            </span>
+          
+
+          
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
@@ -1120,15 +1046,12 @@
                   <span class="post-meta-item-text">更新于</span>
                 
                 <time title="修改时间：2018-09-03 13:30:49" itemprop="dateModified" datetime="2018-09-03T13:30:49+08:00">2018-09-03</time>
-              
+              </span>
             
-          </span>
+          
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
@@ -1146,11 +1069,29 @@
 
           
             
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/08/19/shici/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/19/shici/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -1164,7 +1105,7 @@
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -1177,11 +1118,13 @@
 <li>卫青不败由天幸，李广无功缘数奇。 《老将行》王维</li>
 <li>君子之泽，五世而斩。 《孟子·离娄章句下·第二十二节》
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/19/shici/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/08/19/shici/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -1190,11 +1133,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1234,16 +1182,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/12/VIM/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/12/VIM/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zzw"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RESPECT">
+      <meta itemprop="name" content="RESPECT"/>
     </span>
 
     
@@ -1253,22 +1201,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/12/VIM/" itemprop="url">
-                  Vim 常用命令
-                </a>
+                
+                <a href="/2018/08/12/VIM/" class="post-title-link" itemprop="url">Vim 常用命令</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -1281,16 +1228,14 @@
               
 
               <time title="创建时间：2018-08-12 12:30:51" itemprop="dateCreated datePublished" datetime="2018-08-12T12:30:51+08:00">2018-08-12</time>
+            </span>
+          
+
+          
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
@@ -1298,15 +1243,12 @@
                   <span class="post-meta-item-text">更新于</span>
                 
                 <time title="修改时间：2018-09-03 13:28:38" itemprop="dateModified" datetime="2018-09-03T13:28:38+08:00">2018-09-03</time>
-              
+              </span>
             
-          </span>
+          
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
@@ -1324,11 +1266,29 @@
 
           
             
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/08/12/VIM/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/12/VIM/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -1342,7 +1302,7 @@
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -1358,11 +1318,13 @@
 <li>B 前一个长单词的第一字符</li>
 <li>ge 前一个单词的最后一个字符
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/12/VIM/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/08/12/VIM/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -1371,11 +1333,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1415,16 +1382,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/08/CCT2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/08/CCT2/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zzw"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RESPECT">
+      <meta itemprop="name" content="RESPECT"/>
     </span>
 
     
@@ -1434,22 +1401,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/08/CCT2/" itemprop="url">
-                  解线性方程组的直接方法
-                </a>
+                
+                <a href="/2018/08/08/CCT2/" class="post-title-link" itemprop="url">解线性方程组的直接方法</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -1462,16 +1428,14 @@
               
 
               <time title="创建时间：2018-08-08 21:06:48" itemprop="dateCreated datePublished" datetime="2018-08-08T21:06:48+08:00">2018-08-08</time>
+            </span>
+          
+
+          
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
@@ -1479,15 +1443,12 @@
                   <span class="post-meta-item-text">更新于</span>
                 
                 <time title="修改时间：2019-04-30 08:02:01" itemprop="dateModified" datetime="2019-04-30T08:02:01+08:00">2019-04-30</time>
-              
+              </span>
             
-          </span>
+          
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
@@ -1505,11 +1466,29 @@
 
           
             
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/08/08/CCT2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/08/CCT2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -1523,7 +1502,7 @@
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -1545,11 +1524,13 @@
 <li>未证明，可以利用 Jordan 标准型切入。</li>
 </ul>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/08/CCT2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/08/08/CCT2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -1558,11 +1539,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1602,16 +1588,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/18/数学面试问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/18/数学面试问题/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zzw"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RESPECT">
+      <meta itemprop="name" content="RESPECT"/>
     </span>
 
     
@@ -1621,22 +1607,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/18/数学面试问题/" itemprop="url">
-                  2018年南京大学数学暑期夏令营面试的问题
-                </a>
+                
+                <a href="/2018/07/18/数学面试问题/" class="post-title-link" itemprop="url">2018年南京大学数学暑期夏令营面试的问题</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -1649,36 +1634,52 @@
               
 
               <time title="创建时间：2018-07-18 20:29:14" itemprop="dateCreated datePublished" datetime="2018-07-18T20:29:14+08:00">2018-07-18</time>
+            </span>
+          
+
+          
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-01 11:07:39" itemprop="dateModified" datetime="2018-08-01T11:07:39+08:00">2018-08-01</time>
+                <time title="修改时间：2019-07-16 09:40:47" itemprop="dateModified" datetime="2019-07-16T09:40:47+08:00">2019-07-16</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
               
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
             
-          </span>
-
-          
-
-          
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/07/18/数学面试问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/18/数学面试问题/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -1692,7 +1693,7 @@
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -1715,14 +1716,14 @@
 <li>无限维空间和有限维空间的本质的区别</li>
 <li>泛函分析老师叫什么名字，数学物理方程老师叫什么名字</li>
 <li>为什么要学计算数学</li>
-<li>$E^*$ 的定义，叫什么名字</li>
+<li>$E^*$的定义，叫什么名字</li>
 <li>在零测集上改变函数值会不会影响函数</li>
 <li>区域可不可以划分为零测集之和</li>
 </ol>
 <p>上来直接就是自我介绍一下自己，把名字写在黑板上，然后就马上回答问题。大概回答了有15-20来分钟了。其中没有问英语的这些虚的，都是很硬核的题目。</p>
 <p>会就会不会就不会的，比如我回答的时候拓扑的定义的时候不记得了，简直了。我学了一年的基础拓扑然后不知道拓扑的定义，然后我就直接回答说我学过但是不知道。当时特别尴尬，直接把我晾在讲台上1分多钟。</p>
 <p>还有一些问题我事后才想起来我回答错了，其实有些问题还是不那么容易回答的。比如说可测函数和连续函数的关系，很容易想到的是可测函数不一定是连续函数，连续函数一定是可测函数。但是相差了多少就一下子会忘记，当时我就乱说了相差了一个零测集。其实离开了以后回忆了一下，这个其实就是Lusin定理，相差了一个任意小的测度。</p>
-<p>还有我之前记得的那个自反空间的定义就是$E^{<strong>}\cong E$ 然后我一开始说存在 $E^{</strong>}$ 到 $E$  的一个同构，然后老师就说是你们老师教错还是你自己记错，我突然害怕了，然后我想了一下说是等距同构，然后他说这样就对了吗？我当时也没反应过来，后来看了一下书，发现其实这个等距同构得是那个定义好的典范映射是满射。当时也没清晰。</p>
+<p>还有我之前记得的那个自反空间的定义就是$E^{<strong>}\cong E$然后我一开始说存在$E^{</strong>}$到$E$的一个同构，然后老师就说是你们老师教错还是你自己记错，我突然害怕了，然后我想了一下说是等距同构，然后他说这样就对了吗？我当时也没反应过来，后来看了一下书，发现其实这个等距同构得是那个定义好的典范映射是满射。当时也没清晰。</p>
 <p>还有就是矩阵的特征根和行列式的关系，我当时马上回答了说特征根的乘积就是行列式。当时老师也没说什么，我感觉我错的题目老师一般都不来说，就直接换个题目，太坑了。我当时回答了用Jordan标准型或者Schur定理，其实这两个方法都需要在复数域上来做。当时也没想数域，反正还是有很多小问题的。</p>
 
           
@@ -1733,11 +1734,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1777,16 +1783,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/18/NNU/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/18/NNU/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zzw"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RESPECT">
+      <meta itemprop="name" content="RESPECT"/>
     </span>
 
     
@@ -1796,22 +1802,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/18/NNU/" itemprop="url">
-                  浙江人在南师大
-                </a>
+                
+                <a href="/2018/07/18/NNU/" class="post-title-link" itemprop="url">浙江人在南师大</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -1824,16 +1829,14 @@
               
 
               <time title="创建时间：2018-07-18 15:01:55" itemprop="dateCreated datePublished" datetime="2018-07-18T15:01:55+08:00">2018-07-18</time>
+            </span>
+          
+
+          
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
@@ -1841,19 +1844,37 @@
                   <span class="post-meta-item-text">更新于</span>
                 
                 <time title="修改时间：2018-08-09 18:20:54" itemprop="dateModified" datetime="2018-08-09T18:20:54+08:00">2018-08-09</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
               
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
             
-          </span>
-
-          
-
-          
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/07/18/NNU/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/18/NNU/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -1867,7 +1888,7 @@
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -1882,11 +1903,13 @@
 <li>南师大转专业 <strong><u>比较</u></strong> 容易</li>
 <li>英语师范和数学师范，数学要降级
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/18/NNU/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/07/18/NNU/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -1895,11 +1918,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1945,95 +1973,101 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
+
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">zzw</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
+  
+  <p class="site-author-name" itemprop="name">zzw</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
 
           
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">10</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
           
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
         </div>
-      </section>
+      </div>
 
       
 
@@ -2041,6 +2075,7 @@
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
         
@@ -2067,25 +2102,29 @@
 
 
 
-  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.4.0</div>
-
-
-
 
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv" title="总访客量">
+    <span class="post-meta-item-icon">
       <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
     </span>
   
 
   
-    <span class="site-pv" title="总访问量">
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
       <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
     </span>
   
@@ -2111,15 +2150,13 @@
     
 
     
-	
-    
 
     
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -2134,9 +2171,8 @@
 
 
 
-
-
-
+  
+  
 
 
 
@@ -2151,27 +2187,20 @@
 
 
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
-  
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+  <script src="/js/utils.js?v=7.2.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+  <script src="/js/motion.js?v=7.2.0"></script>
 
 
 
@@ -2179,41 +2208,16 @@
   
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
+  <script src="/js/schemes/muse.js?v=7.2.0"></script>
 
 
 
 
   
 
+  <script src="/js/next-boot.js?v=7.2.0"></script>
 
-
-
+  
 
   
 
@@ -2223,69 +2227,81 @@
 
   
   
-
-  
-  
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-
-  
-    
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
-    });
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zzw.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
 </script>
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
+
+
+
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
     
   
 
-
-  
   
 
-  
 
   
 
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
   
 
