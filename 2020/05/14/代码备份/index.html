@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.2.0',
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="1. 提取静态网页1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950import requestsfrom bs4 import BeautifulSoupfrom lxml import etreeimport rehuawei_mate10_pro_ua = &apos;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码备份">
+<meta property="og:url" content="http://yoursite.com/2020/05/14/代码备份/index.html">
+<meta property="og:site_name" content="RESPECT">
+<meta property="og:description" content="1. 提取静态网页1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950import requestsfrom bs4 import BeautifulSoupfrom lxml import etreeimport rehuawei_mate10_pro_ua = &apos;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-05-15T02:38:40.416Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="代码备份">
+<meta name="twitter:description" content="1. 提取静态网页1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950import requestsfrom bs4 import BeautifulSoupfrom lxml import etreeimport rehuawei_mate10_pro_ua = &apos;">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2020/05/14/代码备份/"/>
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>代码备份 | RESPECT</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">RESPECT</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">To All Master</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/14/代码备份/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzw"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RESPECT"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">代码备份
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-05-14 09:22:35" itemprop="dateCreated datePublished" datetime="2020-05-14T09:22:35+08:00">2020-05-14</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-05-15 10:38:40" itemprop="dateModified" datetime="2020-05-15T10:38:40+08:00">2020-05-15</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon"
+              >
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          
+
+          <br/>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<h2 id="1-提取静态网页"><a href="#1-提取静态网页" class="headerlink" title="1. 提取静态网页"></a>1. 提取静态网页</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">huawei_mate10_pro_ua = <span class="string">'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-cn; BLA-AL00 Build/HUAWEIBLA-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.132 MQQBrowser/8.9 Mobile Safari/537.36'</span></span><br><span class="line">chrome =<span class="string">'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 得到str格式的html，可以用Beautiful Soup去煲汤</span></span><br><span class="line"><span class="comment"># 得到的str格式的，分两种情况去处理，一种利用xpath，另外一种利用BeautifulSoup</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getHTMLText</span><span class="params">(url)</span>:</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">'User-Agent'</span>: chrome</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        r = requests.get(url, headers = headers)</span><br><span class="line">        r.raise_for_status()</span><br><span class="line">        r.encoding = r.apparent_encoding</span><br><span class="line">        print(r.status_code)</span><br><span class="line">        <span class="keyword">return</span> r.text</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"error"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getbf</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="comment"># url = 'https://m.nvshens.net/rank/2.html'</span></span><br><span class="line">    <span class="comment"># ulr ='http://www.matrixz.top/aria2/trackers_best.txt?preview'</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">#调用getHTMLText函数，得到函数格式</span></span><br><span class="line">    r = getHTMLText(url)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#利用BeautifulSoup转化为bf格式</span></span><br><span class="line">    soup = BeautifulSoup(r, <span class="string">'lxml'</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> soup</span><br><span class="line">    <span class="comment"># # res = soup.content.find_all("div",&#123;"class",re.compile(r'.*-content')&#125;)</span></span><br><span class="line">    <span class="comment"># for i in res:</span></span><br><span class="line">    <span class="comment">#     print(i.get_text())</span></span><br><span class="line">    <span class="comment">#这里soup.div.content返回的还是Tag格式的，一直可以搞下去，其实也挺方便</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getxpath</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="comment">###这里利用Xpath去处理，主要不能结合正则表达式不好用</span></span><br><span class="line">    r = getHTMLText(url) <span class="comment"># 调用一下这个得到文本格式的函数</span></span><br><span class="line">    sel = etree.HTML(r) <span class="comment">#变成xpath的格式</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 然后调用sel.xpath(//'')</span></span><br><span class="line">    <span class="comment"># e.g con = sel.xpath('//div[@class="article-title"]/@a|//div[@style="text-align:center;"]/text()')</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> sel <span class="comment">#输出这种格式</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-提取动态网页"><a href="#2-提取动态网页" class="headerlink" title="2. 提取动态网页"></a>2. 提取动态网页</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line"></span><br><span class="line">chrome_options = Options()</span><br><span class="line"><span class="comment"># chrome_options.add_argument('window-size=1920x3000') #指定浏览器分辨率</span></span><br><span class="line"><span class="comment"># chrome_options.add_argument('--disable-gpu') #谷歌文档提到需要加上这个属性来规避bug</span></span><br><span class="line"><span class="comment"># chrome_options.add_argument('--hide-scrollbars') #隐藏滚动条, 应对一些特殊页面</span></span><br><span class="line">chrome_options.add_argument(<span class="string">'blink-settings=imagesEnabled=false'</span>) <span class="comment">#不加载图片, 提升速度</span></span><br><span class="line">chrome_options.add_argument(<span class="string">'--headless'</span>) <span class="comment">#浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败</span></span><br><span class="line"><span class="comment"># chrome_options.binary_location = r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" #手动指定使用的浏览器位置</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getHTMLtext</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        driver = webdriver.Chrome(<span class="string">'D:\Program Files (x86)\chromedriver\chromedriver.exe'</span>,options=chrome_options)</span><br><span class="line">        driver.get(url)</span><br><span class="line">        driver.switch_to.frame(<span class="string">"contentFrame"</span>) <span class="comment"># 切换到歌单所在的iframe，关键步骤，不然还是没法看到源代码的。</span></span><br><span class="line">        r = driver.page_source <span class="comment"># 相当于F12获取网页源代码，得到的是str格式，可以直接利用re去提取数据，也可以利用转化为xpath soup都一样</span></span><br><span class="line">        print(r[<span class="number">2000</span>:<span class="number">3000</span>])</span><br><span class="line">        <span class="keyword">return</span>(r)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        driver.close() <span class="comment"># 关闭浏览器，回收资源</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-利用api，读取json返回数据"><a href="#3-利用api，读取json返回数据" class="headerlink" title="3. 利用api，读取json返回数据"></a>3. 利用api，读取json返回数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">url=<span class="string">'https://api.vc.bilibili.com/link_draw/v2/Doc/index'</span></span><br><span class="line">params=&#123;</span><br><span class="line">    <span class="string">'type'</span>:<span class="string">'recommend'</span>,</span><br><span class="line">    <span class="string">'page_num'</span>:<span class="number">0</span>,</span><br><span class="line">    <span class="string">'page_size'</span>:<span class="number">45</span></span><br><span class="line">&#125;</span><br><span class="line">headers=&#123;</span><br><span class="line">    <span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0(WindowsNT6.1)AppleWebKit/537.36(KHTML,likeGecko)Chrome/58.0.3029.110Safari/537.36'</span>,</span><br><span class="line">    <span class="string">'Accept-Encoding'</span>:<span class="string">'gzip,deflate'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">r = requests.get(url = url, params = params, headers = headers)</span><br><span class="line"></span><br><span class="line">str = r.json() <span class="comment">#返回的就是dict格式，直接用来re算了</span></span><br><span class="line">re.findall(<span class="string">r'https://.*?.(?:jpg|png|gif)'</span>, str1)</span><br></pre></td></tr></table></figure>
+<h1 id="编写H-Viewer时候遇到的问题。"><a href="#编写H-Viewer时候遇到的问题。" class="headerlink" title="编写H-Viewer时候遇到的问题。"></a>编写H-Viewer时候遇到的问题。</h1><h2 id="Bilibili-画友"><a href="#Bilibili-画友" class="headerlink" title="Bilibili-画友"></a><a href="https://h.bilibili.com/d" target="_blank" rel="noopener">Bilibili-画友</a></h2><p>这个是我第一次尝试用api的格式来提取数据，这也是受到了<code>扒图</code>软件的启发，他给出的例子里面对于这个就是利用了api的格式。<br>在做这个api的时候基本上没有什么问题，因为这个api也是由<code>扒图</code>软件已经基本上写好的。关键是我想实现评论的功能，本来也是利用Chrome进行抓包获取api，后来我认为会不会是自带的抓包软件并不是很好，所以得到的api并不是真实的api。原因在于我直接复制他写出来的<a href="https://api.bilibili.com/x/v2/reply?callback=jQuery111307778321189817317_1589503922494&amp;jsonp=jsonp&amp;pn=1&amp;type=11&amp;oid=63604&amp;sort=2&amp;_=1589503922496" target="_blank" rel="noopener">api</a>，得到的是“非常抱歉，该页面暂时无法访问”。所以在这个地方我就一直卡了好久。</p>
+<p>后来下载了Fillder软件之后仍然仅有这样的一个地址。是在没办法我返回的api地址直接百度一下，就搜到了这篇文章，<a href="https://www.cnblogs.com/brusally/p/11198512.html" target="_blank" rel="noopener">对B站各种数据进行抓包分析</a>。里面提到了不要js参数，就可以了。他也说了直接打开肯定打不开。<br>我还以为是要去掉js参数，其实是一个<a href="http://www.cwbeta.com/2018/05/15/b%E7%AB%99%E8%AF%84%E8%AE%BA%E6%8A%BD%E5%A5%96javascript%E4%BB%A3%E7%A0%81/" target="_blank" rel="noopener">防跨域操作</a>，在<a href="https://blog.csdn.net/Tomsidi/article/details/81489871" target="_blank" rel="noopener">这篇文章</a>说明了要复制到浏览器中打开就行了。<br>发现还是不行，B站主站看视频之后的评论的话到时真的可以，调用一下api，然后根据文章删除部分。例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https://api.bilibili.com/x/v2/reply?callback=jQuery17208515931759409758_1589506408699&amp;jsonp=jsonp&amp;pn=1&amp;type=1&amp;oid=370658779&amp;sort=2&amp;_=1589506410438</span><br><span class="line">这样的一个地址，去掉jQuery那部分，然后后面去不去的无所谓，就能够得到返回的json格式。</span><br><span class="line">https://api.bilibili.com/x/v2/reply?jsonp=jsonp&amp;pn=1&amp;type=1&amp;oid=370658779</span><br><span class="line">这里直接点击打开也是无所谓的。</span><br></pre></td></tr></table></figure>
+<p>但是网上百度了一下还是不知道怎么处理B站画友的api</p>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/12/app-md/" rel="next" title="app.md">
+                <i class="fa fa-chevron-left"></i> app.md
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/24/200524/" rel="prev" title="怖客文档集合">
+                怖客文档集合 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+  <p class="site-author-name" itemprop="name">zzw</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zzw</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

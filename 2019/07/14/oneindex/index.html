@@ -93,17 +93,17 @@
   };
 </script>
 
-  <meta name="description" content="oneindex安装教程购买虚拟主机">
+  <meta name="description" content="oneindex安装教程1. 购买虚拟主机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="oneindex安装">
 <meta property="og:url" content="http://yoursite.com/2019/07/14/oneindex/index.html">
 <meta property="og:site_name" content="RESPECT">
-<meta property="og:description" content="oneindex安装教程购买虚拟主机">
+<meta property="og:description" content="oneindex安装教程1. 购买虚拟主机">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-14T09:04:48.059Z">
+<meta property="og:updated_time" content="2020-05-14T01:52:01.362Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="oneindex安装">
-<meta name="twitter:description" content="oneindex安装教程购买虚拟主机">
+<meta name="twitter:description" content="oneindex安装教程1. 购买虚拟主机">
 
 
 
@@ -328,13 +328,23 @@
                 
               
 
-              <time title="创建时间：2019-07-14 17:03:41 / 修改时间：17:04:48" itemprop="dateCreated datePublished" datetime="2019-07-14T17:03:41+08:00">2019-07-14</time>
+              <time title="创建时间：2019-07-14 17:03:41" itemprop="dateCreated datePublished" datetime="2019-07-14T17:03:41+08:00">2019-07-14</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-05-14 09:52:01" itemprop="dateModified" datetime="2020-05-14T09:52:01+08:00">2020-05-14</time>
+              </span>
             
           
 
@@ -381,31 +391,45 @@
       
 
       
-        <h1 id="oneindex安装教程"><a href="#oneindex安装教程" class="headerlink" title="oneindex安装教程"></a>oneindex安装教程</h1><h2 id="购买虚拟主机"><a href="#购买虚拟主机" class="headerlink" title="购买虚拟主机"></a>购买虚拟主机</h2><a id="more"></a>
-<p>这里我们购买的是香港的一个虚拟主机：友明互联，先尝试了一下1r/m的主机。 [友明互联地址]（<a href="http://idc.ymhlw.cn/）" target="_blank" rel="noopener">http://idc.ymhlw.cn/）</a><br>购买主机后进入用户控制面板。选择PHP程序版本为7.2(至少5.5+)，必须要curl支持（这个也改变不了）</p>
-<h2 id="购买免费域名"><a href="#购买免费域名" class="headerlink" title="购买免费域名"></a>购买免费域名</h2><p>登陆<a href="https://my.freenom.com" target="_blank" rel="noopener">freenom</a>，选择一个免费域名，然后进入解析。根据购买的虚拟主机显示的地址来解析。这里我们利用了A解析。<br>进入Managing xxx（域名），选择最后一项Manage Freenom DNS。</p>
+        <h1 id="oneindex安装教程"><a href="#oneindex安装教程" class="headerlink" title="oneindex安装教程"></a>oneindex安装教程</h1><h2 id="1-购买虚拟主机"><a href="#1-购买虚拟主机" class="headerlink" title="1. 购买虚拟主机"></a>1. 购买虚拟主机</h2><a id="more"></a>
+<p>这里我们购买的是香港的一个虚拟主机：友明互联，先尝试了一下1r/m的主机。 <a href="http://idc.ymhlw.cn/" target="_blank" rel="noopener">友明互联地址</a><br>购买主机后进入用户控制面板。选择PHP程序版本为7.2(至少5.5+)，必须要curl支持（这个也改变不了）</p>
+<blockquote>
+<p>这个虚拟云并不是很好，已经更换为了<a href="http://idc.gngzs.top/index.php" target="_blank" rel="noopener">光年云互联</a>不得不说，这种虚拟云空间还是很多的。有些走流量的话就比较贵了。2020年6月10日到期，购买的产品是香港高速一型。感觉闭那个右明互联好，但是友明互联的话我也是已经购买了一个产品了。可以的话要把这个产品也利用起来，就绑定到github的页面上</p>
+</blockquote>
+<h2 id="2-购买免费域名"><a href="#2-购买免费域名" class="headerlink" title="2. 购买免费域名"></a>2. 购买免费域名</h2><p>登陆<a href="https://my.freenom.com" target="_blank" rel="noopener">freenom</a>，选择一个免费域名，然后进入解析。根据购买的虚拟主机显示的地址来解析。这里我们利用了A解析。<br>进入Managing xxx（域名），选择最后一项Manage Freenom DNS。</p>
 <p>Add Records Name栏填写WWW or www.Type选择A记录，TTL默认即可，Target即为解析到的地址，A记录的话解析地址为一个ip地址。</p>
 <p>完成以上操作之后，回到虚拟主机控制面板。增进域名绑定，输入www.域名（例如www.matrixz.ga，注意www一定要加上）</p>
-<h2 id="上传oneindex源码。"><a href="#上传oneindex源码。" class="headerlink" title="上传oneindex源码。"></a>上传oneindex源码。</h2><p>oneindex的github<a href="https://github.com/donwa/oneindex" target="_blank" rel="noopener">项目地址</a>，下载releases中的oneindex.zip。然后上传到虚拟主机。<br>打开虚拟主机的FTP/文件管理目录，在线文件管理器。看到wwwroot目录，点击进入。一般我的操作是先上传zip压缩包，然后在线解压即可。</p>
+<blockquote>
+<p>随后在这个上面也再次购买了免费域名matrix.cf也用了很久，但是也是2019年末到期的。那时候已经很长一段时间没有去用了。<br>然后在2020年再次购买了腾讯域名，需要实名认证，通过微信购买的。matrix.top域名。续费起来也比较方便。而且微信小程序管理起来也是比较方便。域名是一方面的问题，另外一个方面的问题是解析的事情。利用虚拟云空间解析。<br>付费域名的解析过程大致相同，A记录是一个ip地址，camare记录是一个域名，解析到某一域名。TTL表示刷新时间，有域名提供商确定，一般为600（s），10min。</p>
+</blockquote>
+<h2 id="3-上传oneindex源码"><a href="#3-上传oneindex源码" class="headerlink" title="3. 上传oneindex源码"></a>3. 上传oneindex源码</h2><p>oneindex的<del>github<a href="https://github.com/donwa/oneindex" target="_blank" rel="noopener">项目地址</a></del>作者已经删库，下载releases中的oneindex.zip。然后上传到虚拟主机。<br>打开虚拟主机的FTP/文件管理目录，在线文件管理器。看到wwwroot目录，点击进入。一般我的操作是先上传zip压缩包，然后在线解压即可。</p>
+<blockquote>
+<p>这里并不需要特定的目录，可以自行创建，然后填写的时候链接到这个目录下就行</p>
+</blockquote>
 <p>至此，我们在浏览器中输入域名（例如www.matrix.cf）即可完成解析，进入oneindex程序安装的环境检测页面。</p>
-<h2 id="oneindex程序安装"><a href="#oneindex程序安装" class="headerlink" title="oneindex程序安装"></a>oneindex程序安装</h2><ol>
-<li>浏览器中输入域名(www.matrix.cf)进入安装，点击下一步。</li>
+<blockquote>
+<p>是否是www看的是域名管理里面的解析过程</p>
+</blockquote>
+<h2 id="4-oneindex程序安装"><a href="#4-oneindex程序安装" class="headerlink" title="4. oneindex程序安装"></a>4. oneindex程序安装</h2><ol>
+<li>浏览器中输入之前购买的<a href="www.matrix.cf">域名</a>进入安装，点击下一步。</li>
 <li>填入client_id和client_secret。点击后面的获取应用ID和机密。</li>
 <li>登陆具有5T的账户（想成为网页进入的账户），输入账户。我们是<code>xx@kuan.flu.cc</code>。下一步输入密码<code>xxx</code></li>
-<li>出现请保存你的应用机密。<code>jafKDDI76*;aezwJUA886^!</code>。复制记录下来。然后点击下一步在Registration Successful!一栏看到App ID(or Client ID)<code>c95e8ef0-f432-4e4c-a49b-3f2b318912ab</code></li>
+<li>出现请保存你的应用机密。<code>jafKDDI76*;axxxxxx^!</code>。复制记录下来。然后点击下一步在Registration Successful!一栏看到App ID(or Client ID)<code>c95e8ef0-f432-4e4c-a49bxxxxxx2ab</code></li>
 <li>返回到前面一个页面，输入应用机密和应用ID。然后下一步</li>
 <li>看到绑定微软账户，点击绑定（由于刚刚完成了登陆，现在应该是自动登陆的，只需要点击一下就完成了绑定）。然后直接进入了程序安装完成。</li>
 <li>可以直接管理后台。初始密码oneindex。进入后台管理之后我们一般修改使用自己比较熟悉的密码（弱密码即可）。</li>
 <li>后台管理页面为域名/?/login 或者/?/admin</li>
 </ol>
-<h2 id="一些注意事项"><a href="#一些注意事项" class="headerlink" title="一些注意事项"></a>一些注意事项</h2><p>由于一些不可预测的原因。在管理页面的修改过程中，我发现</p>
+<blockquote>
+<p>现在的oneindex作业已经弃坑了，不过有代替的<a href="https://github.com/qkqpttgf/OneManager-php" target="_blank" rel="noopener">onemanage</a>,还是很好用的，而且界面也挺好看。</p>
+</blockquote>
+<h2 id="5-一些注意事项"><a href="#5-一些注意事项" class="headerlink" title="5. 一些注意事项"></a>5. 一些注意事项</h2><p>由于一些不可预测的原因。在管理页面的修改过程中，我发现</p>
+<p><del>1. 不能勾选最后一行的伪静态，不然会出现二级域名打不开的情况。<strong>应该是之前的问题，或者是onedrive本身问题</strong></del><br><del>2. 不能选择要分享的根目录文件，会出现打开页面为空白的情况。<strong>现在一般分享/share 文件夹</strong></del><br><del>3. 可以利用通配符的方法隐藏某些文件夹。</del></p>
 <ol>
-<li>不能勾选最后一行的伪静态，不然会出现二级域名打不开的情况。</li>
-<li>不能选择要分享的根目录文件，会出现打开页面为空白的情况。</li>
-<li>可以利用通配符的方法隐藏某些文件夹。</li>
 <li>利用在文件夹内放置<code>.password</code>可以设置文件夹密码</li>
-<li></li>
+<li>相比起来OneManage好许多了，里面可以自己设置挺多的东西，不过一般也不太常用</li>
 </ol>
+<p>最后附上我的<a href="http://www.matrixz.top" target="_blank" rel="noopener">OneManage地址</a></p>
 
       
     </div>
@@ -513,7 +537,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
