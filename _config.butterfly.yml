@@ -263,10 +263,6 @@ aside:
     content: 记录美好生活
 
 
-  avatar:
-    img: ./img/avatar.png
-    effect: false # 頭像會一直轉圈
-
 
     # Share.js
   # https://github.com/overtrue/share.js
