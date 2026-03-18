@@ -19,8 +19,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          submodules: recursive # 关键：拉取子模块
+        # 不用 submodules，直接克隆主题
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -32,15 +31,22 @@ jobs:
         with:
           version: 8
 
+      # 关键：手动克隆主题
+      - name: Clone theme
+        run: |
+          rm -rf themes/*
+          git clone --depth=1 -b main https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
+
       - name: Install dependencies
         run: |
           pnpm install
-          pnpm add hexo-util hexo-log hexo-fs cheerio
+          pnpm add hexo-util hexo-log hexo-fs
 
       - name: Build Hexo
         run: |
           pnpm run build
           ls -la public/
+          cat public/index.html | head -5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -51,5 +57,4 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - name: Deploy to
