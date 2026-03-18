@@ -3,7 +3,6 @@ name: Deploy Hexo to GitHub Pages
 on:
   push:
     branches: [main]
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -21,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive # 关键：拉取子模块（主题）
+          submodules: recursive # 关键：拉取子模块
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -36,17 +35,12 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm install
-          # 关键：安装 Butterfly 需要的依赖
           pnpm add hexo-util hexo-log hexo-fs cheerio
-          # 主题内依赖
-          cd themes/butterfly && pnpm install || npm install || true
 
       - name: Build Hexo
         run: |
           pnpm run build
-          # 验证输出
           ls -la public/
-          test -f public/index.html && echo "✅ Build success" || echo "❌ Build failed"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -54,9 +48,6 @@ jobs:
           path: ./public
 
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
