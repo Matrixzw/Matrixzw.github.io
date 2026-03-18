@@ -6,10 +6,11 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "dev": "hexo clean && hexo server"
   },
   "hexo": {
-    "version": ""
+    "version": "7.3.0"
   },
   "dependencies": {
     "hexo": "^7.0.0",
@@ -23,6 +24,7 @@
     "hexo-permalink-pinyin": "^1.1.0",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-marked": "^6.0.0",
+    "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^1.0.0"
