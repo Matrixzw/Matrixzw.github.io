@@ -206,7 +206,6 @@ waline_js:
   other_name: waline
   version: 3.8.0
 
-
 nav:
   # 導航欄 Logo 圖片
   logo:
@@ -261,10 +260,3 @@ aside:
     enable: true
     # 公告內容
     content: 记录美好生活
-
-
-
-    # Share.js
-  # https://github.com/overtrue/share.js
-  sharejs:
-    # sites: facebook,twitter,wechat,weibo,qq
